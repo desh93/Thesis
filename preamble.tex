@@ -1,0 +1,99 @@
+\usepackage[utf8]{inputenc}
+\usepackage[UKenglish]{babel}
+\usepackage[numbers,sort&compress]{natbib}
+
+\usepackage{tabularx}
+\usepackage{multirow}
+
+\usepackage[dvipsnames]{xcolor} % need to load before pgfplots
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots,fillbetween}
+\pgfplotsset{compat=1.15}
+\pgfplotsset{ticklabel style={font=\footnotesize}}
+\pgfplotsset{xlabel style={font=\small,align=right,text width=0.8\figurewidth}}
+\pgfplotsset{ylabel style={font=\small,yshift=-1ex,align=right,text width=0.7\figureheight}}
+\pgfplotsset{legend style={draw=none,fill=none,font=\footnotesize}}
+\pgfplotsset{title style={font=\small}}
+
+\usepgfplotslibrary{external}
+\tikzexternalize
+\tikzset{%
+  external/system call={lualatex \tikzexternalcheckshellescape --halt-on-error --interaction=batchmode --output-directory=./build --jobname "\image" "\texsource"},
+  /pgf/images/include external/.code={%
+    \includegraphics{build/#1}%
+  },  
+}
+
+\newlength\figureheight
+\newlength\figurewidth
+\newlength\subfigwidth
+
+\usepackage{amsmath,amsfonts,amssymb,commath}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\expectation}{\mathbb{E}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\GP}{\mathrm{GP}\!}
+\newcommand{\given}{\,|\,}
+
+\usepackage{subdepth}
+
+%TC:ignore
+% Don't double-space display environments
+% \BeforeBeginEnvironment{equation}{\vspace{-\baselineskip}\begin{singlespace}}
+% \AfterEndEnvironment{equation}{\end{singlespace}\vspace{-.5\baselineskip}\noindent\ignorespaces}
+% \BeforeBeginEnvironment{align}{\begin{singlespace}}
+% \AfterEndEnvironment{align}{\end{singlespace}\noindent\ignorespaces}
+%TC:endignore
+
+\usepackage{pdflscape}
+\usepackage{adjustbox}
+
+\usepackage{bm,upgreek}
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\trans}[1]{{#1}^\mathsf{T}}
+
+\usepackage[pagewise]{lineno}
+% Fix for lineno with AMS math environments
+\newcommand*\patchAmsMathEnvironmentForLineno[1]{
+  \expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
+  \expandafter\let\csname oldend#1\expandafter\endcsname\csname end#1\endcsname
+  \renewenvironment{#1}%
+     {\linenomath\csname old#1\endcsname}%
+     {\csname oldend#1\endcsname\endlinenomath}}% 
+\newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{%
+  \patchAmsMathEnvironmentForLineno{#1}%
+  \patchAmsMathEnvironmentForLineno{#1*}}%
+\AtBeginDocument{%
+\patchBothAmsMathEnvironmentsForLineno{equation}%
+\patchBothAmsMathEnvironmentsForLineno{align}%
+\patchBothAmsMathEnvironmentsForLineno{multline}%
+}
+
+\usepackage[compat=1.1.0]{tikz-feynman}
+\tikzset{/tikzfeynman/warn luatex=false,
+         /tikzfeynman/momentum/arrow shorten=0.25
+}
+
+\usepackage{slashed} % Feynman slash notation
+
+\usepackage[italic]{hepnames}
+\def\@shiftlen@anti@gen@bar{1mu} % Hacky fix for Andy's insanity
+\usepackage[separate-uncertainty=true,range-phrase={ to },range-units=single,multi-part-units=single,list-units=single,list-final-separator={, and }]{siunitx}
+\usepackage{xspace}
+\DeclareRobustCommand{\LHC}{LHC\xspace}
+\DeclareRobustCommand{\CERN}{CERN\xspace}
+\DeclareRobustCommand{\ATLAS}{ATLAS\xspace}
+% \DeclareRobustCommand{\APtop}{\overline{t}}
+% \DeclareRobustCommand{\APbottom}{\overline{b}}
+\DeclareRobustCommand{\ttbar}{\(\Ptop\APtop\)\xspace}
+\DeclareRobustCommand{\protonproton}{$\Pproton\Pproton$\xspace}
+\DeclareRobustCommand{\CP}{$C \mkern-1.0mu P$\xspace}
+
+\DeclareRobustCommand{\pT}{\ensuremath{p_\text{T}}\xspace}
+\DeclareRobustCommand{\mtt}{$m_{\Ptop\APtop}$\xspace}
+
+\def\newarraystrech{0.6}
+
+\newcommand{\errstatsyst}[4]{\ensuremath{{#1}\pm{#2} \, \text{(stat)}\pm{#3}\,\text{(syst)}\,\si{#4}}}
+\newcommand{\tol}[3]{\hbox{\rule{0pt}{11pt}\ensuremath{{#1\,}^{+{#2}}_{-{#3}}}}}

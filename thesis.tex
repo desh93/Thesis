@@ -1,0 +1,65 @@
+%% For electronic draft builds
+% \documentclass[11pt,a4paper,hyperpdf,oneside,nobind,hidefront]{AJBthesis}
+
+%% For printed draft builds
+% \documentclass[11pt,a4paper,twoside,bind,hidefront]{AJBthesis}
+
+%% For short draft builds (breaks citations by necessity)
+% \documentclass[11pt,a4paper,hyperpdf,nobind,draft,hidefrontback]{AJBthesis}
+
+% For electronic version
+\documentclass[11pt,a4paper,hyperpdf,oneside,nobind]{AJBthesis}
+
+%% For soft-bound version
+% \documentclass[11pt,a4paper,oneside,bind]{AJBthesis}
+
+%% For hard-bound version
+% \documentclass[11pt,a4paper,oneside,bind]{AJBthesis}
+
+\input{preamble}
+
+\title{\texorpdfstring{UNTITLED}{UNTITLED}}
+\author{Deshan Kavishka Abhayasinghe}
+
+\begin{document}
+
+\begin{frontmatter}
+    \input{frontmatter}
+\end{frontmatter}
+
+\begin{mainmatter}
+    \linenumbers
+    \input{chapters/introduction}
+    \input{chapters/SM}
+    \input{chapters/experimentalSetup}
+    \input{chapters/simulationAndReco}
+\end{mainmatter}
+
+\clearpage
+
+\begin{backmatter}
+    \input{backmatter} 
+    \bibliographystyle{bib/utphys}    
+    \bibliography{bib/SM,bib/GP,bib/GP-unfolding,bib/ATLAS,bib/CMS,bib/method,bib/analysis}    
+\end{backmatter}
+
+\let\svaddcontentsline\addcontentsline
+    \renewcommand\addcontentsline[3]{%
+        \edef\qtest{#1}%
+        \def\qmatch{lof}%
+        \ifx\qmatch\qtest\else%
+            \def\qmatch{lot}%
+            \ifx\qmatch\qtest\else%
+                \svaddcontentsline{#1}{#2}{#3}%
+        \fi\fi%
+    }
+
+%TC:ignore
+\begin{appendices}
+    % \input{chapters/app-background}
+    % \input{chapters/app-uncertainties}
+    % \input{chapters/app-xsecs}
+\end{appendices}
+%TC:endignore
+
+\end{document}
