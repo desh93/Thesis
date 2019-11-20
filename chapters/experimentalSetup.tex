@@ -1,8 +1,43 @@
 \chapter{Experimental Setup}\label{chap:expSetup}
-LHC ATLAS ETC
-\section{The Large Hadron Collider}
+This section will describe in detail the experimental apparatus used to produce results needed for the analysis carried out in Chapter \cref{chap:Analysis}. 
+The complex machinery of the accelerating system will be described in \cref{sec:method:LHC}, followed by the detector system and a review of the filtering and processing of the data acquired by the detector will be described in Section \ref{sec:method:ATLAS}.
 
-\section{The ATLAS detector}
+\section{The Large Hadron Collider}\label{sec:method:LHC}
+The Large Hadron Collider (LHC)~\cite{LHC} operated by the Operated by the European Organisation for Nuclear Research (CERN) is currently the largest and most powerful particle accelerator. 
+The LHC ring is about \SI{100}{\metre} underground at the French-Swiss border close to Geneva, and has circumference of \SI{27}{\kilo\metre}.
+Predominately performing proton-proton (\protonproton) collisions with a design centre-of-mass collision energy of $\sqrt{s} = \SI{14}{\tera\electronvolt}$ and a design instantaneous collision luminosity of \SI{e34}{\centi\metre^{-2} \second^{-1}}.
+Whist the LHC also allows to accelerate heavy ions (e.g.\ Pb and Xe), the heavy-ion program is not discussed further, as only \protonproton collision data is used for the presented studies in this thesis. 
+
+The LHC is supported by a chain of pre-accelerators at CERN which are used to ramp protons to the required input energy of \SI{450}{\giga\eV}~\cite{LHCInjectorChain,LHCFacts}.
+A schematic of the LHC accelerator chain is shown in Figure \cref{fig:method:CERN-complex}.
+The process begins by stripping off orbiting electrons from Hydrogen to obtain protons. This is done by the \emph{Linac 2}, a linear accelerator which also accelerates the protons to an energy of \SI{50}{\mega\eV}.
+These proton beams are then fed into into the \emph{Proton Synchrotron Booster} (PSB), first of a series of circular accelerators that accelerate the protons to an energy of \SI{1.4}{\giga\eV}.
+The beams then enter the \SI{628}{\meter} long \emph{Proton Synchrotron} (PS) where the proton beams are accelerated to a beam energy of \SI{25}{\giga\eV} and injected into the \emph{Super Proton Synchrotron} (SPS).
+At the penultimate stage of the acceleration in the \SI{6.9}{\kilo\meter} ring of the SPS, the proton beam reaches the required beam energy of \SI{450}{\giga\eV} arranged in 240 bunches.
+After the SPS, the protons injected into counter-circulating LHC rings to be accelerated to their maximum energy, where collisions under stable conditions are achieved.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/CCC-v2018-print-v2.pdf}
+    \caption[The CERN accelerator complex]{The CERN accelerator complex in 2018, including LHC and it's pre-accelerators.
+    Figure from~\cite{CERNComplex}.}
+    \label{fig:method:CERN-complex}
+\end{figure}
+
+There are a total of 1232 dipole magnets installed in the LHC that used steer the proton beams around each ring. 
+For proton energies of \SI{7}{\tera\eV}, a magnetic field of \SI{8.3}{\tesla} is required in these dipoles.
+To keep the beams focused and achieve a very small beam size at the interaction point quadrupole and higher order magnets are used. 
+
+In total there are a maximum of 3564 possible bunch positions with a spacing of \SI{25}{\nano\second} available at the LHC. 
+However, due to rise-time constraints of the injector and beam-dump kicker magnets this is reduced to 2808 for a spacing of \SI{25}{\nano\second} with approximately $10^{11}$ protons per bunch.
+The filling choice of the LHC ring is the so-called bunch scheme. 
+The bunches are typically clustered in what are called bunch trains, while gaps between the bunch trains may due to the injector magnet rise-times. 
+
+The two circulating protons beans intersect at four interaction points where the main experiments are installed at the LHC. 
+CMS~\cite{CMS} and ATLAS~\cite{ATLAS}, two general purpose detectors allow precision measurements of SM processes, including the properties of the Higgs boson, and allow for the search for physics beyond the SM.
+Whereas LHCb~\cite{LHCb} and ALICE's~\cite{ALICE} are two lower rate specialised detectors studying the properties of flavour physics and heavy-ion physics respectively.
+To study the properties of particles with very low scattering angles from the beam (i.e forward physics), TOTEM [\textbf{REF}] and LHCf, two additional smaller experiments were also installed at the LHC.
+
+\section{The ATLAS detector}\label{sec:method:ATLAS}
 
 \subsection{Inner Detector}
 
