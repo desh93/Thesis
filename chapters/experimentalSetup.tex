@@ -135,7 +135,75 @@ Precise tracking information is needed to measure the properties of particles ex
 \end{equation}
 
 \subsection{Calorimeters}\label{sec:method:Cals}
-The ATLAS calorimetry system consists of the electromagnetic (EM) and the hadronic calorimeters (HCAL), located closest to the beam pipe after the ID outside of the solenoid magnet. Designed to measure the position and energy of particles emerging from the interaction point. Using materials which have a high probability of particles interaction with them, the EM and HCAL are specialised in measuring the energies of $\gamma$ and $e$, and hadrons, respectively.
+The ATLAS calorimetry system consists of the electromagnetic and the hadronic calorimeters, located closest to the beam pipe after the ID outside of the solenoid magnet. Designed to measure the position and energy of particles emerging from the interaction point. Using materials which have a high probability of particles interaction with them, the electromagnetic and hadronic calorimeters are specialised in measuring the energies of $\gamma$ and $e$, and hadrons, respectively. Neutral particles like $\gamma$ and neutral hadrons which do not induce a signal in the ID can be identified in the calorimeters. This allows for nearly all Standard Model particles to be identified with the exception of weakly interaction neutrinos and $\mu$ which has minimal ionization within the distance of the calorimeters and the interaction point. 
+
+High energy particles undergo multiple scattering producing a \emph{shower} of lower energy particles that travel through the calorimeter material. Therefore, it is important to ensure that  \emph{particle showers} are contained within the calorimeters when designing them. The depth of a calorimeter material can be characterised by a particles radiation lengths ($\chi_{0}$) and it's nuclear interaction lengths ($\lambda$). Nuclear interaction length is be defined as the mean distance a particle travels in a medium before undergoing inelastic scattering. Due to electromagnetic interactions with the surrounding material, over one radiation length a particle loses on average $e^{-1}$ it's original energy. 
+
+ATLAS using sampling calorimeters for both the electromagnetic and hadronic calorimeters. The Calorimeter materials have been selected to either be ionised or scintillate when particle a particle shower enters which results in a measurable electrical signals. A particles energy can be calculated by summing the total radiation produced by a shower in the active layers. 
+
+\subsubsection{Electromagnetic calorimeter}
+The electromagnetic calorimeter is designed to fully measure the energies of electrons (and positrons), and photons. Measurements of the particles energies are made by inducing electromagnetic showers when the particle interacts with a dense material. For electrons the shower is primarily initiated by bremsstrahlung, whilst for photons it is initiated by pair production. Shower particles are then be detected by the detecting layers of the calorimeter interleaved with layers of dense material.
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=\largefigwidth]{images/lar}};
+        \node[anchor=west,align=center] (hec) at (-2.0,2.3) {\small Hadronic end-cap\\ calorimeter};
+        \draw (hec) to ++(2,2.5);
+        \node[anchor=west,align=center] (fcal) at (8.5,-0.8) {\small Forward calorimeter};
+        \draw (fcal) to ++(-1.4,4.4);
+        \node[anchor=west,align=center] (ecal) at (0,1) {\small Barrel electromagnetic\\ calorimeter};
+        \draw (ecal) to ++(1.3,2.6);
+        \node[anchor=west,align=center] (emec) at (4,0) {\small Electromagnetic end-cap\\ calorimeter};
+        \draw (emec) to ++(1.1,3);
+        \clip (current bounding box.south west) rectangle ($(current bounding box.north east)+(1.5,0)$);
+    \end{tikzpicture}
+    \caption[Illustration highlighting the liquid argon components of the ATLAS calorimeters]{Illustration highlighting the liquid argon components of the ATLAS calorimeters.
+        From \cite{ATLASLarImage} with added labels.}
+    \label{fig:method:ATLAS:LAr}
+\end{figure}
+
+The electromagnetic calorimeter uses liquid argon (LAr) as it's scintillator material and lead plates as it's shower inducing material. Liquid argon component of the colorimeter were chosen due to it's stability of response over a long period of time whilst being exposed to radiation~\cite{ATLAS:LAr-TDR}. It's divided into barrel and end-cap regions highlighted in \cref{fig:method:ATLAS:LAr}. 
+
+In the barrel region the electromagnetic calorimeter is split into three regions of different granularity. The innermost layer of the calorimeter has a fine granularity in $\eta$. Majority of the thickness of the electromagnetic calorimeter consists of the second layer, arranged in a square grid, aids in locating the primary vertices of particles. Combining the measurements of the first two layers allows for locating the origin of neutral particles, which do not leave tracks in the ID. The final layer, with the largest granularity, is used to estimate the energy lost beyond the electromagnetic calorimeter and to distinguish between electromagnetic and hadronic showers. A sketch of the barrel module can be seen in \cref{fig:method:ATLAS:ECal}, where the cell granularity of each section is clearly visible.
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[scale=0.9]{images/calo.pdf}};
+    \end{tikzpicture}
+    \caption[Drawing showing a section of the barrel electromagnetic calorimeter]{Drawing showing a section of the barrel electromagnetic calorimeter.
+    The liquid argon cells are arranged into three distinct layers, with granularity decreasing for larger radius.
+    From \cite{ATLAS}.}
+    \label{fig:method:ATLAS:ECal}
+\end{figure}
+
+In the forward region, each end-cap electromagnetic calorimeter consists of two coaxial wheels separated by \SI{3}{mm}. The inner wheels are constructed similarly to the barrel calorimeters shown in \cref{fig:method:ATLAS:ECal}. The other wheels do not have a third layer and majority of the thickness is composed of the first two layers. 
+
+\subsubsection{Hadronic calorimeter}
+The hadronic calorimeter, like the electromagnetic one, is a sampling calorimeter. Unlike the electromagnetic calorimeter it uses steel as the shower-inducing material and plastic scintillating tiles~\cite{ATLAS:tile-TDR}. The tile calorimeter sits in the barrel region at $\abs{\eta} < 1.7$ where it divided into, the tile barrel $\abs{\eta} < 1.0$ followed by the extended barrels covering $ 0.8 < \abs{\eta} < 1.7 $. The barrel and extended barrels are divided azimuthally into 64 modules. On the edges of the tiles wavelength shifting fibers are extract signals by guiding them into photomultiplier tubes. 
+
+The hadronic end-cap calorimeter covers  $1.5 < \abs{\eta} < 3.2$ using LAr technology. It consists of two wheels per end-cap, and uses copper as the shower inducing material. In each end-cap it two independent wheels are placed with \SI{50}{\milli\meter} copper plates. A greater containment is achieved compared to the tile calorimeter by placing 12 nuclear interaction lengths of material before the muon spectrometers. 
+
+\subsubsection{Forward calorimeters}
+The forward calorimeter provides additional coverage in the range $3.1 < \abs{\eta} < 4.9$ and is designed to measure the energies of both electromagnetic and hadronic showers~\cite{ATLAS:LAr-TDR}. It consists of three modules, each using LAr as the detecting material. Copper rods are placed parallel to the beam axis in the innermost layer, is optimised for electromagnetic showers. Tungsten rods are used for the second and third layers as the shower inducing material to measure the energy of hadronic particles. 
+
+\subsubsection{Performace}
+
+Many analysis in ATLAS require an excellent energy resolution. Based on test beam data, the calorimeter the calorimeter energy resolution is summarized in Table ~\cite{ATLAS:testbeam-calo}~\cite{ATLAS:testbeam-hcal}.
+
+\begin{table}
+    \begin{tabular}{ccc}
+         & jet \pT [\si{\giga\eV}] & Resolution \\
+        \midrule
+        $\geq 6$ & $\frac{\sigmaE}{E} =$ \\
+        $\geq 5$ & $>65$ & $\geq 0$ & $240\,166 \pm 412$ \\
+        $\geq 2$ & $>75$ & $\geq 2$ & $303\,399 \pm 464$ \\
+    \end{tabular}
+    \caption[Comparison of trigger strategies]{Comparison of trigger strategies.
+        The minimum number of jets, \pT for those jets, and number of \Pbottom-tagged jets are shown with the associated yields after applying to Monte Carlo simulation.
+        The top row corresponds to the strategy used for the analysis in this chapter.}
+    \label{tab:analysis:trigger-yields}
+\end{table}
 
 \subsection{Muon spectrometer}\label{sec:method:MS}
 
