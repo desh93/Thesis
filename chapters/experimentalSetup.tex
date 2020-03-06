@@ -57,7 +57,7 @@ allow precision measurements of SM processes, including the properties of the Hi
 allow for the search for physics beyond the SM. Whereas LHCb~\cite{LHCb} and ALICE's~\cite{ALICE} 
 are two lower rate specialised detectors studying the properties of flavour physics and heavy-ion 
 physics respectively. To study the properties of particles with very low scattering angles from the 
-beam (i.e forward physics), TOTEM [\textbf{REF}] and LHCf, two additional smaller experiments were 
+beam (i.e forward physics), TOTEM~\cite{totem:2008zza} and LHCf~\cite{LHCf:2008zz}, two additional smaller experiments were 
 also installed at the LHC.
 
 \section{The ATLAS detector}\label{sec:method:ATLAS}
@@ -94,7 +94,7 @@ The energy \emph{E} and momenta \emph{\vec{p}} of a particle can be desribed by 
 
 \subsection{Inner Detector}\label{sec:method:ID}
 
-The Inner Detector (ID)~\cite{ATLAS:ID-TDR} embedded in a \SI{2}{\tesla} solenoid magnetic field, allows for the tracking of charged particles near to the interaction point. It is designed to achieve high precision measurements of momentum and measurements of primary and secondary vertices of collisions in the range $\abs{\eta} \leq 2.5$. It consists of in increasing distance from the beam pipe three independent detector technologies: the \emph{pixel detector}, \emph{semi-conductor tracker (SCT)} and the \emph{transition radiation tracker (TRT)}, as shown in figure \cref{fig:method:ATLAS:ID}. 
+The Inner Detector (ID)~\cite{ATLAS:ID-TDR} embedded in a \SI{2}{\tesla} solenoid magnetic field, allows for the tracking of charged particles near to the interaction point. It is designed to achieve high precision measurements of momentum and measurements of primary and secondary vertices of collisions in the range $\abs{\eta} \leq 2.5$. It consists of in increasing distance from the beam pipe three independent detector technologies: the \emph{pixel detector}, \emph{semi-conductor tracker (SCT)} and the \emph{transition radiation tracker (TRT)}, as shown in  ~\cref{fig:method:ATLAS:ID}. 
 
 \begin{figure}
     \centering
@@ -125,7 +125,7 @@ Based on silicon sensors the SCT is located \SI{299}{\nano\meter} from the inter
 \subsubsection{Transition radiation tracker}
 Located \SI{563}{\milli\meter} from the interaction point the TRT is the outermost component of the ID. The TRT is formed of approximately 370000 gas filled straw tube detectors. Each straw tube is a hollow cylinder with a diameter of \SI{4}{\milli\meter} containing a central tungsten wire filled with a gas mixture of 70\% Xe, 27\% CO$_{2}$ and 3\% O$_{2}$. The tungsten wire along with the tube forms a capacitor, where the wire is the anode and the surrounding tube acts as the cathode. When charged particles pass through the tube, the gas is ionised producing a cascade of electrons. These electrons are attracted to the anode creating a current in the wire. The TRT has 73 straw planes in the barrel region, spaced horizontally at a distance $\SI{563}{\milli\meter} < R < \SI{1066}{\milli\meter}$ and $\abs{z} < \SI{712}{\milli\meter}$ from the interaction point, and 160 straw planed in the end-caps orientated in the radial direction. This results in on average 30 to 40 hits detected per particle by the TRT. The TRT straws have an intrinsic resolution of \SI{130}{\micro\meter} in the $R\phi$ plane. 
 
-The TRT additionally consists of polypropylene fibres and polypropylene foils interleaved between the straw tubes in the barrel and endcap modules respectively. Charged particles passing through the polypropylene undergo transition ration. Transition radiation is produced when particles travel between materiels with different dielectric constants. The radiation results in additional ionisation of the gas in the straw tubes. The energy of the transition radiation is dependant upon mass of the charged particles, which allows for a separation of from electrons and from other charged particles.  
+The TRT additionally consists of polypropylene fibres and polypropylene foils interleaved between the straw tubes in the barrel and end-cap modules respectively. Charged particles passing through the polypropylene undergo transition ration. Transition radiation is produced when particles travel between materiels with different dielectric constants. The radiation results in additional ionisation of the gas in the straw tubes. The energy of the transition radiation is dependant upon mass of the charged particles, which allows for a separation of from electrons and from other charged particles.  
 
 \subsubsection{Performance}
 
@@ -135,7 +135,7 @@ Precise tracking information is needed to measure the properties of particles ex
 \end{equation}
 
 \subsection{Calorimeters}\label{sec:method:Cals}
-The ATLAS calorimetry system consists of the electromagnetic and the hadronic calorimeters, located closest to the beam pipe after the ID outside of the solenoid magnet. Designed to measure the position and energy of particles emerging from the interaction point. Using materials which have a high probability of particles interaction with them, the electromagnetic and hadronic calorimeters are specialised in measuring the energies of $\gamma$ and $e$, and hadrons, respectively. Neutral particles like $\gamma$ and neutral hadrons which do not induce a signal in the ID can be identified in the calorimeters. This allows for nearly all Standard Model particles to be identified with the exception of weakly interaction neutrinos and $\mu$ which has minimal ionization within the distance of the calorimeters and the interaction point. 
+The ATLAS calorimetry system consists of the electromagnetic and the hadronic calorimeters, located closest to the beam pipe after the ID outside of the solenoid magnet. Designed to measure the position and energy of particles emerging from the interaction point. Using materials which have a high probability of particles interaction with them, the electromagnetic and hadronic calorimeters are specialised in measuring the energies of $\gamma$ and $e$, and hadrons, respectively. Neutral particles like $\gamma$ and neutral hadrons which do not induce a signal in the ID can be identified in the calorimeters. This allows for nearly all Standard Model particles to be identified with the exception of weakly interaction neutrinos and $\mu$ which has minimal ionisation within the distance of the calorimeters and the interaction point. 
 
 High energy particles undergo multiple scattering producing a \emph{shower} of lower energy particles that travel through the calorimeter material. Therefore, it is important to ensure that  \emph{particle showers} are contained within the calorimeters when designing them. The depth of a calorimeter material can be characterised by a particles radiation lengths ($\chi_{0}$) and it's nuclear interaction lengths ($\lambda$). Nuclear interaction length is be defined as the mean distance a particle travels in a medium before undergoing inelastic scattering. Due to electromagnetic interactions with the surrounding material, over one radiation length a particle loses on average $e^{-1}$ it's original energy. 
 
@@ -147,7 +147,7 @@ The electromagnetic calorimeter is designed to fully measure the energies of ele
 \begin{figure}
     \centering
     \begin{tikzpicture}
-        \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=\largefigwidth]{images/lar}};
+        \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=\largefigwidth]{images/lar.jpg}};
         \node[anchor=west,align=center] (hec) at (-2.0,2.3) {\small Hadronic end-cap\\ calorimeter};
         \draw (hec) to ++(2,2.5);
         \node[anchor=west,align=center] (fcal) at (8.5,-0.8) {\small Forward calorimeter};
@@ -189,22 +189,130 @@ The forward calorimeter provides additional coverage in the range $3.1 < \abs{\e
 
 \subsubsection{Performace}
 
-Many analysis in ATLAS require an excellent energy resolution. Based on test beam data, the calorimeter the calorimeter energy resolution is summarized in Table ~\cite{ATLAS:testbeam-calo}~\cite{ATLAS:testbeam-hcal}.
+Many analysis in ATLAS require an excellent energy resolution. Based on test beam data, the calorimeter the calorimeter energy resolution is summarized in ~\cref{tab:method:ATLAS:ecalperf}.
 
 \begin{table}
     \begin{tabular}{ccc}
-         & jet \pT [\si{\giga\eV}] & Resolution \\
+         & Detector component & Resolution \\
         \midrule
-        $\geq 6$ & $\frac{\sigmaE}{E} =$ \\
-        $\geq 5$ & $>65$ & $\geq 0$ & $240\,166 \pm 412$ \\
-        $\geq 2$ & $>75$ & $\geq 2$ & $303\,399 \pm 464$ \\
+       EM & Barrel and end-cap & \\
+       Hadronic & Barrel and end-cap &  \\
+                & Forward &  \\
     \end{tabular}
-    \caption[Comparison of trigger strategies]{Comparison of trigger strategies.
-        The minimum number of jets, \pT for those jets, and number of \Pbottom-tagged jets are shown with the associated yields after applying to Monte Carlo simulation.
-        The top row corresponds to the strategy used for the analysis in this chapter.}
-    \label{tab:analysis:trigger-yields}
+    \caption[ATLAS calorimetry energy resolution]{ATLAS calorimetry energy resolution, as obtained from beam-test data ~\cite{ATLAS:testbeam-calo} ~\cite{ATLAS:testbeam-hcal}.}
+    \label{tab:method:ATLAS:ecalperf}
 \end{table}
 
 \subsection{Muon spectrometer}\label{sec:method:MS}
 
-\subsection{Trigger and Data Acquisition System}
+In the outermost portion of the ATLAS detector consists the muon spectrometer~\cite{ATLAS:muon-TDR} as shown in \cref{fig:method:ATLAS:muons}. Muons are able to traverse through most of the ATLAS detector with minimal interactions as the effects of bremsstrahlung is reduced due to the muons larger mass. Tracking chambers are used to measure the paths of muons. A series of toroidal magnets that generate a strong magnetic field in the barrel and end-cap regions, from which the muon momentum can be measured via \emph{sagitta, s} ~\cite{WeissteinSagitta} of the curved trajectory, by
+\begin{equation}
+    \frac{p_\text{T}}{q} = \frac{L^2B}{8s},
+\end{equation}
+where $L$ is the length of the path in a constant magnetic field $B$, and $q$ is the electric charge of the particle.
+
+\begin{figure}[]
+    \centering
+    \begin{tikzpicture}
+        \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=\textwidth]{images/muons}};
+        \node[anchor=east,align=center] (rpc) at ($(image.north east)+(-2.5,-0.5)$) {Resistive plate\\ chambers (RPC)};
+        \draw (rpc.south) to (11,9.5);
+        \draw (rpc.south) to (9.55,8.75);
+        \draw (rpc.south) to (9.55,8.55);
+
+        \node[anchor=west,align=center] (tgc) at ($(image.north west)+(5,0.5)$) {Thin gap\\ chambers (TGC)};
+        \draw (tgc.south) to (6.95,8.4);
+        \draw (tgc.south) to (7.1,8.5);
+        \draw (tgc.south) to (7.35,8.8);
+
+        \node[anchor=west,align=center] (mdt) at ($(image.south west)+(6,0.5)$) {Monitored drift\\ tubes (MDT)};
+        \draw (mdt.north) to (5.2,3.2);
+        % \draw[draw=red] (mdt.north) to ++(0.25,2);
+        \draw (mdt.north) to (10,5.5);
+        \draw (mdt.north) to (9.0,8.72);
+
+        \node[anchor=east,align=center] (csc) at ($(image.south east)+(0,3)$) {Cathode strip\\ chambers (CSC)};
+        \draw (csc) to ++(-2.75,3.65);
+    \end{tikzpicture}
+    \caption[Illustration of the ATLAS muon spectrometer components]{Illustration of the ATLAS muon spectrometer components.
+    The toroid magnet coils are also shown in yellow.
+    From \cite{ATLASMuonImage} with added labels.}    \label{fig:method:ATLAS:muons}
+\end{figure}
+
+In the barrel toroid there are eight coils which provide bending the the region $\abs{\eta} < 1.4$ and in the region $1.6 < \abs{\eta} < 2.7$ the tracks are bent by two smaller end-cap magnets which are inserted into both ends of the barrel toroid. The transition region, $1.4 < \abs{\eta} < 1.6$ consists of a combination of barrel and end-cap fields which provide magnetic deflection. 
+
+The muon spectrometer is composed of modules which use different detection technologies. These modules are organised into barrel and end-cap modules. Precise measurements of the $\eta$ position of the muons are performed in the barrel region by the \emph{monitored drift tubes} (MDTs) which allows for precise measurements of the muon momentum. The MDTs function similarly to the straw tube TRT in the ATLAS inner detector, described above. Formed of \SI{30}{\nano\meter} tubes with a central tungsten wire, which are filled with a Ar/CO$_2$ gas mix held at \SI{3}{\bar}. MDT modules are located in and on the eight coils of the superconducting barrel toroid magnet. The first layer allows for a coverage $\abs{\eta} < 2.0$ and the second and third layers have a coverage of $\abs{\eta} < 2.7$. The MDT spatial resolution is \SI{80}{\micro\meter} and \SI{35}{\micro\meter} per chamber due to having multiple layers of tubes per chamber which provide multiple hits. 
+
+The innermost layer consists of the \emph{cathod-strip chambers} (CSCs), located in the region $2.0 < \abs{\eta} < 2.7$. The CSC chambers are multi-wire proportional chambers with cathode planes segmented into strips in orthogonal directions in order to provide radial and transverse measurements. The space between the two planes is filled with a gas mixture mainly formed of Ar gas. Muons will ionise the gas and positive ions are collected and read out by copper strips. The $\phi$ coordinate is measured the time taken from the induced charges to drift to the cathode. CSC modules are formed of four stacked CSC planes, these achieve a combined resolution of \SI{40}{\micro\meter} in the $\eta$ direction and \SI{4}{\milli\meter} in the $\phi$ direction.
+
+Together the CSCs and the MDTs form the precision tracking chambers and provide state of the art precision measurements of the muon $p_{T}$. A muon $p_{T}$ resolution of $\sigma_{p_{T}}/p_{T} = 10 \% $ at  $p_{T} = \SI{1}{\tera\electronvolt}$ is achieved. 
+
+Special chambers are used to trigger on muons. The fast muon chambers provide signals within \SI{25}{\nano\second} after the passage of a particle which allows to tag the beam crossing. These measure both the coordinates of the track, in the bending plane ($\eta$) and the non-bending plane ($\phi$). Therefore, the trigger chambers provide additional information for the measurement of muon tracks. In the barrel region, where $\abs{\eta} < 1.05$, \emph{resistive plate chambers} (RPC) are used which provide a resolution of \SI{10}{\milli\meter} in both the $z$ and $\phi$ directions. The RPCs are formed of two parallel plates made from a highly resistive plastic laminate with a gas mixture in between the plates. A strong electric field is placed between the resistive places. The gas between the plates is ionised by passing muons, inducing an avalanche of electrons which creates a measurable signal in the form of current spike in matrices of aluminum strips on the back of the resistive strips. In the end-cap region, where $1.05 < \abs{\eta} < 2.4$, \emph{thin gap chambers} (TGCs) are installed. Similar to the CSCs, the TCGs are multi-wire proportional chambers. In the case for the TGC modules the distance between the wire and strips is smaller than the distance between the wires, resulting in a smaller uniform region of the electric field allowing for the electrons formed in the gas ionisation to drift to the wires faster. The TGCs provide muon track information with a precision of 2 - \SI{7}{\milli\meter} in the $\eta$ direction and 3-\SI{7}{\milli\meter} in the $\phi$ direction.
+
+\subsection{Trigger and Data Acquisition System}\label{sec:method:ATLAS:trigger}
+
+The ATLAS trigger system is used to manage the high rate of LHC collisions, reducing the event rate from \SI{40}{\kilo\hertz} to $\mathcal{O}$(\SI{1}{\kilo\hertz}) at which events can be written to mass storage. This is done by partially reconstructing events during data taking and identifying events of interest to record. The trigger system must balance a good rejection of background events, whilst maintaining a high rate of interesting events being saved. To do this, a chain of decision making algorithms in hardware and software is used. For Run-2, the ATLAS trigger system uses a two level system; the Level 1 (L1) hardware trigger and the High Level Trigger (HLT) software trigger. The data acquisition (DAQ) system controls the data flow when trigger decisions have been received. An overview of the components of the ATLAS trigger and DAQ systems outlined in \cref{fig:method:ATLAS:TDAQ}.
+
+\begin{figure}[]
+    \centering
+    \includegraphics[width=\largefigwidth]{images/TDAQ}
+    \caption[Overview of the ATLAS trigger and data acquisition system]{Schamatic outlining overview of the ATLAS trigger and data acquisition system.
+    From~\cite{ATLAS:TDAQ-Run2}.}
+    \label{fig:method:ATLAS:TDAQ}
+\end{figure}
+
+\subsubsection{Level 1 trigger}
+The hardware based L1 trigger is designed to reduce the event rate from \SI{40}{\mega\hertz} to \SI{100}{\kilo\hertz}. Information from both, the muon trigger chambers and the calorimeters are used in the L1 trigger. The L1 trigger can be divided into three parts: the L1 calorimeter trigger (L1Calo), the L1 muon trigger (L1Muon) and the central trigger processor (CTP).
+
+The \emph{calorimeter trigger} relies on firmware programable FPGAs. The sum of the analogue signals of hadronic and electromagnetic calorimeter cells in special trigger towers with typical granularity of approximately $\Delta\eta x \Delta\phi = 0.1 x 0.1$ are provided by on-detection electronics. The analogue signals are digitized are digitised by a preprocessor (PPr). Once the signals have been digitised, they are converted to $E_{T}$ using look-up tables and a series of selections filter the event signatures for $e$, $\gamma$, hadronically-decaying $\tau$, and jets. The object counts which survive for each threshold is passed to the CTP. 
+
+The RPC and TGC of the muon spectrometer use a simple tracking algorithm to identify muon candidates which fall into six $p_{T}$ windows from \SI{5}{\giga\electronvolt} to \SI{35}{\giga\electronvolt}. The bunch crossing in which the signal originates can be determined from the time of flight due the time resolution of the trigger chambers in the muon spectrometer. The information from the RPC and TGC are combined in the muon to CTP interface (MuCTPI) and forwarded to the CTP. 
+
+The \emph{topological trigger} system (L1Topo)~\cite{ATLAS:L1Topo} is located between L1Calo, L1Muon systems and the CTP. It receives input from the L1Calo and L1Muon systems in the form of trigger objects, combining the information and applying algorithmic cuts it is able to discriminate event topologies and shapes. The surviving trigger objects are passed to the CTP.
+
+The decision to accept or reject the event is done by the CTP combining the information from the systems described above. The CTP can be programmed with up to 96 trigger menu items that can define different event selection rules. Additional requirements on prescale or deadtime can be used to further reject events by the CPT. Prescale requirements refer to trigger menu items that have been prescaled as to dampen the acceptance rate of events which pass the cuts. The time difference between L1 accept signals in which front-end drivers or HLT components of the trigger and DAQ system are saturated is referred to as deadtime. Regions of interest (RoIs) are identified by the L1 trigger which could contain high $p_T$ leptons, photons or jets and passed to the HLT, to reduce processing time. 
+
+\subsubsection{High level trigger}
+The ATLAS HLT~\cite{ATLAS:HLT-TDR,ATLAS:TDAQ-Run2} performs software based reconstruction of events which pass the L1 trigger, running on processor farms consisting of 80000 CPU cores. The \emph{inner detector trigger} is responsible for the track reconstruction of measurements made by the inner detector. The recontracted tracks are matched to measurements by the sub-detectors providing reconstruction of physics objects. This allows the HLT to differentiate between photons and electrons, and allowing to tag jets which contain $b$ quarks. 
+
+Due to the flexibility of software implementations and due to large-scale parallel processing, HLT algorithms can be more complex than those in L1. HLT algorithms are combined into chains that can be applies to the event data sequentially. These algorithms may use the RoIs provided by the L1 Trigger, where the processing rate can be increased and reduce the latency. When an event survives a algorithm chain from the HLT, it is accepted and read out into permanent storage. An event rate of \SI{1}{\kilo\hertz} is targeted by the HLT.
+
+\subsubsection{Trigger configurations}
+
+The ATLAS trigger is based on many individual \emph{trigger chains}, referred to as triggers. The trigger system is configured such that to record collisions of interest, whilst limiting the processing load, allowing for a reasonable throughput. Each trigger defines selections on one or more reconstructed objects by the L1 trigger, followed by selection in the HLT trigger. Therefore, the HLT and L1 systems must use compatible modes of operations. 
+
+\section{Luminosity}
+
+For a detector the total luminosity of collisions recorded, L, is given by, 
+\begin{equation}
+   \sigma L = N = \sigma \int_{}^{} \mathcal{L} dt,
+\end{equation}
+
+where N is the recoded number of events, $\sigma$ is the total inelastic cross section, and $\mathcal{L}$ is the instantaneous luminosity. $\mathcal{L}$ is given by~\cite{Herr}
+\begin{equation}
+    L = \frac{n_b f N_1 N_2 }{2\pi \Sigma_{x} \Sigma_{y}} F,
+\end{equation}
+
+where $f$ is the revolution frequency, $n_b$ is the number of colliding bunches with $N_{1(2)}$ protons, $\Sigma_{x(y)}$ the mean beam width in the x(y) direction. The luminosity detectors are calibrated to the inelastic cross section using van-der-Meer (vdM) scans ~\cite{ATLAS:Balagura_2011,ATLAS:vanderMeer:296752}.
+
+The total luminosity delivered per data-taking period att $\sqrt{S} = $ \SI{13}{\tera\electronvolt} is shown inf ~\cref{fig:method:Lumi:lumirun2year}. The Cumulative luminosity delivered by the LHC and recorded by ATLAS is presented in ~\cref{fig:method:Lumi:lumiRun2vsatlas}. Due to inefficiencies in data acquisition the recorded luminosity is lower than what is delivered by the LHC. 
+
+\begin{figure}[]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/intlumivsyear.png}
+        \caption{}
+        \label{fig:method:Lumi:lumirun2year}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/intlumivstimeRun2.png}
+        \caption{}
+        \label{fig:method:Lumi:lumiRun2vsatlas}
+    \end{subfigure}
+    \caption[Total Integrated Luminosity at Run 2 (13 TeV pp data only);
+    Delivered Luminosity versus time for 2011-2018 (p-p data only)]{(a) Cumulative luminosity versus time delivered to ATLAS (green) and recorded by ATLAS (yellow) during stable beams for pp collisions at 13 TeV centre-of-mass energy in LHC Run 2. (b) Cumulative luminosity versus day delivered to ATLAS during stable beams and for high energy p-p collisions.
+    From~\cite{ATLAS:lumiPlots}.}
+    \label{}
+\end{figure}
