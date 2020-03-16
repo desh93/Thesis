@@ -1,8 +1,21 @@
 \chapter{Simulation and Reconstruction}\label{chap:SimReco}
 In order to perform physics analysis, measurements made by the ATLAS detector are reconstructed into meaningful physics objects. Offline reconstruction software performs the reconstruction on saved data which passes the trigger selection on the LHC computing grid in several steps. The main reconstruction is handled by \emph{Tier-0} sites, while the creation of compressed sets of data and MC samples are handled by a world-wide network of computing centers.
 
-The reconstruction and identification of the types of physics objects used in the thesis are described in this section. 
-\section{Reconstruction of physics objects}
+\section{Event simulation}
+To test the theoretical understanding of high energy physics processes, comparisons of experimental data and theoretical predictions are made, usually utilising simulated collision events that can be analysed. Production of simulated data requires the theoretical modelling of many aspects of \protonproton collisions and their resulting products. The simulation process is separated into collision event generation and detector simulation, where each uses a Monte Carlo (MC) sampling method. 
+
+The simulation of collision events consists of the simulation of the matrix element process and then the resulting parton shower and hadronisation process. A predicted cross section can be calculated by integrating the the matrix element over the final space phase space. To perform these calculation knowledge of the distribution of partons in each proton, in the form of \emph{parton distribution functions} (PDFs), to correctly predict the cross section and kinematics of a process. PDFs give the probability for a parton of a given type to be found with some fraction of the protons initial momentum. The matrix element calculations are performed at fixed-order in perturbation theory, therefore, any production of quarks of and gluons beyond the order of the calculation is required to be handled separately. 
+
+High-energy outgoing quarks and gluons emit QCD radiation as the scale of the process evolves. The emission of QCD radiation is in the form of Parton showers which are higher order emissions of additional gluons or the splitting of gluons. The production of such processes are modelled by the \emph{DGLAP equations}~\cite{Dokshitzer77,Gribov72,Altarelli77}, which scales the probabilities for a given type of parton to split into additional partons as a function of energy until the partonic energy scale has reached about \SI{1}{\giga\electronvolt}. Below the energy threshold of \SI{1}{\giga\electronvolt} the quarks and gluons undergo hadronisation. This process is simulated with non-perturbative models~\cite{Andersson1983,Webber1984}. Finally, decays of short-lived particles ($c\tau<\SI{10}{\milli\metre}$), who do not have a long enough lifetime to interact with the ATLAS detector are simulated at this stage. 
+
+A number of different simulation groups specialise in matrix element simulations and parton shower simulations. A careful matching of the simulation of the matrix element and parton shower simulations, usually handled by a dedicated combination package can be used to produce individual datasets of simulated events. Additionally, pile-up interactions between other protons in the beam are also overlaid on the produced hard scatter simulated events to produce a full description of the colliding beams. 
+
+The simulation of the interactions of the particles produced in collisions are handled the \textsc{Geant4} simulation software~\cite{Geant1,Geant2,Geant3}, which provides detailed computer model of the ATLAS detector materials, geometry and including wiring in the detector. The output of the detector simulation is treated the same as measurements of real data events made by the detector, which preserves compatibility between the simulated and real reconstructed data. 
+
+Full simulation of interactions with the detector can be computationally intensive and results in a significant use of resources for the experiment. The analysis presented in this thesis in~\cref{chap:intro} requires multiple samples of large numbers of events to be produced to be sensitive to new physics phenomena beyond. Therefore, the analysis introduces an alternative method that does not rely on the production of large datasets which require full detector simulation, drastically reducing the strain on resources available. 
+
+\section{Reconstruction of physics objects}\label{sec:reconstruction}
+The reconstruction, identification and isolation of the types of physics objects used in the thesis are described in this section. 
 
 \subsection{Tracks and vertex reconstruction}\label{sec:reconstruction:tracks}
 The identification of tracks are important in reconstruction of physics objects and to identify vertices. The aim of track reconstruction is to describe the trajectory of a particle through the inner detector. However, for muons tracks are reconstructed also in the muon spectrometer described in ~\cref{sec:method:MS}. A series of sequential algorithms are used to reconstruct tracks from the inner detector readout~\cite{ATLAS:tracking}. 
@@ -84,14 +97,194 @@ where $Q_1$ and $Q_3$ are the first and third quartiles of the $E_{calib}/E_{tru
 \subsubsection{Electron idendtification}
 A large proportion of reconstructed electron candidates may not be real electrons. It is possible for a physics processes to fake the prompt electron signature. Prompt electrons are defined as electrons which come from the hard scattering vertex and are not the result of hadronic decays. Fake prompt electrons can arise from source such as, hadronic showers which mimic an electron shower, electrons from photon conversions and, the semileptonic decays of heavy flavour hadrons.
 
-Therefore, further criteria, referred to as \emph{identification} is defined to select a sample of pure prompt electrons. A likelihood based identification method is used in the identification of prompt electrons. The method combined 
+Therefore, further criteria, referred to as \emph{identification} is defined to select a sample of pure prompt electrons. A likelihood based identification method is used in the identification of prompt electrons. The method combines signal and background probability density functions (PDFs) of discriminating variables from quantities measured from the detector, such as transition radiation in the TRT and shower shape in the EM calorimeter, to calculate an overall probability for an object to be constructed as an electron. The discriminating variable $d_\mathcal{L}$ is defined as:
+\begin{equation}
+    d_{\mathcal{L}} = \frac{\mathcal{L}_S}{\mathcal{L}_S + \mathcal{L}_B},  
+\end{equation}
+with 
+\begin{equation}
+    \mathcal{L}_{S(B)}(\overrightarrow{x}) = \prod_{i=1}^{n} P_{i}^{S(B)} (x_{i}),
+\end{equation}
 
-\subsection{Event Generation}
+where $\overrightarrow{x}$ is the vector of the n discriminating variable,  $P_{i}^{S(B)}$ is the evaluation of the signal probability density function for the $i^{th}$ discriminating variable at the value $x_i$ under the signal (background) hypothesis. Three identification working points are defined for electron identification: \emph{loose}, \emph{medium} and \emph{tight}. Due to the non-exclusive nature of the working points, reconstructed electrons identified as tight also belong to the medium identification category, where electrons identified as medium also belong to loose identification category. The efficiencies of the identification working points are measured in data and simulation using $Z \rightarrow ee$ and $J/\psi \rightarrow ee$ decays in bins of $\abs{\eta}$ and $E_T$~\cite{Aad:2019tso}.~\cref{fig:method:reco:ideff} shows the efficiencies of the identification working points.The working points offer prompt electron identification efficiencies of 97\%, 95\% and 91\%, with background rejection efficiencies of 99.7\%, 99.8\% and 99.9\% respectively. 
 
-\subsection{Detector Simulation}
+\begin{figure}[]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/reconstruction/figures_electronID_id_effeta.pdf}
+        \caption{}
+        \label{fig:method:reco:idetaeff}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/reconstruction/figures_electronID_id_effpt.pdf}
+        \caption{}
+        \label{fig:method:reco:idpteff}
+    \end{subfigure}
+    \caption[Electron identification efficiency as a function of $\eta$ and as a function of $E_T$ for the identification working points]{Electron identification in data as a function of (a) $E_T$ aand (b) $\eta$ for the loose, medium and tight identification working points. The inner uncertainties are the statistical. and the total uncertainties are statistical and systematic uncertainties in the data-to-simulation efficiency ratio added in quadrature.~\cite{Aad:2019tso}.}
+    \label{fig:method:reco:ideff}
+\end{figure}
 
-\subsection{Full Simulation}
+\subsubsection{Electon isolation}
+To further improve the purity of the prompt electron sample, and further reject the background from hadronic decays, isolation requirements are applied based on the transverse energy around the electron candidate candidate are required. Two types of isolation criteria are used: calorimeter or track based isolation~\cite{Aad:2019tso}. 
 
-\subsection{ATLAS Fast Simulation}
+For the raw calorimeter isolation ($E_{T,raw}^{isol}$), the sum of transverse energy of positive energy topo-clusters whose barycenter falls within a cone around the electron cluster is used. The raw EM particle energy ($E_{T,core}$) also contained within the cone and needs to be subtracted. This subtraction is done by removing the energy of EM calorimeter cells contained in a $\eta \times \phi = 5 \times 7$ around the EM particle cluster. Leakage corrections as a function of $\abs{\eta}$ and $\phi$ are applied since it does not subtract all of the EM particle energy. A correction for the pileup and underlying-event contributions to the isolation cone is also estimated~\cite{Cacciari:2007fd}. The corrected calorimeter isolation variable is computed as:
+\begin{equation}
+    E_{T}^{coneXX} = E_{T,raw}^{isolXX} - E_{T,core} - E_{T,leakage}(E_T,\eta,\Delta R) - E_{{T,\textrm{pile-up}}}(\eta,\Delta R),
+\end{equation}
+where XX refers to the size of the cone, $\Delta R = XX/100$, and a cone size of $\Delta R = 0.2$ is used for electron working points.  
 
+The track isolation ($p_{T}^{coneXX}$) is computed by summing the transverse momentum of selected tracks within a cone centred around the reconstructed electron track, excluding tracks matched to electron or converted photons. Track isolation for electrons is defined with a variable cone size ($p_{T}^{varconeXX}$), which accounts for electrons produced in high-momentum particle decays where the decay products can be very close to the electron track. Therefore, the cone size gets smaller for larger transverse momentum, given by the equation: 
+\begin{equation}
+    \Delta R = \min \left( \frac{10}{p_T[\SI{}{\giga\electronvolt}]}, \Delta R_{\mathrm{max}}\right),
+\end{equation}
+where $\Delta R_{max}$ is maximum cone size, typically $\Delta R_{max} = 0.2$. 
 
+The definitions of the different electron isolation working points are shown in~\cref{tab:ele_wps}. The working points results from a need for compromise between efficiency of identification of prompt electrons and a good rejection of electrons from hadronic processes. The gradient working point is defined by a fixed value of efficiency designed to give an efficiency of 90\% at \pt = \SI{25}{\giga\electronvolt}, uniform in $\eta$.  The three other working points have a fixed requirements on calorimeter and track  isolation variables. The efficiencies for the electron isolation working points are shown on \cref{fig:method:reco:isoeleff}.
+
+\begin{table}[]
+  \centering
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{lcc}
+\hline \hline
+    Working point & Calorimeter isolation  & Track isolation    \\ \hline
+
+    Gradient         & $\epsilon=0.1143\times \pt+92.14\%$ (with \etcs)       & $\epsilon=0.1143\times \pt+92.14\%$ (with \ptvcs) \\ \hline
+    HighPtCaloOnly & $\etcs < \text{max}(0.015\times \pt, 3.5~ \SI{}{\giga\electronvolt})$ & -                                                            \\
+    Loose          & $\etcs/\pt < 0.20$                                     & $\ptvcs /\pt < 0.15$                \\
+    Tight          & $\etcs/\pt < 0.06$                                     & $\ptvcs /\pt < 0.06$                \\
+\hline
+\hline
+  \end{tabular}
+  }
+  \caption[Definition of the electron isolation working points and isolation efficiency $\epsilon$.]{Definition of the electron isolation working points and isolation efficiency $\epsilon$.
+    In the Gradient working point definition, the unit of \pt is \SI{}{\giga\electronvolt}. All working points use a cone size
+    of $\Delta R = 0.2$ for calorimeter isolation and $\Delta R_{\mathrm{max}} = 0.2$ for track isolation~\cite{Aad:2019tso}.}
+  \label{tab:ele_wps}
+\end{table}
+
+\begin{figure}[]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/reconstruction/figures_ele_iso_eff_sf_vs_pt_data17_MediumLH_4WPs.pdf}
+        \caption{}
+        \label{fig:method:reco:isoetaeff}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/reconstruction/figures_ele_iso_eff_sf_vs_eta_data17_MediumLH_4WPs.pdf}
+        \caption{}
+        \label{fig:method:reco:isopteff}
+    \end{subfigure}
+    \caption[Electron isolation efficiency as a function of $\eta$ and as a function of $E_T$ for the isolation working points]{Efficiency of the different isolation working points for electrons
+    from inclusive $Z \rightarrow e^+e^-$ events as a function of the electron (a) $\et$ and
+    (b) $\eta$. The electrons are required to fulfil the Medium selection from the likelihood-based electron identification. The lower panel shows the ratio of the efficiencies measured in data and in MC simulations. The total uncertainties are shown, including the statistical and systematic components~\cite{Aad:2019tso}.}
+    \label{fig:method:reco:isoeleff}
+\end{figure}
+
+\subsubsection{Correction factors}
+
+Scale factors are applied to electrons from simulated events to ensure consistency with of the eficiency of the electrons found in data. A total scale factor is applied correcting for mismodelling in tracking and shower shapes, and electron energy scale, reconstruction and seletion efficiencies.
+
+\subsection{Muons}\label{sec:reconstruction:muons}
+Muon reconstruction is performed individually in the ID (described in~\cref{sec:reconstruction:tracks,sec:method:ID}) and muon spectrometer. The information from these sub-dectecors is then combined to form the muon tracks that are used in the thesis.  Similar to the electron reconstruction criteria is also applied on muon identification and isolation~\cite{Aad:2016jkr}. 
+
+An important quantity in the reconstruction of muons in the ATLAS detector is its transverse momentum, defined as: 
+\begin{equation}
+    \pt = p\sin\theta = \frac{\sin\theta}{\abs{q/p}},
+\end{equation}
+where q/p is the ratio of the muon charge to it's momentum, and is measured from the track curvature. The muon track sagita as described in~\cref{sec:method:MS} is used where the muon tracks egments are coming from all stations of the muon spectrometer. For muons with track segments in only two stations, the curvature is calculated from the angular difference between the two segments. 
+
+\subsubsection{Muon reconstruction}
+Reconstruction of tracks in the muon spectrometer first starts with the formation of segments found using search patterns inside each of muon spectrometer stations. In the MDT layers and the trigger chamber, a Hough transform~\cite{HoughTransform} is used to search for hits and a straight line fit is performed on the hits found in each layer. The RPC and TGC hits measure the coordinate orthogonal to the bending plane. Track segments in the CSC layers are built using a separate combinatorial search in the $\eta$ and $\phi$ planes. 
+
+The muon track candidates are then formed by fitting together the hits from segments in the different layers. Segments from the middle layers of the detector, where more hits are available, are used as seeds the algorithm performs a combinatorial search. The search is then extended to use segments in the inner and outer layers as seeds. Several tracks can be built initially from the same segment. However, an overlap removal is later applied to select the best assignment to a single track, or allows the segment to be shared between two tracks. A global $\chi^2$ is fit on the hits associated with each track, where the track candidate is accepted if the $\chi^2$ satisfies the selection criteria. Hits providing a fit with a large $\chi^2$ are removed and the track fit is repeated. Hits can also be found to be consistent with the track candidate trajectory and are added. Track candidates where additional hits have been found are refit. 
+
+Several algorithms are used to combine the muon track candidates in ID and muon spectrometer, where each algorithm uses different sets of information related to the detector components. Four main algorithms are used depending on the sub-detector used in the reconstruction:
+\begin{itemize}
+    \item \textbf{Combined (CB) Muon:} A global fit using the track candidates found in the ID and muon spectrometer is performed to form a CB muon. To improve the fit quality hits can either be added or removed from the track during the global fit. Most muons are first reconstructed in the muon spectrometer and then extrapolated inwards to the ID hits. A very small fraction of muons are reconstructed using a complementary approach is also used where the ID tracks are extrapolated outward and matched to muon spectrometer hits. CB muons are the main type used in the within ATLAS as they have the highest purity among the different classes of muons.
+    \item \textbf{Segment-tagged (ST) Muons:}  An ID track is classified as a muon if, when extrapolated to the muon spectrometer, it is matched with at least one track segment in the MDT or CSC chambers. It has the lowest purity amount all classes of muons.
+    \item \textbf{Calorimeter-tagged (CT) Muons:} Tracks in the ID that are matched to energy deposits in the calorimeter compatible with a minimum ionizing particle. 
+    \item \textbf{Extrapolated (ME) Muons:} The muon trajectory is reconstructed from based only on the muon spectrometer track and can be extrapolated to the interaction point taking into account energy loss of the muons traversing through the calorimeters. 
+\end{itemize}
+
+Before being used in physics analysis, an overlap removal procedure between the different types are resolved, where if two types of muons share the same track, preference is given to CB, followed by ST, and then to CT muons. The overlap removal procedure for ME is performed by analysing the track hit content and selecting tracks with better fit quality. 
+
+\subsubsection{Muon identification}
+Muons which originate from decays of hadrons will have a characteristic deflection in their reconstructed tracks. This deflection will result in poor track quality and may not be compatible with the measured momentum in the ID and muon spectrometer. Several variables are selected to identify prompt muons. For CB tracks, the variables used in identification are:
+\begin{itemize}
+    \item \textbf{q/p significance:} The absolute difference between the charge and momentum ratio of the muons measured in the ID and MS divided by sum in quadrature of the uncertainties. 
+    \item \textbf{$p^\prime$:} The absolute difference between the \pt measurements in the ID and muon spectrometer divided by the \pt of the combined track.
+    \item $\chi^2$ of the fit.
+\end{itemize}
+In additon, requirements on the number of hits in the ID and muon spectrometer are also used. 
+
+Four muon identification criteria are used to address the requirements of different physics analysis. The identification working points provided are: 
+\begin{itemize}
+    \item \textbf{Medium:} These are the default selection for ATLAS analysis. The systematic uncertainties associated with the reconstruction are minimised by the selection. CB muon tracks are required to have $\geq 3$ hits in at least two MDT layers (excluding $\abs{\eta} < 0,1$). ME tracks required to have at least three MDT/CSC layers in the range $2.5 \geq \abs{\eta} \geq 2.7$. \emph{q/p significance} is required to be less than seven.
+    \item \textbf{Loose:} CB and ME muons satisfying the medium selection are included in the looses selection. Furthermore, CT and ST muons are restricted to the $\abs{\eta} < 0.1$ region. 
+    \item \textbf{Tight:} CB muons with hits in two stations and satisfying the medium selection are considered. Additionally, the normalised $\chi^2$ is required to be less than eight, and finally, a two dimensional cut on \emph{q/p significance} and \emph{$p^\prime$} is also applied. 
+    \item \textbf{High-\pt:} The High-\pt muon selection is used in the main selection of the analysis presented in this thesis. High-\pt muons are chosen to maximise the momentum resolution for tracks with \pt above \SI{100}{\giga\electronvolt}, and is optimized for analyses that extend far into high mass regions. CB muons which have at least three hits in at least three muon stations are selected. A veto is applied on muons with hits in specific regions of the muon spectrometer with suboptimal alignment. This procedure reduces the reconstruction efficiency by \~20\%, but, improves the muon \pt resolution by \~30\%.
+\end{itemize}
+
+~\cref{tab:mm_ideff} shows the signal and background efficiencies of the different working points for muons in the range of $20 < \pt < 100$ obtained from $t\bar{t}$ simulation. An isolation requirement is not applied in the samples shown. When an isolation requirement is applied the misidentification are expected to be reduced by approximately an order of magnitude. 
+
+\begin{table}[]
+    \centering
+    {
+    \begin{tabular}{l||c|c||c|c}
+  \hline \hline
+      & \multicolumn{2}{c||}{$4 \geq \pt \geq 20 \SI{}{\giga\electronvolt}$}  & \multicolumn{2}{c}{$20 \geq \pt \geq 100 \SI{}{\giga\electronvolt}$ }    \\ 
+      \hline \hline
+      Selection & $\epsilon^{MC}_\mu$ [\%] & $\epsilon^{MC}_{Hadrons}$ [\%]& $\epsilon^{MC}_\mu$ [\%]& $\epsilon^{MC}_{Hadrons} $[\%] \\
+      \hline
+      Loose & 96.7 & 0.53 & 98.1 & 0.76 \\ 
+      Medium & 95.5 & 0.38 & 96.1 & 0.17 \\
+      Tight & 89.9 & 0.19 & 91.8 & 0.11 \\
+      High-\pt & 78.1 & 0.26 & 80.4 & 0.13 \\
+  \hline
+  \hline
+    \end{tabular}
+    }
+    \caption[Efficiency for prompt muons from W decays and hadrons decays misidentified as prompt muons]{Efficiency for prompt muons from W decays and hadrons decays misidentified as prompt muons computed using a $t\bar{t}$ MC sample. The results are shown for the four identification selection criteria separating low and high momentum for muon candidates~\cite{Aad:2016jkr}.}
+    \label{tab:mm_ideff}
+  \end{table}
+
+\subsubsection{Muon isolation}
+Similar to electrons, isolation criteria is applied also on muon candidates to improve background rejection. Three isolation variables are defined asses muon isolation: Two track-based and a calorimeter-based isolation variable:
+\begin{itemize}
+    \item Variable track based $p_{T}^{varcone30}$: Defined as the sum of transverse momentum of tracks in a cone of $\Delta R = min(\SI{10}{\giga\electronvolt}/p_{T}^{\mu},0.3)$ with $\pt > \SI{1}{\giga\electronvolt}$, around the candidate muon track. 
+    \item Fixed track based $p_{T}^{cone20}$: Defined as the sum of transverse momentum of all tracks within a cone of $\Delta R = 0.2$ around the candidate muon track.
+    \item Calorimeter based $\et^{cone20}$: Defined as the sum of transverse momentum of all topological clusters within a of cone of $\Delta R = 0.2$ from the candidate muon. 
+\end{itemize}
+
+A number of isolation working points are available depending on the needs of the analysis. In many of the isolation criteria, a ratio of the isolation variable to the muon \pt is used to improve efficiency over the full \pt spectrum. For the analysis discussed in the thesis, the \emph{FCTightTrackOnly} isolation criteria, which requires $\pt^{varcone30}/\pt < 0.6$ is used. 
+
+\subsection{Jets}
+
+\subsubsection{Jet reconstruction}
+Jets are collimated showers of particles produced from the hadronisation of gluons emerging from proton-proton collisions, resulting in energy deposits in the calorimeters. Majority of their energy is deposited in the hadronic calorimeters allowing them to be distinguished from electrons or photons. There are various algorithms available for jet reconstruction~\cite{Atkin_2015}. The ATLAS experiment focuses on the \emph{anti-$k_\text{T}$} algorithm~\cite{antikt}, where topo-clusters are built from calorimeter cells as input. The \emph{anti-$k_T$} algorithm calculates distances between every pair of inputs $i$ and $j$ as:
+\begin{equation}
+    d_{ij} = \min\!\left(k_{ti}^{2p}, k_{tj}^{2p}\right) \frac{\Delta^2_{ij}}{R^2}, 
+\end{equation}
+with the distance to the beam axis,
+\begin{equation}
+    d_{iB} = k_{ti}^{-2}.
+\end{equation}
+where $\Delta_{ij} = (y_i - y_j)^2 - (\phi_i - \phi_j)^2$, $k_{ti}$, $y_i$ and $\phi_i$ are the transverse momentum, rapidity and azimuthal angle of particle i, respectively. The jet radius parameter R, can vary depending on the analysis using the algorithm, and is typically set to $\Delta R = 0.4$. 
+
+For each set of inputs, the algorithm compares the distances $d_{ij} \mathrm{and} d_{iB}$. If $d_{ij} < d_{iB}$ then the four-momenta of the input \emph{j} is combined with input \emph{i}. If, $d_{ij} > d_{iB}$, then $i$ is declared a final jet and removed from the list of entities. The algorithm terminates when the list of entries is empty and all of the inputs have been classified. 
+
+\subsubsection{b-jets}
+\emph{b-jets} are a class of jet that are the result of decays of \emph{b} quarks. The \emph{b} quarks hadronise to to \emph{B} hadrons, which are relatively. The b-jets travel within the detector for longer distances in the detector, on the order of a several millimeters, compared to other types of jets. Therefore, experimental techniques can be used to \emph{tag} the jets containing \emph{B} hadrons~\cite{ATLAS:PHYS-PUB-2015-022,ATLAS:PHYS-PUB-2016-012}.
+
+\subsection{Missing transverse momentum}
+Weakly interaction particles (e.g $\nu$) can traverse through the ATLAS detector without interacting and therefore, cannot be reconstructed. This leaves a characteristic missing transverse momentum signature in the detector defined as: 
+\begin{equation}
+   \et^{miss} = - \left[ ~\sum^{\mathrm{all ~objects}}_i \pt^i + \et^{cl}~ \right],
+\end{equation}
+the summation includes the transverses momentum $\pt^i$ of all leptons, jets and photons. $\et^{cl}$ accounts for all energy clusters in the calorimeters that are not associated with associated with a reconstructed object~\cite{ATL-PHYS-PUB-2015-027}.
+
+\clearpage

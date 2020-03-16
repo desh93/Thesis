@@ -7,6 +7,7 @@
 
 \usepackage[dvipsnames]{xcolor} % need to load before pgfplots
 \usepackage{pgfplots}
+\usepackage{makecell}
 \usepgfplotslibrary{groupplots,fillbetween}
 \pgfplotsset{compat=1.15}
 \pgfplotsset{ticklabel style={font=\footnotesize}}
@@ -100,3 +101,56 @@
 
 \newcommand\tablesize{\fontsize{8pt}{8pt}\selectfont}
 % reconstruction section macros
+% \newcommand*{\Zee}{\ensuremath{Z \to ee}}
+\newcommand*{\et}{\ensuremath{E_{\text{T}}}\xspace}
+\newcommand*{\pt}{\ensuremath{p_{\text{T}}}\xspace}
+\newcommand{\muhat}{\ensuremath{\left\langle \mu \right\rangle}}
+
+\newcommand*{\etcx}{\ensuremath{E_{\text{T}}^{\text{coneXX}}}\xspace}
+\newcommand*{\etcs}{\ensuremath{E_{\text{T}}^{\text{cone20}}}\xspace}
+\newcommand*{\etcb}{\ensuremath{E_{\text{T}}^{\text{cone40}}}\xspace}
+\newcommand*{\ptcs}{\ensuremath{p_{\text{T}}^{\text{cone20}}}\xspace}
+\newcommand*{\ptvcs}{\ensuremath{p_{\text{T}}^{\text{varcone20}}}\xspace}
+\newcommand*{\ptcx}{\ensuremath{p_{\text{T}}^{\text{coneXX}}}\xspace}
+\newcommand*{\ptvcx}{\ensuremath{p_{\text{T}}^{\text{varconeXX}}}\xspace}
+\newcommand*{\ptvcsttva}{\ensuremath{p_{\text{T,TTVA}}^{\text{varcone20}}}\xspace}
+
+% +--------------------------------------------------------------------+
+% |  Monte Carlo generators                                            |
+% +--------------------------------------------------------------------+
+\newcommand*{\ACERMC}{\textsc{AcerMC}\xspace}
+\newcommand*{\ACERMCV}[1]{\textsc{AcerMC}~#1\xspace}
+\newcommand*{\ALPGEN}{\textsc{Alpgen}\xspace}
+\newcommand*{\ALPGENV}[1]{\textsc{Alpgen}~#1\xspace}
+\newcommand*{\GEANT}{\textsc{Geant}\xspace}
+\newcommand*{\Herwigpp}{Herwig++\xspace}
+\newcommand*{\HERWIGpp}{Herwig++\xspace}
+\newcommand*{\Herwig}{Herwig\xspace}
+\newcommand*{\HerwigV}[1]{Herwig~#1\xspace}
+\newcommand*{\HERWIG}{\textsc{Herwig}\xspace}
+\newcommand*{\HERWIGV}[1]{\textsc{Herwig}~#1\xspace}
+\newcommand*{\JIMMY}{\textsc{Jimmy}\xspace}
+\newcommand*{\JIMMYV}[1]{\textsc{Jimmy}~#1\xspace}
+\newcommand*{\MADSPIN}{\textsc{MadSpin}\xspace}
+\newcommand*{\MADGRAPH}{\textsc{MadGraph}\xspace}
+\newcommand*{\MADGRAPHV}[1]{\textsc{MadGraph}~#1\xspace}
+\newcommand*{\MGMCatNLO}{\textsc{MadGraph5}\_aMC@NLO\xspace}
+\newcommand*{\MGMCatNLOV}[1]{\textsc{MadGraph5}\_aMC@NLO~#1\xspace}
+\newcommand*{\MCatNLO}{MC@NLO\xspace}
+\newcommand*{\MCatNLOV}[1]{MC@NLO~#1\xspace}
+\newcommand*{\AMCatNLO}{aMC@NLO\xspace}
+\newcommand*{\AMCatNLOV}[1]{aMC@NLO~#1\xspace}
+\newcommand*{\MCFM}{MCFM\xspace}
+\newcommand*{\MCFMV}[1]{MCFM~#1\xspace}
+\newcommand*{\METOP}{\textsc{MEtop}\xspace}
+\newcommand*{\METOPV}[1]{\textsc{MEtop}~#1\xspace}
+\newcommand*{\POWHEG}{\textsc{Powheg}\xspace}
+\newcommand*{\POWHEGV}[1]{\textsc{Powheg}~#1\xspace}
+\newcommand*{\POWHEGBOX}{\textsc{Powheg-Box}\xspace}
+\newcommand*{\POWHEGBOXV}[1]{\textsc{Powheg-Box}~#1\xspace}
+\newcommand*{\POWPYTHIA}{\POWHEG{}+\PYTHIA}
+\newcommand*{\PROTOS}{\textsc{Protos}\xspace}
+\newcommand*{\PYTHIA}{\textsc{Pythia}\xspace}
+\newcommand*{\PYTHIAV}[1]{\textsc{Pythia}~#1\xspace}
+\newcommand*{\SHERPA}{\textsc{Sherpa}\xspace}
+\newcommand*{\SHERPAV}[1]{\textsc{Sherpa}~#1\xspace}

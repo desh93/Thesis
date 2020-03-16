@@ -1,9 +1,6 @@
 \chapter{Experimental Setup}\label{chap:expSetup}
 This section will describe in detail the experimental apparatus used to produce results needed for 
-the analysis carried out in Chapter \cref{chap:Analysis}. The complex machinery of the accelerating 
-system will be described in \cref{sec:method:LHC}, followed by the detector system and a review of 
-the filtering and processing of the data acquired by the detector will be described in Section 
-\ref{sec:method:ATLAS}.
+the analysis carried out in \cref{chap:analyintro}. The complex machinery of the accelerating system will be described in \cref{sec:method:LHC}, followed by the detector system and a review of the filtering and processing of the data acquired by the detector will be described in \cref{sec:method:ATLAS}.
 
 \section{The Large Hadron Collider}\label{sec:method:LHC}
 The Large Hadron Collider (LHC)~\cite{LHC} operated by the Operated by the European Organisation 
@@ -77,8 +74,7 @@ detector and it's subsystems is outlined in \cref{fig:method:ATLAS}.
     \centering
     \includegraphics[width=\textwidth]{images/ATLAS.png};
     \caption[Schamatic of the ATLAS detector]{Schamatic of the ATLAS detector highlighting major 
-            components within it.
-            From \cite{ATLASImage} with added labels [\textbf{CITE ADAM}].}
+            components within it~\cite{ATLASImage}.}
     \label{fig:method:ATLAS}
 \end{figure}
 
@@ -111,7 +107,7 @@ The Inner Detector (ID)~\cite{ATLAS:ID-TDR} embedded in a \SI{2}{\tesla} solenoi
         \node [anchor=west] (endcap_trt) at (3.5,0.8) {\small End-cap TRT};
         \draw (endcap_trt) to (4.6,2.2);
     \end{tikzpicture}
-    \caption[Illustration of the ATLAS inner detector]{Illustration of the ATLAS inner detector, containing the pixel detector, semiconductor tracker (SCT), and transition radiation tracker (TRT). The \emph{insertable B-layer}, installed in 2014, is not shown. From \cite{ATLASIDImage} with added labels [REF ADAM].}
+    \caption[Illustration of the ATLAS inner detector]{Illustration of the ATLAS inner detector, containing the pixel detector, semiconductor tracker (SCT), and transition radiation tracker (TRT). The \emph{insertable B-layer}, installed in 2014, is not shown~\cite{ATLASIDImage}.}
     \label{fig:method:ATLAS:ID}
 \end{figure}
 
@@ -158,8 +154,7 @@ The electromagnetic calorimeter is designed to fully measure the energies of ele
         \draw (emec) to ++(1.1,3);
         \clip (current bounding box.south west) rectangle ($(current bounding box.north east)+(1.5,0)$);
     \end{tikzpicture}
-    \caption[Illustration highlighting the liquid argon components of the ATLAS calorimeters]{Illustration highlighting the liquid argon components of the ATLAS calorimeters.
-        From \cite{ATLASLarImage} with added labels.}
+    \caption[Illustration highlighting the liquid argon components of the ATLAS calorimeters]{Illustration highlighting the liquid argon components of the ATLAS calorimeters~\cite{ATLASLarImage}.}
     \label{fig:method:ATLAS:LAr}
 \end{figure}
 
@@ -172,8 +167,7 @@ In the barrel region the electromagnetic calorimeter is split into three regions
         \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[scale=0.9]{images/calo.pdf}};
     \end{tikzpicture}
     \caption[Drawing showing a section of the barrel electromagnetic calorimeter]{Drawing showing a section of the barrel electromagnetic calorimeter.
-    The liquid argon cells are arranged into three distinct layers, with granularity decreasing for larger radius.
-    From \cite{ATLAS}.}
+    The liquid argon cells are arranged into three distinct layers, with granularity decreasing for larger radius~\cite{ATLAS}.}
     \label{fig:method:ATLAS:ECal}
 \end{figure}
 
@@ -235,8 +229,8 @@ where $L$ is the length of the path in a constant magnetic field $B$, and $q$ is
         \draw (csc) to ++(-2.75,3.65);
     \end{tikzpicture}
     \caption[Illustration of the ATLAS muon spectrometer components]{Illustration of the ATLAS muon spectrometer components.
-    The toroid magnet coils are also shown in yellow.
-    From \cite{ATLASMuonImage} with added labels.}    \label{fig:method:ATLAS:muons}
+    The toroid magnet coils are also shown in yellow~\cite{ATLASMuonImage}.}    
+    \label{fig:method:ATLAS:muons}
 \end{figure}
 
 In the barrel toroid there are eight coils which provide bending the the region $\abs{\eta} < 1.4$ and in the region $1.6 < \abs{\eta} < 2.7$ the tracks are bent by two smaller end-cap magnets which are inserted into both ends of the barrel toroid. The transition region, $1.4 < \abs{\eta} < 1.6$ consists of a combination of barrel and end-cap fields which provide magnetic deflection. 
@@ -281,7 +275,7 @@ Due to the flexibility of software implementations and due to large-scale parall
 
 The ATLAS trigger is based on many individual \emph{trigger chains}, referred to as triggers. The trigger system is configured such that to record collisions of interest, whilst limiting the processing load, allowing for a reasonable throughput. Each trigger defines selections on one or more reconstructed objects by the L1 trigger, followed by selection in the HLT trigger. Therefore, the HLT and L1 systems must use compatible modes of operations. 
 
-\section{Luminosity}
+\section{Luminosity}\label{sec:lumi}
 
 For a detector the total luminosity of collisions recorded, L, is given by, 
 \begin{equation}
@@ -316,3 +310,5 @@ The total luminosity delivered per data-taking period att $\sqrt{S} = $ \SI{13}{
     From~\cite{ATLAS:lumiPlots}.}
     \label{}
 \end{figure}
+
+\clearpage
