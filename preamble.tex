@@ -154,3 +154,74 @@
 \newcommand*{\PYTHIAV}[1]{\textsc{Pythia}~#1\xspace}
 \newcommand*{\SHERPA}{\textsc{Sherpa}\xspace}
 \newcommand*{\SHERPAV}[1]{\textsc{Sherpa}~#1\xspace}
+
+% +--------------------------------------------------------------------+
+% |  Particle-antiparticle pair notations                              |
+% +--------------------------------------------------------------------+
+\newcommand*{\pp}{\ensuremath{pp}\xspace}
+\newcommand*{\antibar}[1]{\ensuremath{#1\bar{#1}}\xspace}
+\newcommand*{\pbar}{\ensuremath{\bar{p}}\xspace}
+\newcommand*{\ppbar}{\antibar{p}}
+\newcommand*{\tbar}{\ensuremath{\bar{t}}\xspace}
+% \newcommand*{\ttbar}{\antibar{t}}
+% SIunits already defines \bbar - supersede the definition
+\@ifpackageloaded{SIunits}{%}
+  \renewcommand*{\bbar}{\ensuremath{\bar{b}}\xspace}
+}{%
+  \newcommand*{\bbar}{\ensuremath{\bar{b}}\xspace}
+}
+\newcommand*{\bbbar}{\antibar{b}}
+\newcommand*{\cbar}{\ensuremath{\bar{c}}\xspace}
+\newcommand*{\ccbar}{\antibar{c}}
+\newcommand*{\sbar}{\ensuremath{\bar{s}}\xspace}
+\newcommand*{\ssbar}{\antibar{s}}
+\newcommand*{\ubar}{\ensuremath{\bar{u}}\xspace}
+\newcommand*{\uubar}{\antibar{u}}
+\newcommand*{\dbar}{\ensuremath{\bar{d}}\xspace}
+\newcommand*{\ddbar}{\antibar{d}}
+\newcommand*{\fbar}{\ensuremath{\bar{f}}\xspace}
+\newcommand*{\ffbar}{\antibar{f}}
+\newcommand*{\qbar}{\ensuremath{\bar{q}}\xspace}
+\newcommand*{\qqbar}{\antibar{q}}
+\newcommand*{\nbar}{\ensuremath{\bar{\nu}}\xspace}
+\newcommand*{\nnbar}{\antibar{\nu}}
+
+% +--------------------------------------------------------------------+
+% |  e+e-, etc.                                                        |
+% +--------------------------------------------------------------------+
+\newcommand*{\ee}{\ensuremath{e^{+} e^{-}}\xspace}
+\newcommand*{\epm}{\ensuremath{e^{\pm}}\xspace}
+\newcommand*{\epem}{\ensuremath{e^{+} e^-}\xspace}
+\newcommand*{\mumu}{\ensuremath{\mu^{+} \mu^{-}}\xspace}
+\newcommand*{\tautau}{\ensuremath{\tau^{+} \tau^{-}}\xspace}
+\newcommand*{\leplep}{\ensuremath{\ell^{+} \ell^{-}}\xspace}
+\newcommand*{\ellell}{\ensuremath{\ell^{+} \ell^{-}}\xspace}
+\newcommand*{\enu}{\ensuremath{e \nu}\xspace}
+\newcommand*{\munu}{\ensuremath{\mu \nu}\xspace}
+\newcommand*{\lnu}{\ensuremath{\ell \nu}\xspace}
+
+
+% +--------------------------------------------------------------------+
+% |  Vector bosons                                                     |
+% +--------------------------------------------------------------------+
+\newcommand*{\Zzero}{\ensuremath{Z}\xspace}
+\newcommand*{\Zboson}{\ensuremath{Z}\xspace}
+\newcommand*{\Wplus}{\ensuremath{W^{+}}\xspace}
+\newcommand*{\Wminus}{\ensuremath{W^{-}}\xspace}
+\newcommand*{\Wboson}{\ensuremath{W}\xspace}
+\newcommand*{\Wpm}{\ensuremath{W^{\pm}}\xspace}
+\newcommand*{\Wmp}{\ensuremath{W^{\mp}}\xspace}
+
+% +--------------------------------------------------------------------+
+% |  pi, pi0, pi+, pi-, pi+-, eta, eta1, etc.                          |
+% +--------------------------------------------------------------------+
+%\let\pii=\pi
+%\renewcommand*{\pi}{\ensuremath{\pii}\xspace}
+\newcommand*{\pizero}{\ensuremath{\pi^{0}}\xspace}
+\newcommand*{\piplus}{\ensuremath{\pi^{+}}\xspace}
+\newcommand*{\piminus}{\ensuremath{\pi^{-}}\xspace}
+\newcommand*{\pipm}{\ensuremath{\pi^{\pm}}\xspace}
+\newcommand*{\pimp}{\ensuremath{\pi^{\mp}}\xspace}
+%\let\etaa=\eta
+%\renewcommand*{\eta}{\ensuremath{\etaa}\xspace}
+\newcommand*{\etaprime}{\ensuremath{\eta^{\scriptscriptstyle\prime}}\xspace}
