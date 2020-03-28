@@ -124,6 +124,65 @@ The dedicated CI samples are used to validate the reweighting procedure, \cref{f
     \label{fig:datamc:sigoverlays}
 \end{figure}
 
+\subsubsection{Signal template morphing}\label{sec:datamc:mc:sig:morphing}
+The CI samples are produced in steps of \SI{2}{\tera\electronvolt} from 12-\SI{100} {\tera\electronvolt} using the reweighting procedure outlined in \cref{sec:datamc:mc:sig}. The DY component is subtracted from the simulated signals, leaving the pure CI and interference terms. The signal model used in the analysis (\cref{sec:sigmodel}) requires a continuous description of the signal model as a function of $\Lambda$ to fit possible signal contributions that may be between the reweighted signal masses. To implement the signal template morphing, a custom signal probability distribution class was created derived from two available RooFit~\cite{RooFit} classes: a class to model the shape of the signal as a function of $\Lambda$ and another to model the normalisation of the signal as a function of $\Lambda$. There are several classes within RooFit to perform morphing between histograms. However, an advantage of the custom PDF class is that it allows for integration into the existing fit and extrapolation framework. The parameter $\Lambda$ can be easily adjusted to provide a smoothly changing PDF and normalisation. 
+
+\cref{fig:bkgmodel:Morph} depicts the morphed signal PDF for various values of $\Lambda$ for constructive and destructive CI interference models. The Figure shows the morphed signals for the LL chirality model, but, the signal PDFs are produced for all chirality models considered in the analysis. For constructive models the shape of the signal does not change significantly as a function of $\Lambda$. However, for the destructive models a strong relationship between the shape of the signal and $\Lambda$ can be seen. The downward fall in the destructive plots correspond to the point at which the destructive interference is dominant, where a negative signal yield is expected. \cref{fig:bkgmodel:ratioMorph} shows the comparison of a CI template for $\Lambda = \SI{20}{\tera\electronvolt}$ compared with the corresponding morphed signal template, a good agreement between the two can be seen in the ratio panel. 
+
+Furthermore, the morphed signal PDFs can be used in the statistical analysis to describe the signal model. For the search of non-resonant signals like CI, it is prohibitive to describe the signal model with a floating signal strength parameter, $\mu$. When searching for resonances it is natural to use $\mu$ as the parameter of interest. However, due to the shape and normalisation changes of the signal models as a function of $\Lambda$, it is more accurate to define the parameter of interest as a function of $\Lambda$. Further details of the statistical analysis is given in the \cref{chap:statistics}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/Deshan/Documents/PhD/thesis/Thesis/figures/analysis/bkgmodel/sigComp-const-LL-ee.pdf}
+        \label{fig:bkgmodel:Morphee1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/Deshan/Documents/PhD/thesis/Thesis/figures/analysis/bkgmodel/sigComp-dest-LL-ee.pdf}
+        \label{fig:bkgmodel:Morphee2}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/Deshan/Documents/PhD/thesis/Thesis/figures/analysis/bkgmodel/sigComp-const-LL-mm.pdf}
+        \label{fig:bkgmodel:Morphmm1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/Deshan/Documents/PhD/thesis/Thesis/figures/analysis/bkgmodel/sigComp-dest-LL-mm.pdf}
+        \label{fig:bkgmodel:Morphmm2}
+    \end{subfigure}
+    \caption[Morphed signal PDF produced at various $\Lambda$ values compared with the reweighted MC template.]{Comparison of morphed PDF signals for a CI signal for various $\Lambda$ values. for constructive (left) and destructive (right) interference for the electron (top) and muon (bottom) channels. Absolute number of events is plotted in each bin.}
+    \label{fig:bkgmodel:Morph}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/Deshan/Documents/PhD/thesis/Thesis/figures/analysis/bkgmodel/sigCompRatio-const-LL-ee.pdf}
+        \label{fig:bkgmodel:ratioMorphee1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/Deshan/Documents/PhD/thesis/Thesis/figures/analysis/bkgmodel/sigCompRatio-dest-LL-ee.pdf}
+        \label{fig:bkgmodel:ratioMorphee2}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/Deshan/Documents/PhD/thesis/Thesis/figures/analysis/bkgmodel/sigCompRatio-const-LL-mm.pdf}
+        \label{fig:bkgmodel:ratioMorphmm1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/Deshan/Documents/PhD/thesis/Thesis/figures/analysis/bkgmodel/sigCompRatio-dest-LL-mm.pdf}
+        \label{fig:bkgmodel:ratioMorphmm2}
+    \end{subfigure}
+    \caption[Comparison of morphed signal PDF with generated signal template]{Comparison of Morphed PDF signals for a CI signal with $\Lambda = \SI{26}{\tera\electronvolt}$ for constructive (left) and destructive (right) interference for the electron (top) and muon (bottom) channels. The bottom pad shows the ratio of the MC template with the morphed signal PDF. Absolute number of events is plotted in each bin.}
+    \label{fig:bkgmodel:ratioMorph}
+\end{figure}
+
 \section{Estimation of fake background}\label{sec:datamc:fakes}
 Processes involving jets or electron and a jet can pass the signal event selection of the signature of the jets are reconstructed as electrons. The electron plus jet final state are mainly due to W+Jets processes. Typically light-flavour jets, containing charged and neutral pions are misidentified as electrons during reconstruction. Due to the high energies of collisions at the LHC the decays of neutral pions, $\pi^0 \rightarrow \gamma\gamma$, are highly boosted and can lead to narrow electromagnetic energy depositions. These processes can give rise to signatures that are difficult to distinguish from those of the desired electrons. The desired leptons are referred to as "real electrons", whereas the mimicking leptons are referred to as \emph{fake electrons}. The fake background is difficult to estimate using simulation, therefore data-driven techniques are often used. 
 
@@ -167,11 +226,41 @@ where \emph{P} represents the Poisson constraint on the observed number of event
 
 The Likelihood is then minimised the number of fakes can be extracted using \cref{eq:mm:nfakes}, which is them applied as an event by event weight used to produce an invariant mass distribution for the fake background contribution. The background template produced is then smoothed using a function fit~\cite{EXOT-2016-05}. 
 
+\section{Transfer functions}\label{sec:datamc:transfer}
+The transfer function (TF) approach~\cite{Aad:2019fac}, based on an analytical parameterisation of the detector resolution, offers an alternative method to produce large statistics smooth DY and \ttbar samples. The method is used to overcome the limitations of insufficient MC statistics at invarant masses below \SI{2}{\tera\electronvolt}. The available MC samples for analysis of the $2015-16$ dataset~\cite{EXOT-2016-05} had statistical uncertainties that were compatible with the statistical uncertainty in data, resulting in a loss of sensitivity to new physics models. Complicated background smoothing techniques with functional fits were adopted in the analysis in an attempt to tackle the loss in sensitivity. 
+
+The TF approach provides a smooth transformation between the truth and reconstruction level invariant mass spectrums. A functional form is not imposed on the TF, the transformation is analytically parametrised using the detector resolution. The electron and muon channel require separate TFs due to the different reconstruction properties of the two channels. 
+
+\subsection{Overview}
+The transition between a known truth spectrum, $S_t(m_{\ell\ell}^{truth})$, and an unknown reconstructed spectrum, $S_r(m_{\ell\ell}^{reco})$, is be parametrised by a TF, $P(m_{\ell\ell}^{reco} \mid m_{\ell\ell}^{truth})$. $P(m_{\ell\ell}^{reco} | m_{\ell\ell}^{truth})$ describes the probability to reconstruct an event at invariant mass of $m_{\ell\ell}^{reco}$ for events with truth mass $m_{\ell\ell}^{truth}$ that passes the selection. Full simulation MC is used to construct the TFs, where additional smoothing of the MC can be done via a fit with the $P(m_{\ell\ell}^{reco} \mid m_{\ell\ell}^{truth})$. The truth invariant mass spectrum is obtained from a very large truth-only MC samples. Larger samples are able to be produced at truth-level compared to fully reconstructed samples due to significantly smaller CPU times and disk space required to produce them. The truth-only sample is produced such that it is produced at luminosity 55 times larger than the available dataset. The reconstruction level spectrum is then obtained by the following convolution: 
+\begin{equation}\label{eq:TF_generalConv}
+	S_r(m_{\ell\ell}^{reco}) = P(m_{\ell\ell}^{reco} \mid m_{\ell\ell}^{truth}) \otimes \left[ S_t(m_{\ell\ell}^{truth}) \cdot A\varepsilon(m_{\ell\ell}^{truth})) \right], 
+\end{equation}
+where $A\varepsilon(m_{\ell\ell}^{truth}))$ is the acceptance times efficiency. $A\varepsilon(m_{\ell\ell}^{truth}))$ is the probability that a event with truth invariant mass passes the selection. It is calculated by taking the fraction of events accepted in a truth invariant mass bin and the total number of generated events in that bin. 
+
+\subsection{Parametrisation of detector response}
+The TFs are obtained by fitting the detector response, $P(\mathcal{R} \mid m_{\ell\ell}^{truth})$, with a simultaneous fit on 200 $m_{\ell\ell}^{truth}$ bins. The detector response, $\mathcal{R}$, is used as the main variable in the fit due to it's mean value expected to be zero for each truth bin, and is defined as $\mathcal{R} = (m_{\ell\ell}^{reco} - m_{\ell\ell}^{truth}/ m_{\ell\ell}^{truth})$. To capture the response in the tail regions, a range of $R \in [-0.2,0.1]$ and $R \in [-0.75,0.75]$ is fitted for the electron and muon channels respectively. The range is chosen to cover the effects of the detector resolutions in the low and high invariant mass regions for both channels. 
+
+A sum of a Gaussian and Crystal-ball function is used to model $P(\mathcal{R} \mid m_{\ell\ell}^{truth})$ after several functions were tested. The Gaussian, G, component of the function is chosen to model the main peak of the detector response, whereas the longer tails of the Crystal-Ball, CB, models the tails of the detector response. The tails of the response in the electron channel are caused by electromagnetic radiation due to Bremsstrahlung. In the muon channel the tails are a result of poorly reconstructed muons. The function is defined as: 
+\begin{equation}\label{eq:TF_responseParam}
+    P(\mathcal{R}) = \kappa \cdot \mathrm{CB}(\mathcal{R}| \mu_\mathrm{CB}, \sigma_\mathrm{CB}, \alpha_\mathrm{CB}, n_\mathrm{CB}) + (1 - \kappa) \cdot \mathrm{Gauss}(\mathcal{R}| \mu_\mathrm{G}, \sigma_\mathrm{G}).
+\end{equation}
+where,  $\mu_\mathrm{CB}$ and $\mu_\mathrm{G}$ are the mean values of the CB and G, respectively. $\mu_i$ is expected to be zero due the definition of $\mathcal{R}$. $\sigma_\mathrm{CB}$ and $\sigma_\mathrm{G}$ are the width parameters of the CB and Gaussian components, respectively. $\alpha_\mathrm{CB}$ is the cut-off for the CB after which the Gaussian behaviour is replaced by a power-law. $n_\mathrm{CB}$ is the exponent of the power-law and $\kappa$ is the fraction of the CB function in the total probability density function.
+
+The parameters of the response functions are then parameterised as a function of $m_{\ell\ell}^{truth}$ to allow for simultaneous fits in all $m_{\ell\ell}^{truth}$ regions. Initial values for the parameters are obtained by fitting the detector response in single $m_{\ell\ell}^{truth}$ regions. The simultaneous fits are then performed and the final detector response is obtained as:
+\begin{equation}\label{eq:TF_responseTransformation}
+    \begin{aligned}
+        & \mu_i(m_{\ell\ell}^{truth}) \to \mu_i'(m_{\ell\ell}^{truth}) = \left(\mu_i(m_{\ell\ell}^{truth}) \cdot m_{\ell\ell}^{truth}\right) + m_{\ell\ell}^{truth}, \\
+        & \sigma_i(m_{\ell\ell}^{truth}) \to \sigma_i'(m_{\ell\ell}^{truth}) = \sigma_i(m_{\ell\ell}^{truth}) \cdot m_{\ell\ell}^{truth},
+    \end{aligned}
+\end{equation}
+
 \section{Data MC comparisons}\label{sec:datamc:compare}
 \cref{fig:datamc:eecompare,fig:datamc:mmcompare} show the comparisons of the invariant mass distributions between the data and MC expectation with the addition of some benchmark CI interaction signals overlaid on top. The fake contribution is also included in the comparison. 
 \cref{fig:datamc:pt1,fig:datamc:pt2} shows the \pt distribution for the leading and subleading leptons. The $\eta$ distributions for the leading and subleading leptons are shown in \cref{fig:datamc:eta1,fig:datamc:eta2}. In the electron channel the maximum can be seen at $\eta = 0$ and falls towards higher values of $\abs{\eta}$. The transition region coresponds to $1.37 < \abs{\eta} < 1.52$. The muon channel shows dips in the $\eta$ distributions in that correspond to poorly aligned chambers in the muon spectrometer. \cref{fig:datamc:phi1,fig:datamc:phi2} show the $\phi$ distributions for the leading and subleading leptons. A generally flat distribution can be seen in the electron channel. Small structures in the data are observed due to poor modelling of these in the background expectation, due to small inefficiencies in the identification in $\phi$ regions. The $\phi$ distribution for muons show small dips due to support structures on which the ATLAS detector is placed. 
 
-\clearpage
+The comparison is mainly produced for illustrative purposes, since the MC background prediction is used only for the choice of functional fit. Nevertheless, a good agreement is between the data and MC expectation is required for the data-driven fit strategy. Furthermore, the comparisons allow for an early indication to issues that may have occurred when deciding on a selection. The transfer function approach is used to smooth the DY and top samples show in \cref{fig:datamc:eecompare,fig:datamc:mmcompare}
+
 \begin{figure}[]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
@@ -279,7 +368,6 @@ The Likelihood is then minimised the number of fakes can be extracted using \cre
     \caption[$\eta$ distribution of the subleading lepton for the dilepton selections for the full $2015-18$ dataset and the respective MC campaigns.]{$\eta$ distribution of the subleading lepton for the dilepton selections for the full $2015-18$ dataset and the respective MC campaigns. The \ee channel is shown in (a) and \mumu channel in (b). Note that the fake electrons background component is not included in the \ee channel.}
     \label{fig:datamc:eta2}
 \end{figure}
-
 \begin{figure}[]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
@@ -315,37 +403,5 @@ The Likelihood is then minimised the number of fakes can be extracted using \cre
     \caption[$\phi$ distribution of the subleading lepton for the dilepton selections for the full $2015-18$ dataset and the respective MC campaigns.]{$\phi$ distribution of the subleading lepton for the dilepton selections for the full $2015-18$ dataset and the respective MC campaigns. The \ee channel is shown in (a) and \mumu channel in (b). Note that the fake electrons background component is not included in the \ee channel.}
     \label{fig:datamc:phi2}
 \end{figure}
-\clearpage
-
-The comparison is mainly produced for illustrative purposes, since the MC background prediction is used only for the choice of functional fit. Nevertheless, a good agreement is between the data and MC expectation is required for the data-driven fit strategy. Furthermore, the comparisons allow for an early indication to issues that may have occurred when deciding on a selection. 
-
-\section{Transfer functions}\label{sec:datamc:transfer}
-The transfer function (TF) approach~\cite{Aad:2019fac}, based on an analytical parameterisation of the detector resolution, offers an alternative method to produce large statistics smooth DY and \ttbar samples. The method is used to overcome the limitations of insufficient MC statistics at invarant masses below \SI{2}{\tera\electronvolt}. The available MC samples for analysis of the $2015-16$ dataset~\cite{EXOT-2016-05} had statistical uncertainties that were compatible with the statistical uncertainty in data, resulting in a loss of sensitivity to new physics models. Complicated background smoothing techniques with functional fits were adopted in the analysis in an attempt to tackle the loss in sensitivity. 
-
-The TF approach provides a smooth transformation between the truth and reconstruction level invariant mass spectrums. A functional form is not imposed on the TF, the transformation is analytically parametrised using the detector resolution. The electron and muon channel require separate TFs due to the different reconstruction properties of the two channels. 
-
-\subsection{Overview}
-The transition between a known truth spectrum, $S_t(m_{\ell\ell}^{truth})$, and an unknown reconstructed spectrum, $S_r(m_{\ell\ell}^{reco})$, is be parametrised by a TF, $P(m_{\ell\ell}^{reco} \mid m_{\ell\ell}^{truth})$. $P(m_{\ell\ell}^{reco} | m_{\ell\ell}^{truth})$ describes the probability to reconstruct an event at invariant mass of $m_{\ell\ell}^{reco}$ for events with truth mass $m_{\ell\ell}^{truth}$ that passes the selection. Full simulation MC is used to construct the TFs, where additional smoothing of the MC can be done via a fit with the $P(m_{\ell\ell}^{reco} \mid m_{\ell\ell}^{truth})$. The truth invariant mass spectrum is obtained from a very large truth-only MC samples. Larger samples are able to be produced at truth-level compared to fully reconstructed samples due to significantly smaller CPU times and disk space required to produce them. The truth-only sample is produced such that it is produced at luminosity 55 times larger than the available dataset. The reconstruction level spectrum is then obtained by the following convolution: 
-\begin{equation}\label{eq:TF_generalConv}
-	S_r(m_{\ell\ell}^{reco}) = P(m_{\ell\ell}^{reco} \mid m_{\ell\ell}^{truth}) \otimes \left[ S_t(m_{\ell\ell}^{truth}) \cdot A\varepsilon(m_{\ell\ell}^{truth})) \right], 
-\end{equation}
-where $A\varepsilon(m_{\ell\ell}^{truth}))$ is the acceptance times efficiency. $A\varepsilon(m_{\ell\ell}^{truth}))$ is the probability that a event with truth invariant mass passes the selection. It is calculated by taking the fraction of events accepted in a truth invariant mass bin and the total number of generated events in that bin. 
-
-\subsection{Parametrisation of detector response}
-The TFs are obtained by fitting the detector response, $P(\mathcal{R} \mid m_{\ell\ell}^{truth})$, with a simultaneous fit on 200 $m_{\ell\ell}^{truth}$ bins. The detector response, $\mathcal{R}$, is used as the main variable in the fit due to it's mean value expected to be zero for each truth bin, and is defined as $\mathcal{R} = (m_{\ell\ell}^{reco} - m_{\ell\ell}^{truth}/ m_{\ell\ell}^{truth})$. To capture the response in the tail regions, a range of $R \in [-0.2,0.1]$ and $R \in [-0.75,0.75]$ is fitted for the electron and muon channels respectively. The range is chosen to cover the effects of the detector resolutions in the low and high invariant mass regions for both channels. 
-
-A sum of a Gaussian and Crystal-ball function is used to model $P(\mathcal{R} \mid m_{\ell\ell}^{truth})$ after several functions were tested. The Gaussian, G, component of the function is chosen to model the main peak of the detector response, whereas the longer tails of the Crystal-Ball, CB, models the tails of the detector response. The tails of the response in the electron channel are caused by electromagnetic radiation due to Bremsstrahlung. In the muon channel the tails are a result of poorly reconstructed muons. The function is defined as: 
-\begin{equation}\label{eq:TF_responseParam}
-    P(\mathcal{R}) = \kappa \cdot \mathrm{CB}(\mathcal{R}| \mu_\mathrm{CB}, \sigma_\mathrm{CB}, \alpha_\mathrm{CB}, n_\mathrm{CB}) + (1 - \kappa) \cdot \mathrm{Gauss}(\mathcal{R}| \mu_\mathrm{G}, \sigma_\mathrm{G}).
-\end{equation}
-where,  $\mu_\mathrm{CB}$ and $\mu_\mathrm{G}$ are the mean values of the CB and G, respectively. $\mu_i$ is expected to be zero due the definition of $\mathcal{R}$. $\sigma_\mathrm{CB}$ and $\sigma_\mathrm{G}$ are the width parameters of the CB and Gaussian components, respectively. $\alpha_\mathrm{CB}$ is the cut-off for the CB after which the Gaussian behaviour is replaced by a power-law. $n_\mathrm{CB}$ is the exponent of the power-law and $\kappa$ is the fraction of the CB function in the total probability density function.
-
-The parameters of the response functions are then parameterised as a function of $m_{\ell\ell}^{truth}$ to allow for simultaneous fits in all $m_{\ell\ell}^{truth}$ regions. Initial values for the parameters are obtained by fitting the detector response in single $m_{\ell\ell}^{truth}$ regions. The simultaneous fits are then performed and the final detector response is obtained as:
-\begin{equation}\label{eq:TF_responseTransformation}
-    \begin{aligned}
-        & \mu_i(m_{\ell\ell}^{truth}) \to \mu_i'(m_{\ell\ell}^{truth}) = \left(\mu_i(m_{\ell\ell}^{truth}) \cdot m_{\ell\ell}^{truth}\right) + m_{\ell\ell}^{truth}, \\
-        & \sigma_i(m_{\ell\ell}^{truth}) \to \sigma_i'(m_{\ell\ell}^{truth}) = \sigma_i(m_{\ell\ell}^{truth}) \cdot m_{\ell\ell}^{truth},
-    \end{aligned}
-\end{equation}
 
 \clearpage
