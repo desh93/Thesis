@@ -1,0 +1,87 @@
+\chapter{Statistical analysis}\label{chap:stats}
+
+The interpretation of measured observables, after performing a measurement, forms one of the main challenges in experimental particle physics. Statistical methods are used to quantify the relationship between some measured observables and parameters in a model. In the analysis described in this thesis, the goal is estimating the number of non-resonant signal events from the measured dataset, containing possibly both signal and background events. The estimated signal yield and the estimated background yield can be used to determine the agreement of non-resonant i.e. Contact Interactions scenarios with data, and infer values of parameters in non-resonant models. 
+
+A central concept in statistics in particle physics is that of uncertainty, which can originate from a number of different sources. For example, uncertainties can be the result from the lack of knowledge of the experiment, or the consequence of a more fundamental random nature in the system due to quantum mechanics. A variable is said to be random when it is not known or cannot be predicted with complete certainty~\cite{Cowan1998}. The concept of probability can be used to quantify the degree of randomness. A mathematical definition of probability was formulated by Kolmogorov as set of axioms~\cite{Kol33}. 
+
+There are two main interpretations of probability commonly used in data analysis. Most commonly used in high energy physics, the frequentist interpretation, and another interpretation known as subjective or Bayesian probability is also used. The frequentist notion of probability of an event is defined as the limit of it's relative frequency in a large number of trials. The large number of trials forms an ensemble, where in particle physics an ensemble can be formed by repeating the experiment multiple times. In frequentist probabilities, the true values of the parameters are states of nature and not the outcome of the experiment. The Bayesian definition of probability is based on a degree of belief. Therefore, Bayesian probabilities can be assigned to hypothesis on states of nature. The practical consequence of Bayesian probabilities is that prior must be supplied for various parameter values and hypothesis. 
+
+The frequentist interpretation of probability is used for analysis in this thesis. The common use of the frequentist interpretation does not indicate an inherent merit over the Bayesian interpretation, but rather highlights the technically simple implementation of the frequentist interpretation. 
+
+\section{Parameter estimation}
+One of the most common tasks in high energy physics is estimation of some model parameter, commonly known as the parameter of interest (POI) e.g. number of signal events or signal strength in search for new physics. The POI can be estimated by measuring a set of \emph{observables}, \emph{x} who's probability depends on the POI. Depending on analysis, different quantities can be utilised as \emph{observables}, e.g. the analysis described in this thesis uses the dielectron and dimuon invariant mass. Replication of the experiment multiple times results in different values of \emph{x} resulting in a \emph{probability density function} of \emph{x}, written as $f(x;\alpha)$. The probability density function has the important property of satisfying the normalisation condition:
+\begin{equation}
+    \begin{aligned}
+        \int_{-\infty}^{\infty} f(x;\alpha)~dx = 1
+    \end{aligned}
+\end{equation}
+
+Where the parameter $\alpha$ represents some unknown parameter. $f(x)$ describes the probability density for a single event, however, when considering datasets with many events, $\mathcal{D} = (x_1,..,x_n)$, the probability density is given by the product of the densities for each event. In counting experiments, such as the one described in this analysis, the total number of selected events is also a random variable, where the total number of observed events, \emph{n} fluctuates around the expected number, $\nu$ according to a Poisson distribution. When considering binned data, common to most analyses, histograms are defined that yield a certain number of entries $\textbf{n} = (n_1,..,n_N)$ in \emph{N} bins. The expected number of events in the entries for a bin are given by:
+\begin{equation}
+\begin{aligned}
+    \nu_i(\alpha) = n_{tot}\int_{x_i^{min}}^{x_i^{max}} f(x;\alpha)~dx
+\end{aligned}
+\end{equation}
+where $x_{min}$ and $x_{max}$ are the bin limits. A likelihood function for the total probability distribution for \emph{N} bins can be defined:
+\begin{equation}
+    \label{eq:poissL}
+    \begin{aligned}
+        & \mathcal{L}(n;\alpha) = \prod_{i=1}^{N}\mathrm{Poisson}(n_i;\nu_i), \\
+        & \mathrm{Poisson}(n;\nu) = \frac{\nu^ne^{-\nu}}{n!}.
+    \end{aligned}
+\end{equation}
+
+For the single-bin counting experiment used in the analysis $N = 1$ due to only one bin used for the statistical analysis. The expected number of events in the signal region can be defined as $\nu = \nu_B +\nu_S$, where $\nu_B$ is the expected background events and $\nu_S$ is the expected signal events in signal region. The POI used in this analysis is $\nu_S$. Using the likelihood function, one can estimate the POI given the collected data. 
+
+An \emph{estimator}, $\hat{\alpha}(\mathcal{D})$ is some function of the data and its value is used to estimate the true value of some parameter $\alpha$. There are various properties that an estimator must satisfy to be considered a \emph{good} estimator e.g bias, variance, consistency~\cite{errorsOnNumbers}. Consistency is the requirement that the estimator should converge to the true value in the limit of infinite statistics. A bias of an estimator is defined as the difference between the expectation value of the estimator $E[\hat{\alpha}]$ and the true value of $\alpha$. Variance is defined as $var[\hat{\alpha}] = E\left((\alpha - E[\hat{\alpha}])^{2}\right)$. There is a clear tradeoff between bias and variance, in the class of unbiased estimators there is a well defined minimum variance bound~\cite{Cranmer:2015nia}. When interpreting the results in the context of CI interaction models $\nu_S$ can either be expressed as a function of $\Lambda$, where it can be considered the POI. This allows for the results to be either interpreted directly in terms of lambda or the reinterpretation of the results on the number of signal events, $\nu_s$.
+
+The most common method used estimator is the maximum likelihood estimator (MLE), defined as the value of $\alpha$ which maximises the likelihood function. In practice, due to computational efficiency, this is done by minimising $-\log\mathcal{L}$. For multi parameter likelihood functions, the various components of $\alpha_p$ are referred to as \emph{floating} parameters. The MLE method can be generalised and is used in determining, where a likelihood function can be defined and used to determine the \emph{best-fit} values for the parameters used in the background estimation. The minimisation is handled by the Minuit~\cite{James:873119} tool in the RooFit framework.
+
+\section{Treatment of systematic uncertainties}
+In the example likelihood given in \cref{eq:poissL} there are additional parameters that also affect the distributions of our observables that is not the POI. These parameters are known as \emph{nuisance parameters} ($\theta$), as they must be accounted for regardless of the interest to the analysis. These include the systematic uncertainties affecting the signal and background normalisation and shape. Using the methods described in \cref{sec:extrap:uncertainties} $\pm  1\sigma$ up and down variations of $\tilde{\theta}$ are constructed. Once the uncertainties have been estimated, a constraint term $f(\theta;\tilde{\theta},\sigma_\theta)$ is multiplied by the likelihood. A Gaussian penalty term is used for the constraint term in the analysis. The Gaussian constraint is parameterised such that $\tilde{\theta} = 0$ is the nominal value of the parameter, and $\tilde{\theta} \pm 1$ are the $\pm1\sigma$ variations. The likelihood can be redefined as:
+\begin{equation}
+    \label{eq:likelihood}
+    \begin{aligned}
+        & \mathcal{L}(n;\nu,\theta) = \prod_{i=1}^{N}\mathrm{Poisson}(n_i;\nu_i(\theta)) \cdot \mathrm{Gaussian}(\tilde{\theta};\theta,\sigma_\theta), \\
+        & \mathrm{Gaussian}(\tilde{\theta};\theta,\sigma_\theta) = \prod_{j=1}^{N_{syst}} \frac{1}{\sqrt{2\pi\sigma_{\theta,j}}} e^\frac{-(\tilde{\theta_j} - \theta_j)}{2\sigma_{\theta,j}^2},
+    \end{aligned}
+\end{equation}
+where $\theta_j$ is the nuisance parameter corresponding to systematic \emph{j}. Each systematic uncertainty considered in the analysis will have a gaussian constraint on the likelihood. 
+
+When the data is fit using the full likelihood in \cref{eq:likelihood} both the POI and nuisance parameters are estimated to minimise the likelihood. However, in some scenarios, the fit may constrain a nuisance parameter better than the POI, indicating an inherent mismodelling of the likelihood. Over constraining nuisance parameters may lead to underestimated uncertainties on the POI. The \emph{post-fit} pulls are used to quantify the degree to which the estimate of the nuisance parameter, $\hat{\theta}$ deviates from the expected value $\tilde{\theta}$ given uncertainty after fitting $\hat{\sigma}$. The pull of a nuisance parameter is defined as: 
+\begin{equation}
+    \label{eq:nppull}
+    \begin{aligned}
+        & pull = \frac{\hat{\theta} -{\theta}}{\hat{\sigma_\theta}}.
+    \end{aligned}
+\end{equation}
+Deviation from the central value of the nuisance parameter will indicate at features of the data not described by the model. The pulls from the fit to the data are shown in \cref{chap:results}. 
+
+\section{Hypothesis testing}
+Hypothesis tests are an additional statistical tool used in the analysis to test the compatibility of the data collected with respect to two hypotheses, rejecting one over the other based on experimental observations. Two hypotheses are defined: an \emph{alternative hypothesis} ($\mathrm{H_0}$) and a \emph{null hypothesis} ($\mathrm{H_0}$). When considering an observed excess or deficit for discovery, $\mathrm{H_1}$ is defined as the expectation solely based on the SM background expectation, also referred to as the background only hypothesis. While $\mathrm{H_1}$ is defined as the expectation from SM background and a BSM process e.g. CIs, referred to as the signal+background hypothesis. When no significant excess is observed, the definitions of $\mathrm{H_1}$ and $\mathrm{H_0}$ are swapped and a potential signal can be excluded. 
+
+In order to distinguish between the two hypothesis a \emph{test statistic}, $\mathcal{T}(\mathcal{D})$ is constructed such that the value of $\mathcal{T}$ will be different dependant on the hypothesis. An \emph{acceptance region} is defined, such that if $\mathcal{T}(\mathcal{D}) < k_\alpha$, then $H_0$ is accepted. The test statistic is defined such that it minimises the probability at which $H_0$ is rejected when it is true, known as Type-I error. In contrast, a Type-II errors describes accepting $H_0$ when $H_1$ is true, denoted by $\beta$. A test statistic is chosen such that it maximises the power of a test, $1-\beta$. There are a multitude of test statistics that can be used, however, the most power test is given by the likelihood ratio $\mathcal{T}(\mathcal{D}) = \mathcal{L}(n;\nu_{s+b})/\mathcal{L}(n;\nu_{b})$ according to the Neyman-Pearson lemma~\cite{Cowan1998}. A generalisation of the likelihood ratio known as the \emph{profile likelihood ratio} is defined as:
+\begin{equation}
+    \label{eq:profLL}
+    \begin{aligned}
+        \lambda(\nu_s) = \frac{\mathcal{L}(\nu_s;\hat{\hat{\theta}}(\nu_s))}{\mathcal{L}(\hat{\nu},\hat{\theta})},
+    \end{aligned}
+\end{equation}
+where the conditional maximum likelihood estimate $\hat{\hat{\theta(\nu_s)}}$ is the value of $\theta$ that maximises the likelihood function with $\nu_s$ fixed. The profile likelihood test statistic is used in many of the LHC experiments, including ATLAS. The test statistic is used to define the final test statistic relevant to analyses,
+\begin{equation}
+    \label{eq:teststat}
+    \begin{aligned}
+        q_{\nu_s} = -2\ln\lambda(\nu_s).
+    \end{aligned}
+\end{equation}
+
+The test statistic can be used to quantify the compatibility of the observed data for a given hypothesis, known as a \emph{p}-value:
+\begin{equation}
+    \label{eq:pvalue}
+    \begin{aligned}
+        p_{\nu_s = \int_{q_{\mu,obs}}^\infty f(q_\mu;\nu_s,\theta)~dq_\mu,
+    \end{aligned}
+\end{equation}
+where $f(q_\mu;\nu_s,\theta)$ is the probability density function of the test statistic under the hypothesis $\nu_s$. $q_{\mu,obs}$ is the test statistic of the observed data. As $p_{\nu_s}$ gets smaller, the confidence that the assumed hypothesis is true decreases. 
+
+In the particle physics community, the conventional threshold to take the value 

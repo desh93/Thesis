@@ -2,7 +2,7 @@
 
 There are several systematics that effect the background modelling of the simulated samples, these uncertainties can be divided into two distinct categories: experimental uncertainties related to the event (e.g luminosity measurement) and reconstruction of the physics objects described in \cref{chap:SimReco}, and uncertainties of theoretical predictions from the PDF and the choice of PDF. Due to the data-driven nature of the analysis, uncertainties related to the simulated samples background modelling are not directly applied, instead, they are propagated to calculating the bias introduced on the background model choice. Further detail on the background model uncertainties are given in \cref{chap:bkgmodel}. The theoretical background uncertainty variations are estimated as a function of $m_{ll}$ at truth mass and the transfer function approach, described in \cref{sec:datamc:transfer}, is applied to generate smooth reconstructed templates for the uncertainties. Furthermore, uncertainties on the fake-template estimation is also considered to estimate the impact on the background model. The experimental uncertainties are provided by dedicated groups in charge of performance of electron and muon reconstruction and measurement.
 
-\section{Experimental uncertainties}
+\section{Experimental uncertainties}\label{sec:sysmc:exp}
 
 \subsection{Event Uncertainties}
 Uncertainty on the luminosity and the pileup measurements affect the overall normalisaton of the processes being studied. The determination of the luminosity is described in \cref{sec:method:lumi} and the uncertainty is calculated using the method described in \cite{Aaboud:2208146}. For the full Run-2 dataset used in this analysis the luminosity uncertainty was found to be $\pm 1.7\%$. The uncertainty on the pileup distributions by taking the difference between the pileup distribution observed in data and those expected at the time of producing the MC simulations. Additionally, uncertainties on the efficiency of the triggers used in the analysis is also considered.  \cref{fig:uncert:prwuncert} depicts the effect of the pileup uncertainty on the invariant mass distribution for the electron and muon channels. A difference between the electron and muon channels can be seen for the pileup uncertainty due to statistical fluctuations in the simulated sample. 
@@ -108,7 +108,7 @@ Electron and muon energy scale corrections are applied only on data. The effects
     \label{fig:uncert:eeExp}
 \end{figure}
 
-\section{Theoretical uncertainties}
+\section{Theoretical uncertainties}\label{sec:sysmc:theory}
 The theoretical uncertainties considered are only applied to the background modelling simulation samples. High energy searches like the one described in this thesis probe previously uncharted kinematic regions as their mass predictions extend to \SI{}{\tera\electronvolt} energy scales. Therefore, a detailed modelling of the systematic uncertainties related to the knowledge of the partonic structure structure of the proton is required as the kinematic range being probed extends passed the range where the PDF is calculated from data. Differences between the electron and muon channel can be seen due to resolution effects in the detector. 
 
 \subsection{PDF uncertainties}
