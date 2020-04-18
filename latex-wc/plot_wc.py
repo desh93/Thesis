@@ -2,8 +2,8 @@ import sys
 from datetime import datetime
 import matplotlib
 import matplotlib.pyplot as plt
-
-# plt.style.use("thesis")
+#plt.style.use("thesis")#
+# plt.xkcd()
 import pandas as pd
 
 thesis_meetings = [] # 2 august 2019
@@ -19,19 +19,21 @@ def main(filein):
 
     ax.set_ylabel("Word count")
     ax.set_xlabel("Date")
-    # ax.axvline(datetime(2019, 7, 23), color="orange") # Started chapter 2
-    # ax.axvline(datetime(2019, 8, 13), color="orange") # Finished chapter 4
+    ax.axvline(datetime(2020, 3, 23), color="orange",label="Lockdown Starts") # Started chapter 2
+    #ax.axvline(datetime(2020, 4, 01), color="orange") # Finished chapter 4
 
-    #ax.axvline(datetime(2019, 9, 20), color="black", label="Adam's submission")
-    #ax.axvspan(datetime(2019, 5, 19), datetime(2019, 6, 2),
-    #color="red", alpha=0.4, linewidth=0, label="IPAC")
+    ax.axvline(datetime(2020, 3, 20), color="black", label="Lewis's submission")
+    ylim = ax.get_ylim()
+    print ylim
+    ax.axvspan(datetime(2019, 12, 20), datetime(2020, 3, 1),color="red", alpha=0.3, linewidth=0, label="Analysis push")
+    ax.axvspan(datetime(2020, 2, 11), datetime(2020, 2, 23),color="blue", alpha=0.3, linewidth=0, label="Sri Lanka")
     # ax.axvline(datetime(2019, 11, 8), color="orange", label="Deadline")
 
     #ax.axvspan(datetime(2019, 7, 19), datetime(2019, 7, 21),
     #           color="blue", alpha=0.4, linewidth=0,
     #           label="Helena's wedding")
 
-    ax.legend(loc="upper left")
+    ax.legend(loc="upper left",frameon=0)
     # from IPython import embed; embed()
 
     # ax.set_yscale("log")
@@ -41,4 +43,4 @@ def main(filein):
 
 if __name__ == '__main__':
     main("timestamped_wordcounts.txt")
-    # main("timestamped_figurecounts.txt")
+#    main("timestamped_figurecounts.txt")

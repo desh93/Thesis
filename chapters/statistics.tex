@@ -47,7 +47,7 @@ Probability models can be constructed to simultaneously describe several channel
 \end{equation}
 where the Poisson models for the individual channels are multiplied together. For simplicity of notation the dicussion below focuses only on a single channel. However, the procedure described below is applied in the case of the combined model as well. 
 
-\section{Treatment of systematic uncertainties}
+\section{Treatment of systematic uncertainties}\label{sec:stats:nps}
 In the example likelihood given in \cref{eq:poissL} there are additional parameters that also affect the distributions of our observables that is not the POI. These parameters are known as \emph{nuisance parameters} ($\theta$), as they must be accounted for regardless of the interest to the analysis. These include the systematic uncertainties affecting the signal and background normalisation and shape. Using the methods described in \cref{sec:extrap:uncertainties} $\pm  1\sigma$ up and down variations of $\tilde{\theta}$ are constructed. Once the uncertainties have been estimated, a constraint term $f(\theta;\tilde{\theta},\sigma_\theta)$ is multiplied by the likelihood. A Gaussian penalty term is used for the constraint term in the analysis. The Gaussian constraint is parameterised such that $\tilde{\theta} = 0$ is the nominal value of the parameter, and $\tilde{\theta} \pm 1$ are the $\pm1\sigma$ variations. The likelihood can be redefined as:
 \begin{equation}
     \label{eq:likelihood}
@@ -62,10 +62,18 @@ When the data is fit using the full likelihood in \cref{eq:likelihood} both the 
 \begin{equation}
     \label{eq:nppull}
     \begin{aligned}
-        & pull = \frac{\hat{\theta} -{\theta}}{\hat{\sigma_\theta}}.
+        & \mathrm{pull} = \frac{\hat{\theta} -{\theta}}{\hat{\sigma_\theta}}.
     \end{aligned}
 \end{equation}
-Deviation from the central value of the nuisance parameter will indicate at features of the data not described by the model. The pulls from the fit to the data are shown in \cref{chap:results}. 
+Deviation from the central value of the nuisance parameter will indicate at features of the data not described by the model. The pulls of the nuisance parameters from the fit to data are shown in \cref{chap:results}. The impact of the nuisance parameter on the parameter of interest is defined as:
+\begin{equation}
+    \label{eq:npinpact}
+    \begin{aligned}
+        & \mathrm{Impact} = \delta \hat{\nu_s} = \hat{\hat{\nu}}_{s,\theta \pm \sigma_\theta} - \hat{\nu}_s,
+    \end{aligned}
+\end{equation}
+where $\hat{\hat{\nu}}_{s,\theta \pm \sigma_\theta}$ the fitted value of $\nu_s$ with the nuisance parameter fixed at at it's expectation value plus or minus it's standard deviation for the \emph{prefit} impact. The postfit impact is given where the nuisance parameter is fixed at it's observed value plus or minus it's standard deviation. 
+
 
 \section{Hypothesis tests}
 Hypothesis tests are an additional statistical tool used in the analysis to test the compatibility of the data collected with respect to two hypotheses, rejecting one over the other based on experimental observations. Two hypotheses are defined: an \emph{alternative hypothesis} ($\mathrm{H_0}$) and a \emph{null hypothesis} ($\mathrm{H_0}$). When considering an observed excess or deficit for discovery, $\mathrm{H_1}$ is defined as the expectation solely based on the SM background expectation, also referred to as the background only hypothesis. While $\mathrm{H_1}$ is defined as the expectation from SM background and a BSM process e.g. CIs, referred to as the signal+background hypothesis. When no significant excess is observed, the definitions of $\mathrm{H_1}$ and $\mathrm{H_0}$ are swapped and a potential signal can be excluded. 
@@ -128,7 +136,7 @@ Using the above test statistic and \cref{eq:pvalue}, a \emph{p}-value can be def
         p_{\nu_s} = \int_{\tilde{q}_{\mu,obs}}^\infty f(\tilde{q}_{\nu_s};\nu_s,\hat{\hat{\theta}}(\nu_s))~d\tilde{q}_\mu.
     \end{aligned}
 \end{equation}
-It was previously defined, such that if the if the test statistic is outside the acceptance region $\alpha$, the hypothesis is rejected. In this construction, the region at which $p_{\nu_s} \geq 1 - \alpha$ is referred to as the \emph{confidence level} (CL) that includes the true value of the POI with probability larger than $1-\alpha$. This would then lead to the statement that the confidence interval covers the true value of the parameter with a CL larger than $1-\alpha$. The CL value of the upper limit is commonly chosen as 95\% for ATLAS and CMS results. 
+It was previously defined, such that if the if the test statistic is outside the acceptance region $\alpha$, the hypothesis is rejected. In this construction, the region at which $p_{\nu_s} \geq 1 - \alpha$ is referred to as the \emph{confidence level} (CL) that includes the true value of the POI with probability larger than $1-\alpha$. This would then lead to the statement that the confidence interval covers the true value of the parameter with a CL larger than $1-\alpha$. The CL value of the upper limit is commonly chosen as 95\% for ATLAS and CMS results. Signal hypothesis will be tested until the point at which the signal hypothesis is found that is no longer excluded at the 95\% confidence interval. 
 
 The expected limit and corresponding upper and lower bounds are calculated by sampling a distribution of the limits produced from a number of background only MC toy experiments and taking the median value. The median value is taken instead of the mean, as it is invariant to the choice of significance or \emph{p}-value. The distribution of the limit is given by $f(\nu_{s,lim};0,\hat{\hat{\theta}}(\nu_s = 0,obs))$, where the nuisance parameters have a profiled value based on the observed data. The $1\sigma$ and $2\sigma$ bands around the expected limit can be calculated by taking the 68\% and 95\% quantiles. 
 
@@ -266,19 +274,19 @@ The expected limits in the electron and muon channels are compared for the two c
     & & & \multicolumn{4}{c}{Expected limit [TeV]} \\
     Int. & Channel & POI & LL & LR & RL & RR \\
     \midrule
-    \multirow{3}{*}[-1em]{\begin{sideways}Constructive\end{sideways}} & \multirow{2}{*}{$ee$} & $\Lambda$ & 31.1 & 28.9 & 28.7 & 30.9 \\
+    \multirow{3}{*}[-1em]{\begin{sideways}Constructive\end{sideways}} & \multirow{2}{*}{$\ee$} & $\Lambda$ & 31.1 & 28.9 & 28.7 & 30.9 \\
     & & $\nu_s$ & 31.1 & 28.8 & 28.7 & 30.9 \\
     \cmidrule{2-7}
-     & \multirow{2}{*}{$\mu\mu$} & $\Lambda$ & 29.6 & 27.4 & 27.3 & 29.5 \\
+     & \multirow{2}{*}{$\mumu$} & $\Lambda$ & 29.2 & 27.1 & 27.0 & 29.0 \\
     & & $\nu_s$ & 29.8 & 27.6 & 27.5 & 29.6 \\
     \midrule
-    \multirow{3}{*}[-1em]{\begin{sideways}Destructive\end{sideways}} & \multirow{2}{*}{$ee$} & $\Lambda$ & 23.0 & 24.4 & 24.4 & 23.2 \\
+    \multirow{3}{*}[-1em]{\begin{sideways}Destructive\end{sideways}} & \multirow{2}{*}{$\ee$} & $\Lambda$ & 23.0 & 24.4 & 24.4 & 23.2 \\
     & & $\nu_s$ & 23.0 & 24.4 & 24.4 & 23.2 \\
     \cmidrule{2-7}
-     & \multirow{2}{*}{$\mu\mu$} & $\Lambda$ & 22.3 & 23.9 & 23.9 & 22.8 \\
+     & \multirow{2}{*}{$\mumu$} & $\Lambda$ & 22.0 & 23.6 & 23.6 & 22.2 \\
     & & $\nu_s$ & 22.6 & 24.1 & 24.1 & 22.8 \\
 \bottomrule\end{tabular}}
-\caption{Comparison of expected limits from reinterpreting the results in terms of $\Lambda$ from limits on the number of signal events ($\nu_s$) and limits set directly on $\Lambda$ as the parameter of interest.}  
+\caption{Comparison of expected limits from reinterpreting the results in terms of $\Lambda$ from limits on the number of signal events ($\nu_s$) and limits set directly on $\Lambda$ as the parameter of interest. The limits are shown for the various CI chiral and interference models in the electron and muon channels.}  
 \label{tab:limits_comparePOI}
 \end{center}
 \end{table}
