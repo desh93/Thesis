@@ -19,14 +19,15 @@ def main(filein):
 
     ax.set_ylabel("Word count")
     ax.set_xlabel("Date")
-    ax.axvline(datetime(2020, 3, 23), color="orange",label="Lockdown Starts") # Started chapter 2
+    ax.axvline(datetime(2020, 3, 23), color="orange",linestyle="dotted", label="Lockdown Starts") # Started chapter 2
     #ax.axvline(datetime(2020, 4, 01), color="orange") # Finished chapter 4
 
-    ax.axvline(datetime(2020, 3, 20), color="black", label="Lewis's submission")
+    # ax.axvline(datetime(2020, 3, 20), color="black", label="Lewis's submission")
+    ax.axvline(datetime(2020, 4, 29), color="green", linestyle="dotted", label="Lewis's viva")
+    ax.axvline(datetime(2020, 4, 27), color="red", linestyle="dotted", label="2nd circulation")
     ylim = ax.get_ylim()
-    print ylim
     ax.axvspan(datetime(2019, 12, 20), datetime(2020, 3, 1),color="red", alpha=0.3, linewidth=0, label="Analysis push")
-    ax.axvspan(datetime(2020, 2, 11), datetime(2020, 2, 23),color="blue", alpha=0.3, linewidth=0, label="Sri Lanka")
+
     # ax.axvline(datetime(2019, 11, 8), color="orange", label="Deadline")
 
     #ax.axvspan(datetime(2019, 7, 19), datetime(2019, 7, 21),
