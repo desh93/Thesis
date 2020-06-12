@@ -1,10 +1,10 @@
 \chapter{Results}\label{chap:results}
-This chapter outlines the results from the functional fit to the data and corresponding profile likelihood fit to the data. The statistical analysis is also presented where results are shown in the context of model-independent and model-dependent CI signals. 
+This chapter outlines the results from the functional fit to the data and corresponding profile likelihood fit to the data. The statistical analysis is also presented, where results are shown in the context of model-independent non-resonant signal events and model-dependent CI signal models. 
 
 \section{Fits to data}
-The background only fits, and extrapolation to the data in the signal regions considered in the analysis are shown in \cref{fig:fits}. The fits are performed in the \SI{1}{\giga\electronvolt} linear binned datasets corresponding to the full Run-2 luminosity of \SI{139}{\femto\barn^{-1}}. The CR and SRs are defined in \cref{sec:extrap:optimisation}. Linear binning is used as it allows for a better-constrained fit to the data in the CR. However, the linear binning is less appealing to present the fits as it becomes difficult to determine any features in the distribution due to the large number of bins. The parameter values from the fit to the data in the CR is given in \cref{tab:fitpars}. 
+The background only fits, and extrapolation to the data in the SR's considered in the analysis are shown in \cref{fig:fits}. The fits are performed in the \SI{1}{\giga\electronvolt} linear binned datasets corresponding to the full Run-2 luminosity of \SI{139}{\femto\barn^{-1}}. The CR and SRs are defined in \cref{sec:extrap:optimisation}. Linear binning is used as it provides enough information for a better-constrained fit to the data in the CR. However, the fits in \cref{fig:fits} are presented in a log binning. The parameter values from the fit to the data in the CR is given in \cref{tab:fitpars}. 
 
-\cref{fig:fits} depicts the extrapolation to the SR, where the contents of the SR has been integrated into a single bin to be consistent with the statistical analysis. The uncertainty on the background estimate in the SR and a few benchmark CI models are also shown in the figure. The bottom panel shows the pulls in each invariant-mass bin, defined as $(\mathrm{Data}-\mathrm{Fit})/\sigma\mathrm{Data}$. The distribution are presented in $\log{(\text{m}_{\ell\ell})}$ to allow for a cleaner presentation of the fits. 
+\cref{fig:fits} depicts the extrapolation to the SR, where the contents of the SR has been integrated into a single bin to be consistent with the statistical analysis. The data points are plotted at the centre of each bin as the number of events divided by the bin width, which is constant in $\log{(\text{m}_{\ell\ell})}$. The error bars indicate statistical uncertainties only. A few CI benchmark CI signal shapes are shown, scaled to the data luminosity and superimposed by subtracting the LO DY component and adding the resulting shape to the background shape obtained from the fit. The background-only fit is shown in solid red, with the light red area being its uncertainty. The boundaries of the CR and SR corresponding to the signals used are shown in dotted vertical lines for reference and marked by arrows. A small excess is observed in the electron constriction SR, and a deficit is observed in the remaining signal regions. The bottom panel shows the differences between the data and the fit results in units of standard deviations of the statistical uncertainty of data, defined as $(\mathrm{Data}-\mathrm{Fit})/\sigma_\mathrm{Data}$. 
 
 \begin{figure}[!htpb]
     \centering
@@ -30,13 +30,9 @@ The background only fits, and extrapolation to the data in the signal regions co
     \end{subfigure}
     \caption[Distributions of the invariant mass of dilepton pairs passing the full selection for dielectrons and dimuons. Where the background-only fit has been performed in the CR and extrapolated to the signal region.]{
     Distributions of the invariant mass of dilepton pairs passing the full selection for dielectrons (left) and dimuons (right), and showing CR and SR for constructive interference (top) and destructive interference (bottom).
-    The data points are plotted at the centre of each bin as the number of events divided by the bin width, which is constant in $\log{(\text{m}_{\ell\ell})}$.
-    The error bars indicate statistical uncertainties only.
     A few CI benchmark signal shapes are shown, scaled to the data luminosity and superimposed by subtracting the LO DY component and adding the resulting shape to the background shape obtained from the fit.
-    These signals have LL chirality with $\Lambda=$ 18, 22, and 26~TeV for the constructive case and $\Lambda=$16, 20, and $26$~TeV for the destructive case.
     The background-only fit is shown in solid red, with the light red area being its uncertainty.
     The boundaries of the CR and SR corresponding to the signals used are shown in dotted vertical lines for reference and marked by arrows.
-    %In the destructive interference case, the signal shapes do not differ much on the scale used for these plots.
     The differences between the data and the fit results in units of standard deviations of the statistical uncertainty are shown in the bottom panels.
     }
     \label{fig:fits}
@@ -63,12 +59,12 @@ The background only fits, and extrapolation to the data in the signal regions co
     \label{tab:fitpars}
 \end{table}
 
-ATLAS Event displays for the highest mass dielectron and dimuon candidates are shown in \cref{fig:eventDisplay}. The dielectron candidate with the highest mass reconstructed mass corresponds to an electron pair with $m_{ee} = \SI{4.06}{\tera\electronvolt}$. The electrons are emitted back to back with a leading electron $\et = \SI{2.01}{\tera\electronvolt}$, $\eta = 0.47$ and $\phi = -0.78$. Whereas, the subleading electron is emitted with $\et = \SI{1.92}{\tera\electronvolt}$, $\eta = 0.03$ and $\phi = 2.37$. The dimuon highest mass candidate has $m_{\mu\mu} = \SI{2.75}{\tera\electronvolt}$. The leading muon is emitted with $\pt = \SI{1.82}{\tera\electronvolt}$, $\eta = -0.52$ and $\phi = -0.56$, and the subleading muon has $\pt = \SI{1.04}{\tera\electronvolt}$, $\eta = -0.67$ and $\phi = 2.53$. Figure \cref{fig:eventDisplay} depicts jets overlapping with the muons, where the \pt < \SI{50}{\giga\electronvolt}, therefore, indicating that they are induced by the calorimeter deposits of the muons. 
+ATLAS Event displays for the highest mass dielectron and dimuon candidates are shown in \cref{fig:eventDisplay}. The dielectron candidate with the highest mass reconstructed mass corresponds to an electron pair with $m_{ee} = \SI{4.06}{\tera\electronvolt}$. The electrons are emitted with a leading electron $\et = \SI{2.01}{\tera\electronvolt}$, $\eta = 0.47$ and $\phi = -0.78$. Whereas, the subleading electron is emitted with $\et = \SI{1.92}{\tera\electronvolt}$, $\eta = 0.03$ and $\phi = 2.37$. The dimuon highest mass candidate has $m_{\mu\mu} = \SI{2.75}{\tera\electronvolt}$. The leading muon is emitted with $\pt = \SI{1.82}{\tera\electronvolt}$, $\eta = -0.52$ and $\phi = -0.56$, and the subleading muon has $\pt = \SI{1.04}{\tera\electronvolt}$, $\eta = -0.67$ and $\phi = 2.53$. Figure \cref{fig:eventDisplay} depicts jets overlapping with the muons, where the \pt < \SI{50}{\giga\electronvolt}, therefore, indicating that they are induced by the calorimeter deposits of the muons. 
 
 
 
-\subsubsection{Signal region Yields and significances}
-\cref{tab:yields} lists the expected background and observed event yields in each of the SR defined in \cref{sec:extrap:optimisation}. The background uncertainties are also shown in terms of numbers of events in the signal region. A single bin Poisson likelihood is constructed for each of the SR as described in \cref{chap:stats} and the compatibility of finding the observed data with the background-only hypothesis is tested by fitting the data with the statistical model. The largest deviation from the expected background can be seen in the electron constructive signal region, which corresponds to an observed significance of $1.4\sigma$. There is a small deficit of events observed in the other SRs, where the observed significances range from $0.17\sigma$ to $0.61\sigma$. The significances were calculated using the profile likelihood test statistic and 500000 MC toy experiments. The results indicate that there are no significant excesses observed in the data in the SRs to hint at the presence of new physics signatures. 
+\subsubsection{Signal region yields and significances}
+\cref{tab:yields} lists the expected background and observed event yields in each of the SR's defined in \cref{sec:extrap:optimisation}. The background uncertainties are also shown in terms of numbers of events in the SR. A single bin Poisson likelihood is constructed for each of the SR as described in \cref{chap:stats} and the compatibility of finding the observed data with the background-only hypothesis is tested by fitting the data with the statistical model. The largest deviation from the expected background can be seen in the electron constructive SR, which corresponds to an observed significance of $1.28\sigma$. There is a small deficit of events observed in the other SRs, where the observed significances range from $-0.99\sigma$ to $-0.17\sigma$. The p-value of each observation is calculated using the statistical procedure described in \cref{chap:stats}. The significance is the Gaussian cumulative density function of the p-value. The results indicate that there are no significant excesses observed in the data in the SRs to hint at the presence of new physics signatures. 
 
 \begin{figure}[!htpb]
     \centering
@@ -99,21 +95,21 @@ ATLAS Event displays for the highest mass dielectron and dimuon candidates are s
 \multicolumn{2}{c|}{Signal Regions} & \multicolumn{2}{c|}{Yields} & \multicolumn{4}{c|}{Background Uncertainties} & Significance \\
 Channel & Interference & Data & Background & \STATU & \ISSU & \CRBU & Total & \\
 \hline
-\ee     & Constructive & 19 & 12.4 & 1.7 & 0.5 & 0.2 & 1.8 & 1.44$\sigma$\\
-\ee     & Destructive  & 2  & 3.1  & 1.1 & 0.2 & <0.1 & 1.1 & 0.19$\sigma$\\
-$\mumu$ & Constructive & 6  & 9.6  & 2.0 & 0.6 & 0.2 & 2.1 & 0.61$\sigma$\\
-$\mumu$ & Destructive  & 1  & 1.4  & 0.8 & 0.3 & 0.1 & 0.9 & 0.17$\sigma$\\
+\ee     & Constructive & 19 & 12.4 & 1.7 & 0.5 & 0.2 & 1.8 & ~~~1.28\\
+\ee     & Destructive  & 2  & 3.1  & 1.1 & 0.2 & <0.1 & 1.1 & --~0.19\\
+$\mumu$ & Constructive & 6  & 9.6  & 2.0 & 0.6 & 0.2 & 2.1 & --~0.99\\
+$\mumu$ & Destructive  & 1  & 1.4  & 0.8 & 0.3 & 0.1 & 0.9 & --~0.58\\
 \bottomrule
 \end{tabular}
 }
 \endgroup
-\caption[The dielectron and dimuon event yields for the data, the expected background, the corresponding background uncertainties and the respective significances in the different signal regions used in the analysis.]{The dielectron and dimuon event yields for the data, the expected background, the corresponding background uncertainties and the respective significances in the different signal regions used in the analysis. \STATU is the ``statistical uncertainty'', \ISSU is the ``induced spurious signal uncertainty'' and \CRBU is the ``control region bias uncertainty''. The total uncertainty is calculated by taking the sum in quadrature of the individual components. The significance of an excess is quantified by the probability (p-value) of the observed data given the background-only hypothesis}
+\caption[The dielectron and dimuon event yields for the data, the expected background, the corresponding background uncertainties and the respective significances in the different signal regions used in the analysis.]{The dielectron and dimuon event yields for the data, the expected background, the corresponding background uncertainties and the respective significances in the different signal regions used in the analysis. \STATU is the ``statistical uncertainty'', \ISSU is the ``induced spurious signal uncertainty'' and \CRBU is the ``control region bias uncertainty''. The total uncertainty is calculated by taking the sum in quadrature of the individual components.}
 \label{tab:yields}
 \end{center}
 \end{table}
 
 \section{Nuisance parameter rankings}
-The pulls and impact of the nuisance parameters are checked in order to determine if their values have significantly from the original estimate after the fit. The procedure outlined in \cref{sec:stats:nps} is used to calculate the pulls and impact of the nuisance parameters. The pulls and impact are estimated using the model-independent description of the statistical model, where $\nu_s$ is taken as the POI. They are presented in \cref{fig:nprankingee,fig:nprankingmm} for the electron and muon channels, respectively, in the SRs considered in the analysis. Only the uncertainties on the background estimate and the luminosity uncertainty on the signal event yield are considered in the model-independent description, due to there being no explicitly defined signal model. 
+The pulls and impact of the nuisance parameters are checked in order to determine if their values have significantly deviated from the original estimate after the fit. The procedure outlined in \cref{sec:stats:nps} is used to calculate the pulls and impact of the nuisance parameters. The pulls and impact are estimated using the model-independent description of the statistical model, where $\nu_s$ is taken as the POI. They are presented in \cref{fig:nprankingee,fig:nprankingmm} for the electron and muon channels, respectively, in the SRs considered in the analysis. Only the uncertainties on the background estimate and the luminosity uncertainty on the signal event yield are considered in the model-independent description, due to there being no explicitly defined signal model. 
 
 The nuisance parameters are ranked based on their \emph{postfit} impact, where the nuisance parameters are shown according to their impact in descending order. The dominant uncertainty in all signal regions and channels considered is the statistical uncertainty of the fit (\STATU), indicating that the sensitivity to non-resonant signals is statistically dominated. The second-largest impact is from the induced spurious signal uncertainty (\ISSU). The contribution from the luminosity ($\sigma_{Lumi}$) and \CRBU have a negligible impact on the results. The figure indicates that there are no visible pulls on the nuisance parameters and that they are not constrained, which can be determined by the error bar on the pull. An error on the pull smaller or larger than $1\sigma$ would indicate that a nuisance parameter has been constrained \emph{postfit}. Differences between the \emph{postfit} and \emph{prefit} impacts can be inferred from the error bar on the pull, as any residual difference would indicate that the nuisance parameter is constrained. 
 
@@ -153,28 +149,21 @@ The nuisance parameters are ranked based on their \emph{postfit} impact, where t
 \clearpage
 
 \section{Model independent exclusion limits}
-The exclusion limits provided in this section are calculated using the signal event yield, $\nu_s$ as the POI in the statistical analysis using 500000 toy MC experiments. The 95\% CL limits are calculated on the signal event yield for each of the SRs considered in the analysis. These limits are then used to calculate limits on the visible cross-section ($\sigma_\textrm{vis}\times\textrm{Br}$), which is calculated using:
+The exclusion limits provided in this section are calculated using the signal event yield, $\nu_s$, as the POI in the statistical analysis using 500000 toy MC experiments. The 95\% CL limits are calculated on the signal event yield for each of the SRs considered in the analysis. These limits are then used to calculate limits on the visible cross-section ($\sigma_\textrm{vis}\times\textrm{Br}$) using:
 \begin{equation}
     \label{eq:visxs}
     \begin{aligned}
-        & \sigma_\textrm{vis}\times\textrm{Br} = \frac{N_{\mathrm{events}}}{\mathrm{Luminosity}}
+        & \sigma_\textrm{vis}\times\textrm{Br} = \frac{N_{\mathrm{events}}}{\mathrm{Luminosity}},
     \end{aligned}
 \end{equation}
-where $N_{\mathrm{events}}$ corresponds to the number of events and luminosity is the integrated luminosity of the full Run-2 dataset. The limits on the signal event yield and the visible cross-section can be used by theorist to re-interpret the results in the context of other BSM models. \cref{fig:limit_n} shows the expected and observed limits on the number of signal events and visible cross-section times branching fraction for each of the SRs in the electron and muon channels. The one and two sigma error on the expected limit are shown by the green and yellow bands, respectively. Due to the excess of observed in the constructive SR of the electron channel, the observed limit is above the one sigma expected error. Whereas, the deficits in the other signal regions results in the lower observed limit compared to the expected limit. \cref{tab:yields_sig} summarises the observed and expected limit on the number of signal events and the visible cross-section times branching fraction. Expected signal event yields, along with their acceptance times efficiency in the SRs for various CI LL chiral $\Lambda$ models are also given in \cref{tab:yields_sig}. Further detail on the prescribed reinterpretation procedure is given below in \cref{sec:results:reinterp}.
+where $N_{\mathrm{events}}$ corresponds to the number of events and luminosity is the integrated luminosity of the full Run-2 dataset. The limits on the signal event yield and the visible cross-section can be used by theorist to re-interpret the results in the context of other BSM models. \cref{fig:limit_n} shows the expected and observed limits on the number of signal events  for each of the SRs in the electron and muon channels. The one and two sigma error on the expected limit are shown by the green and yellow bands, respectively. Due to the excess of observed in the constructive SR of the electron channel, the observed limit is above the one sigma error on the expected limit. Whereas, the deficits in the other signal regions results in the lower observed limit compared to the expected limit. \cref{tab:yields_sig} summarises the observed and expected limit on the number of signal events and the visible cross-section times branching fraction. Expected signal event yields, along with their acceptance times efficiency in the SRs for various CI LL chiral $\Lambda$ models are also given in \cref{tab:yields_sig}. Further detail on the prescribed reinterpretation procedure is given below in \cref{sec:results:reinterp}.
 
 \begin{figure}[!htpb]
+
     \centering
-    \begin{subfigure}[b]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{/Users/Deshan/Documents/PhD/thesis/Thesis/figures/results/fig_03a.pdf}
-        \label{fig:limit_n1}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{/Users/Deshan/Documents/PhD/thesis/Thesis/figures/results/fig_03a.pdf}
-        \label{fig:limit_n2}
-    \end{subfigure}
-    \caption[Model independent upper limits at 95\% CL on the number of signal events (left) and the visible cross section times branching fraction (right) in the SRs used in the analysis for electron and muon channels.]{Model independent upper limits at 95\% CL on the number of signal events (left) and the visible cross section times branching fraction (right) in the SRs used in the analysis for electron and muon channels. The green and yellow bands correspond to the one and two sigma uncertainty on the expected limit.}
+    \includegraphics[width=0.7\textwidth]{/Users/Deshan/Documents/PhD/thesis/Thesis/figures/results/fig_03a.pdf}
+    \label{fig:limit_n1}
+    \caption[Model independent upper limits at 95\% CL on the number of signal events in the SRs used in the analysis for electron and muon channels.]{Model independent upper limits at 95\% CL on the number of signal events in the SRs used in the analysis for electron and muon channels. The green and yellow bands correspond to the one and two sigma uncertainty on the expected limit.}
     \label{fig:limit_n}
 \end{figure}
 
@@ -253,7 +242,7 @@ where $\mathcal{A}\times\epsilon_\textrm{sig}$ is calculated for each invariant-
 \section{Exclusion limits on CI models}
 The exclusion limits provided in this section calculated using $\Lambda$ as the POI in the statistical analysis and using 500000 toy MC experiments. This follows the procedure defined in \cref{sec:stat:poi}. The signal model used for each hypothesis test uses the morphed PDF templates produced using the custom class defined in \cref{sec:datamc:mc:sig:morphing}. The experimental uncertainties defined in \cref{chap:sysmc} are used in the signal model as additional Gaussian constraints. 
 
-\cref{fig:limit_lambda} shows the exclusion limits provided for the CI chiral and interference models for the electron, muon and combined dilepton channel. The one and two sigma error bands are shown by the green and yellow bars, respectively. Due to the relationship between lambda and the cross-section defined in \cref{chap:CI} an observed excess with respect to the expected events would result in a lower observed limit on lambda compared to the expected limit, as the higher $\Lambda$ models correspond to a smaller number of expected events. Therefore, the deficits in the other SRs results in smaller observed limits compared to the expected limit. The asymmetry in the error bands are a result of the limit statistics in the signal regions. The exclusion limits are interpreted as lower limits on the CI energy scale $\Lambda$. \cref{tab:limits_on_lambda} summarises the exclusion limits on the CI models. The electron channel drives the combined limit due to the larger signal region and smaller uncertainties associated with the electron signal regions. 
+\cref{fig:limit_lambda} shows the exclusion limits provided for the CI chiral and interference models for the electron, muon and combined dilepton channel. The one and two sigma error bands are shown by the green and yellow bars, respectively. Due to the relationship between lambda and the cross-section defined in \cref{chap:CI} an observed excess with respect to the expected events would result in a lower observed limit on lambda compared to the expected limit, as the higher $\Lambda$ models correspond to a smaller number of expected events. Therefore, the deficits in the other SRs results in larger observed limits compared to the expected limit. The asymmetry in the error bands are a result of the limited statistics in the signal regions. The exclusion limits are interpreted as lower limits on the CI energy scale $\Lambda$. \cref{tab:limits_on_lambda} summarises the exclusion limits on the CI models. The electron channel drives the combined limit due to the larger signal region and smaller uncertainties associated with the electron signal regions. 
 
 \begin{figure}[!htpb]
     \centering
