@@ -207,15 +207,13 @@ Together the CSCs and the MDTs form the precision tracking chambers and provide 
 Special chambers are used to trigger on muons. The fast muon chambers provide signals within \SI{25}{\nano\second} after the passage of a particle, which allows to tag the beam crossing. This measures both the coordinates of the track, in the bending plane ($\eta$) and the non-bending plane ($\phi$). In the barrel region, where $\abs{\eta} < 1.05$, \emph{resistive plate chambers} (RPC) are used which provide a resolution of \SI{10}{\milli\meter} in both the $z$ and $\phi$ directions. The RPCs are formed of two parallel plates made from a highly resistive plastic laminate with a gas mixture in between the plates. A strong electric field is placed between the resistive plates. The gas between the plates is ionised by passing muons, inducing an avalanche of electrons which creates a measurable signal in the form of current spikes in matrices of aluminium strips on the back of the resistive strips. In the end-cap region, where $1.05 < \abs{\eta} < 2.4$, \emph{thin gap chambers} (TGCs) are installed. Similar to the CSCs, the TCGs are multi-wire proportional chambers. For the TGC modules, the distance between the wire and strips is smaller than the distance between the wires, resulting in a smaller uniform region of the electric field. This allows for the electrons formed in the gas ionisation to drift to the wires faster. The TGCs provide muon track information with a precision of 2 - \SI{7}{\milli\meter} in the $\eta$ direction and 3 - \SI{7}{\milli\meter} in the $\phi$ direction.
 
 \subsection{Trigger and Data Acquisition System}\label{sec:method:ATLAS:trigger}
-The ATLAS trigger system is used to manage the high rate of LHC collisions, reducing the event rate from \SI{40}{\mega\hertz} to $\mathcal{O}$(\SI{100}{\kilo\hertz}) at which events can be written to mass storage. This is done by partially reconstructing events during data taking and identifying events of interest to record. The trigger system must balance a good rejection of background events while maintaining a high rate of interesting events being saved. A chain of decision-making algorithms in hardware and software is utilised. For Run-2, the ATLAS trigger system uses a two-level system; the Level 1 (L1) hardware trigger and the High-Level Trigger (HLT) software trigger. The data acquisition (DAQ) system controls the data flow when trigger decisions have been received. 
-% An overview of the components of the ATLAS trigger and DAQ systems outlined in \cref{fig:method:ATLAS:TDAQ}.
-
-% \begin{figure}[]
-%     \centering
-%     \includegraphics[width=\largefigwidth]{images/TDAQ}
-%     \caption[Overview of the ATLAS trigger and data acquisition system]{Schematic overview of the ATLAS trigger and data acquisition system~\cite{ATLAS:TDAQ-Run2}.}
-%     \label{fig:method:ATLAS:TDAQ}
-% \end{figure}
+The ATLAS trigger system is used to manage the high rate of LHC collisions, reducing the event rate from \SI{40}{\mega\hertz} to $\mathcal{O}$(\SI{100}{\kilo\hertz}) at which events can be written to mass storage. This is done by partially reconstructing events during data taking and identifying events of interest to record. The trigger system must balance a good rejection of background events while maintaining a high rate of interesting events being saved. A chain of decision-making algorithms in hardware and software is utilised. For Run-2, the ATLAS trigger system uses a two-level system; the Level 1 (L1) hardware trigger and the High-Level Trigger (HLT) software trigger. The data acquisition (DAQ) system controls the data flow when trigger decisions have been received. An overview of the components of the ATLAS trigger and DAQ systems outlined in \cref{fig:method:ATLAS:TDAQ}.
+\begin{figure}[!htpb]
+    \centering
+    \includegraphics[width=\largefigwidth]{images/tdaqFullNew2017.png}
+    \caption[Overview of the ATLAS trigger and data acquisition system]{Schematic overview of the ATLAS trigger and data acquisition system~\cite{ATLAS:TDAQ-Run2}.}
+    \label{fig:method:ATLAS:TDAQ}
+\end{figure}
 
 \subsubsection{Level 1 trigger}
 The hardware-based L1 trigger is designed to reduce the event rate from \SI{40}{\mega\hertz} to \SI{100}{\kilo\hertz}. Information from the muon trigger chambers and the calorimeters are used in the L1 trigger. The L1 trigger is divided into three parts: the L1 calorimeter trigger (L1Calo), the L1 muon trigger (L1Muon) and the central trigger processor (CTP).
@@ -231,7 +229,7 @@ The CTP makes decisions on accepting or rejecting an event by combining the info
 \subsubsection{High level trigger}
 The ATLAS HLT~\cite{ATLAS:HLT-TDR,ATLAS:TDAQ-Run2} performs software-based reconstruction of events which pass the L1 trigger, running on processor farms consisting of 80000 CPU cores. The \emph{inner detector trigger} is responsible for the track reconstruction of measurements made by the inner detector. The reconstructed tracks are matched to measurements by the sub-detectors providing reconstruction of physics objects. This allows the HLT to differentiate between photons and electrons, and to tag jets which contain $b$ quarks. 
 
-Due to the flexibility of software implementations and large-scale parallel processing, HLT algorithms can be more complicated than those in L1. HLT algorithms are combined into chains that are applied to the event data sequentially. These algorithms may use the RoIs provided by the L1 trigger, where the processing rate can be increased and reduce the latency. When an event survives an algorithm chain from the HLT, it is accepted and read out into permanent storage. An event rate of \SI{1}{\kilo\hertz} is targeted by the HLT \textcolor{red}{\textbf{DOES THIS ACHIEVE IT?}}.
+Due to the flexibility of software implementations and large-scale parallel processing, HLT algorithms can be more complicated than those in L1. HLT algorithms are combined into chains that are applied to the event data sequentially. These algorithms may use the RoIs provided by the L1 trigger, where the processing rate can be increased and reduce the latency. When an event survives an algorithm chain from the HLT, it is accepted and read out into permanent storage. An event rate of \SI{1}{\kilo\hertz} is achieved by the HLT.
 
 \subsubsection{Trigger configurations}
 

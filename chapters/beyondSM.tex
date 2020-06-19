@@ -1,27 +1,25 @@
 \chapter{Beyond the Standard Model}\label{chap:bsm}
-The Standard Model of particle physics has had tremendous success in describing the majority of the observed phenomena so far. However, there remain several critical unanswered questions from experimental signatures that do not fit within the framework of the SM. These signatures hint towards physics beyond the Standard Model (BSM). This thesis focuses on a search for contact interaction (CI) models in dilepton final states. 
+The Standard Model of particle physics has had tremendous success in describing the majority of the observed phenomena so far. However, there remain several critical unanswered questions from experimental signatures that do not fit within the framework of the SM. These signatures hint towards physics beyond the Standard Model (BSM). The motivation to look for BSM physics is outlined in \cref{sec:bsm:motivation}. This thesis focuses on a search for contact interaction (CI) models in dilepton final states. The four-fermion contact interaction model belongs to a subset set of a broad range of effective field theory models. \cref{sec:bsm:eft} provides a brief over view of effective field theories, where an example of a well known effective field theory is given. The specific CI interaction model used in the analysis of this thesis is outlined in \cref{sec:bsm:ci}.
 
-This chapter will briefly outline some of the outstanding questions in the SM that motivates BSM searches. Additionally, the four-fermion contact interaction will be summarised. 
+\section{Motivation}\label{sec:bsm:motivation}
 
+The SM mechanism to generate neutrino masses relies on unobserved right-handed neutrinos, and requires significant parameter turning to describe the size of the observed neutrinos masses~\cite{Fukuda_1998}. The search for answers to these questions is one such motivation for BSM theories. Many BSM theories attempt to explain these two phenomena. 
 
-\section{Motivation}
-The SM mechanism to generate neutrino masses relies on unobserved right-handed neutrinos, and require significant parameter turning to describe the size of the observed neutrinos masses. The search for answers to these questions is one such motivation for BSM theories. Many BSM theories attempt to explain these two phenomena. 
+% Another such phenomena results from global fits to the cosmic microwave background (CMB) radiation that has indicated the baryonic matter described by the SM only makes up 5\% of the total mass of the universe~\cite{Bennett_2013,2014Plank}. Measurements of rotation curves of galaxies and gravitational lensing~\cite{roos2010dark} indicate the existence of dark matter, which constitutes 27\% of the universe. In many theories, dark matter does not interact via the strong interaction, and is not electrically charged, or interacts with electromagnetic radiation. Therefore, the only possible candidate in the SM is the neutrino. The remainder of the universe is expected to be consist of dark energy, inferred through observations of the expansion of the universe~\cite{Peebles_2003}. 
 
-Another such phenomena results from global fits to the cosmic microwave background (CMB) radiation that has indicated the baryonic matter described by the SM only makes up 5\% of the total mass of the universe~\cite{Bennett_2013,2014Plank}. Measurements of rotation curves of galaxies and gravitational lensing~\cite{roos2010dark} indicate the existence of dark matter, which constitutes 27\% of the universe. In many theories, dark matter does not interact via the strong interaction, and is not electrically charged, or interacts with electromagnetic radiation. Therefore, the only possible candidate in the SM is the neutrino. The remainder of the universe is expected to be consist of dark energy, inferred through observations of the expansion of the universe~\cite{Peebles_2003}. 
+An additional observed shortcoming of the SM, and one of the strongest motivations for BSM models, is a result of an internal inconsistency of the SM itself. The observed Higgs mass is $\sim \SI{100}{\giga\electronvolt}$ and is a result of the electroweak symmetry breaking scale. There is a vast difference between this and the Plank scale ($\sim 10^{19}~\SI{}{\giga\electronvolt}$), with no other scale present in between. The Plank scale is where quantum gravitational effects become dominant. Therefore, the Higgs mass is sensitive to large vacuum fluctuations and can result in corrections proportional to corrections from one-loop diagrams of virtual particles, where an infinite number of corrections could exist. In order to counter these corrections, the measured Higgs mass needs to be finely tuned between the bare mass and the radiative corrections~\cite{Giudice_2008}. This fine-tuning motivates the existence of TeV scale physics, which would cancel some of the divergent corrections. \emph{Supersymmetry} (SUSY) is one possible theory that attempts to explain the observed hierarchy problem~\cite{MARTIN_1998}. SUSY introduces \emph{superpartners} for each fermion and an extra spin-one boson in the SM, that have opposite spin to cancel the loop corrections on the Higgs mass. However, SUSY has not yet been observed, thus introducing a new SUSY breaking scale, which results in some fine-tuning. An alternative approach to mitigate the hierarchy problem is by the introduction of some large extra dimensions, where gravity is allowed to propagate these new dimensions~\cite{Arkani_Hamed_1998}. 
 
-An additional observed shortcoming of the SM, and one of the strongest motivations for BSM models, is a result of an internal inconsistency of the SM itself. The observed Higgs mass is $\sim \SI{100}{\giga\electronvolt}$ and is a result of the electroweak symmetry breaking scale. There is a vast difference between this and the Plank scale ($\sim 10^19~\SI{}{\giga\electronvolt}$), with no other scale present in between. The Plank scale is where quantum gravitational effects become dominant. Therefore, the Higgs mass is unprotected from large vacuum fluctuations and can result in corrections proportional to corrections from one-loop diagrams of virtual particles, where an infinite number of corrections could exist. In order to counter these corrections, the measured Higgs mass needs to be finely tuned~\cite{Giudice_2008}. This fine-tuning motivates the existence of TeV scale physics, which would cancel some of the divergent corrections. \emph{Supersymmetry} (SUSY) is one possible theory that attempts to explain the observed hierarchy problem~\cite{MARTIN_1998}. SUSY introduces \emph{superpartners} for each fermion and an extra spin-one boson in the SM, that have opposite spin to cancel the loop corrections on the Higgs mass. However, SUSY has not yet been observed, thus introducing a new SUSY breaking scale, which results in some fine-tuning. An alternative approach to mitigate the hierarchy problem is by the introduction of some large extra dimensions, where gravity is allowed to propagate in new dimensions~\cite{Arkani_Hamed_1998}. 
-
-\section{Brief overview of effective field theory}
-An effective field theory (EFT) is a low-energy approximation of a higher-energy QFT. With the use of an EFT indirect effects of particles with masses well beyond what is currently able to be experimentally probed can be quantified. They are based on the property of decoupling~\cite{manohar2018introduction}, where it refers to the screening of high-energy phenomena for interactions at lower energy scales. Using the expansion of the propagator of a massive particle with mass m, 
+\section{Brief overview of effective field theory}\label{sec:bsm:eft}
+An effective field theory (EFT) is a low-energy approximation of a full QFT. With the use of an EFT indirect effects of particles with masses well beyond what is currently possible to be experimentally probed can be quantified. The EFT approach is based on the property of decoupling~\cite{manohar2018introduction}, where it refers to the screening of high-energy phenomena for interactions at lower energy scales. Using the expansion of the propagator of a massive particle with mass \emph{m}, 
 \begin{equation}
     \label{eq:propogator}
     \begin{aligned}
         \frac{1}{q^2 - m^2} = \frac{1}{m^2}(1 + \frac{q^2}{m^2} + ..),
      \end{aligned}
 \end{equation}
-it is clear that when $m^2 \gg q^2$, the propagation of the particle is suppressed. This is also apparent from the uncertainty principle, where the range of the force reduces as the mass of the particle grows large. Therefore, a mass of a mediator can be taken large enough that the propagator connecting interaction vertices is reduced to a point, resulting in a contact interaction. This results in the reduction of many theories into smaller sets of EFT operators. The EFT operators allow the construction of an effective Lagrangian describing the interactions at lower energies only in terms of SM fields. 
+where $q^2$ is the momentum transfer of the particle. it is clear that when $m^2 \gg q^2$, the propagation of the particle is suppressed. This is also apparent from the uncertainty principle, where the range of the force reduces as the mass the mediator particle increases. Therefore, the mass of a mediator can be taken large enough that the propagator connecting interaction vertices is reduced to a point, resulting in a \emph{contact interaction}. This results in the reduction of many possible high-energy theories into smaller sets of EFT operators. The EFT operators allow the construction of an effective Lagrangian describing the interactions at lower energies only in terms of SM fields. 
 
-Historically the \emph{top-down} approach was prevalent, where a consistent theory valid at very high scales is defined, and observations are constructed within that framework. However, due to lack of observations of new BSM heavy states at the LHC validating such models, the focus has shifted to a \emph{bottom-up} model building. The bottom-up approach considers the SM as the low-energy renormalisable gauge theory within a theory at higher energy scales $\Lambda_{\mathrm{BSM}}$. Higher-order operators can be added to the SM, and a general effective Lagrangian can be written as: 
+Historically a \emph{top-down} approach was favoured, where a consistent theory valid at very high scales is defined, and observations are constructed within that framework. However, due to lack of observations of new BSM heavy states at the LHC validating such models, the focus has shifted to a \emph{bottom-up} model building. The bottom-up approach considers the SM as the low-energy gauge theory within a theory at higher energy scales $\Lambda_{\mathrm{BSM}}$. Higher-order operators can be added to the SM, and a general effective Lagrangian can be written as
 \begin{equation}
     \label{eq:eftLagrangian}
     \begin{aligned}
@@ -29,7 +27,23 @@ Historically the \emph{top-down} approach was prevalent, where a consistent theo
         \mathcal{L}_\mathrm{D}   &= \sum_i \frac{c_i}{\Lambda_{\mathrm{BSM}}^{D-4}}\mathcal{O}^{(D)}_i.
      \end{aligned}
 \end{equation}
-$\mathcal{L}_\mathrm{SM}$ is the dimension four SM Lagrangian, $\Lambda_{\mathrm{BSM}}$ is the mass scale for BSM, and $\mathcal{O}_i$ are the dimension d effective operators. The $c_i$ are dimensionless couplings that specify the strength of the BSM interactions, known as \emph{Wilson coefficients}. There is only one dimension five operator that is gauge invariant but is irrelevant for the work presented in this thesis. The work presented in this thesis is restricted to dimension six. 
+$\mathcal{L}_\mathrm{SM}$ is the dimension-four SM Lagrangian, $\Lambda_{\mathrm{BSM}}$ is the mass scale for BSM, $\mathcal{O}_i$ are dimension $D$ effective operators, and $c_i$ are dimensionless couplings that specify the strength of the BSM interactions, known as \emph{Wilson coefficients}. 
+
+The SM operators are dimension-four (\cref{chap:SM}), which allows them to be renormalisable.  However, the effective operators are not renormalisable as they are of dimension $D \geq 5$. Therefore, the effective theory is only valid valid up to energies much lower than the scale $\Lambda_\mathrm{BSM}$. The full effective Lagrangian is an infinite series. However, the inverse of the scale $\Lambda_\mathrm{BSM}$ plays an important role, where dimensional analysis and the ratio between the energy scale of the experiment and energy scale  is used to keep only terms that are dimension-four. This procedure is known as power counting~\cite{Contino_2016}. 
+
+There is only one dimension-five operator that is gauge invariant and is known as the Weinberg operator~\cite{Weinberg:1979sa}, which can be used to give Majorana neutrino masses through EWSB~\cite{Jenkins_2018}. However, the effects of this operator cannot be probed in the LHC as the dimension-five operator violates the conservation of lepton number, whereas the LHC has strong constraints on the lepton number violation.
+
+The dimension six operators can be probed at the LHC. The work presented in this thesis is restricted to dimension six. The list of EFT operators was first classified in 1986~\cite{Buchmuller:163116}, and contains 80 operators for each flavour. There are several ways of reducing the operators, as transformations between operators are possible. The \emph{Warsaw basis}~\cite{Grzadkowski_2010} was the first complete and non-redundant set of dimension-6 operators that were proposed. This thesis focuses on dilepton final states, therefore only quark-lepton interactions will be considered. Some examples of general lepton-quark four-fermion contact interaction can be parameterised by the following dimension six operators~\cite{de_Blas_2013}.
+\begin{equation}
+    \label{eq:CIop}
+    \begin{aligned}
+        & \mathcal{O}^{(1)}_{\ell q} = (\bar{\ell}\gamma^\mu \ell)(\bar{q}\gamma_\mu q),~~ &\mathcal{O}^{(3)}_{\ell q} =& ~(\bar{\ell}\sigma_I\gamma^\mu \ell)(\bar{q}\sigma_I\gamma_\mu q), \\
+        & \mathcal{O}_{eu} = (\bar{e}\gamma^\mu e)(\bar{u}\gamma_\mu u),~~ &\mathcal{O}_{e d} =& ~(\bar{e}\gamma^\mu e)(\bar{d}\gamma_\mu d), \\
+        & \mathcal{O}_{\ell u} = (\bar{\ell}\gamma^\mu \ell)(\bar{u}\gamma_\mu u),~~ &\mathcal{O}_{\ell d} =& ~(\bar{\ell}\gamma^\mu \ell)(\bar{d}\gamma_\mu d), \\
+     \end{aligned}
+\end{equation}
+where $\ell$ and  \emph{q} are the SM lepton and quark doublets, respectively.
+
 
 \subsubsection{Fermi theory}
 The classic example of an EFT approach is the Fermi theory of low-energy weak interactions. The full UV theory is the SM, and it is matched to the EFT by considering a theory valid at small momenta compared to $m_{Z,W}$~\cite{manohar2018introduction}. Muon decay, $\mu \rightarrow e\nu_\mu\bar{\nu}_e$, is considered as an example, where the SM energy scale ($\Lambda_{\mathrm{BSM}}\sim\SI{80.8}{\giga\electronvolt}$) is much higher than that of the interactions ($m_\mu \sim \SI{100}{\giga\electronvolt}$). 
@@ -48,11 +62,26 @@ Considering the low-energy limit where $m_W^2 \gg q^2$, the propagator can be ex
 \begin{equation}
     \label{eq:smmuon1}
     \begin{aligned}
-        \mathcal{M} =  \frac{g^2}{8 m_w^2}g_{\nu\mu}
+        \mathcal{M} =  \frac{g^2}{8 m_W^2}g_{\nu\mu}
         [\bar{\nu}_\mu\gamma^\mu(1-\gamma^5)\mu]
         [\bar{e}\gamma^\mu(1-\gamma^5)\nu_e].
      \end{aligned}
 \end{equation}
+The Feynman diagram for the process is given by  
+\begin{align}
+\feynmandiagram[layered layout, inline=(b), horizontal=a to b] {
+  a [particle=\(\mu^{-}\)] -- [fermion] b -- [fermion] f1 [particle=\(\nu_{\mu}\)],
+  b -- [boson, edge label'=\(W^{-}\)] c,
+  c -- [anti fermion] f2 [particle=\(\overline \nu_{e}\)],
+  c -- [fermion] f3 [particle=\(e^{-}\)],
+}; \quad = \quad \feynmandiagram[large, inline=(v), horizontal=a to b] {
+a [particle=\(\mu^{-}\)] -- [fermion] v[dot] -- [fermion] b [particle=\(e^{-}\)],
+v -- [anti fermion] f2 [particle=\(\overline \nu_{e}\)],
+v -- [fermion] f3 [particle=\(\nu_{\mu}\)],
+}; \quad + \quad \mathcal{O}\left(\frac{q^2}{m^2_W} \right), 
+\end{align}
+where the first term corresponds to the SM diagram for the decay of the muon, the right hand side of the equation shows the effective vertex and the higher order correction terms. 
+
 In the Fermi effective theory, weak interactions are described by four-fermion contact interaction, with coupling $c/\Lambda^2$, where c is the Wilson coefficient and $\Lambda$ is the scale of the EFT. This results in the amplitude
 \begin{equation}
     \label{eq:eftmuon}
@@ -62,7 +91,7 @@ In the Fermi effective theory, weak interactions are described by four-fermion c
         [\bar{e}\gamma^\mu(1-\gamma^5)\nu_e].
      \end{aligned}
 \end{equation}
-Hence, by comparing \cref{eq:smmuon1,eq:eftmuon}, the amplitude from the SM and Fermi theory can be matched by setting $\Lambda = m_W^2$ and $ c - g^2/2$. The Fermi constant, $G_F$, is related to EFT coupling by 
+Hence, by comparing \cref{eq:smmuon1,eq:eftmuon}, the amplitude from the SM and Fermi theory can be matched by setting $\Lambda = m_W^2$ and $ c = g^2/2$. The Fermi constant, $G_F$, is related to the EFT coupling by 
 \begin{equation}
     \label{eq:fermiconstant}
     \begin{aligned}
@@ -70,17 +99,8 @@ Hence, by comparing \cref{eq:smmuon1,eq:eftmuon}, the amplitude from the SM and 
      \end{aligned}
 \end{equation}
 
-\section{Four-fermion contact interactions}\label{sec:bsm:ci}
-A possible solution to the hierarchy problem in the SM is the existence of constituents of quarks and leptons, known as \emph{preons}~\cite{Eichten:1984eu,Eichten:1983hw}. If quarks and leptons are composite, with at least one common constituent, the interaction of these constituents could manifest itself through an effective four-fermion CI at energies well below the compositeness scale.
-
-The list of EFT operators was first classified in 1986~\cite{Buchmuller:163116}, and there existed 80 operators for each flavour. There were several ways of reducing the operators, as transformations between operators were possible. The \emph{Warsaw basisis}~\cite{Grzadkowski_2010} was the first complete and non-redundant set of dimension-6 operators that were proposed. This thesis focuses on a broad class of lepton-quark four-fermion CIs parameterised by the dimension six operator~\cite{de_Blas_2013}
-\begin{equation}
-    \label{eq:CIop}
-    \begin{aligned}
-        \mathcal{O}_{\ell q} = (\bar{\ell}\gamma^\mu \ell)(\bar{q}\gamma^\mu q),
-     \end{aligned}
-\end{equation}
-where $\ell$ and \emph{q} are the SM lepton and quark doublets. Using this operator, the Lagrangian is defined as 
+\section{Four-fermion contact interaction}\label{sec:bsm:ci}
+The search presented in this thesis focuses on one dimension-six operator: $\mathcal{O}^{(1)}_{\ell q} = (\bar{\ell}\gamma^\mu \ell)(\bar{q}\gamma_\mu q)$, which can be used to postulate the existence of the constituents of quarks and leptons, known as \emph{preons}~\cite{Eichten:1984eu,Eichten:1983hw}, as a possible solution to the hierarchy problem in the SM. If quarks and leptons are composite, with at least one common constituent, the interaction of these constituents could manifest itself through an effective four-fermion CI at energies well below the compositeness scale. The Lagrangian for such processes is defined as 
 \begin{equation}
 \label{eq:CIlagrangian}
 \begin{aligned}
@@ -89,12 +109,41 @@ where $\ell$ and \emph{q} are the SM lepton and quark doublets. Using this opera
     &\eta_{LR}\left(\bar{q}_L\gamma_{\mu}q_L\right)\left(\bar{\ell}_R\gamma^{\mu}\ell_R\right) + \eta_{RL}\left(\bar{q}_R\gamma_{\mu}q_R\right)\left(\bar{\ell}_L\gamma^{\mu}\ell_L\right)\},
 \end{aligned}
 \end{equation}
-where $g$ is a coupling constant chosen such that $g^2/4\pi = 1$, $\gamma$ are the Dirac matrices and the spinors $\mathcal{L}_{L,R}$ are the left-handed and right-handed fermion fields, respectively. The parameters $\eta_{ij}$, where $i$ and $j$ are $L$ or $R$, define the chiral structure (left or right) of the new interaction. Specific models are chosen by assigning the parameters to be $-1$, $0$ or $+1$. The sign of the $\eta_{ij}$ determines whether the interference with SM is constructive ($\eta_{ij} = -1$) or destructive constructive ($\eta_{ij} = +1$). The cross section for the process $q\bar{q} \rightarrow \ell\ell$ in the presence of such contact interactions is given by
+where $g$ is a coupling constant and chosen such that $g^2/4\pi = 1$ for convention~\cite{Eichten:1984eu}, $\gamma$ are the Dirac matrices and the spinors $q_{L,R}$ are the left-handed and right-handed quark fields, respectively, and $\ell$ are the fermion fields. The parameters $\eta_{ij}$, where $i$ and $j$ are $L$ or $R$, define the chiral structure (left or right) of the new interaction. Specific models are chosen by assigning $\eta_{ij}$ to be $-1$, $0$ or $+1$. A chiral model can be chosen in the follow way
+\begin{equation}
+    \label{eq:chiral}
+    \begin{aligned}
+    \mathcal{L}_{LL} &=  \mathcal{L}(\eta_{LL} = \pm1,\eta_{LR} = 0,\eta_{RL} = 0,\eta_{RR} =0), \\
+    \mathcal{L}_{LR} &=  \mathcal{L}(\eta_{LL} = 0,\eta_{LR} = \pm1,\eta_{RL} = 0,\eta_{RR} =0), \\
+    \mathcal{L}_{RL} &=  \mathcal{L}(\eta_{LL} = 0,\eta_{LR} = 0,\eta_{RL} = \pm1,\eta_{RR} =0), \\
+    \mathcal{L}_{RR} &=  \mathcal{L}(\eta_{LL} = 0,\eta_{LR} = 0,\eta_{RL} = 0,\eta_{RR} =\pm1). 
+    \end{aligned}
+\end{equation}
+
+The scattering amplitudes for the fermions can interfere either constructively or destructively with the SM Drell-Yan process (DY). Whether the interference is constructive or destructive is dependent on the sign of $\eta_{ij}$. For example, the model destructively interferes with the DY for $\eta_{ij} = +1$ and constructively interferes for $\eta_{ij} = -1$. Therefore, the combination of the interference and chiral models result in eight separate CI interaction models that can be tested.  
+
+The leading-order production mechanism for DY with an additional CI interaction process for dilepton final states is given by 
+\begin{align}
+    \abs{\quad\feynmandiagram [inline=(a),horizontal=a to b] {
+        i1 [particle=\(q\)]-- [fermion] a -- [fermion] i2 [particle=\(\overline q\)],
+        a  -- [boson, edge label'=\({\gamma/Z}\)] b,
+        f1 [particle=\(\ell\)] -- [fermion] b -- [fermion] f2 [particle=\(\overline \ell\)],
+      }; \quad + \quad \feynmandiagram[large, inline=(v), horizontal=a to b] {
+        a [particle=\(q\)] -- [fermion] v[dot] -- [fermion] b [particle=\(\ell\)],
+        v -- [anti fermion] f2 [particle=\(\overline \ell\)],
+        v -- [fermion] f3 [particle=\(\overline q\)],
+        };\quad}^2,
+\end{align}
+where the fist term corresponds to the DY process and the second term to the CI process. 
+
+The differential cross-section with respect invariant mass, $m_{\ell\ell}$, for the process $q\bar{q} \rightarrow \ell\ell$ in the presence of such contact interactions is given by
 \begin{eqnarray}
     \frac{d\sigma}{dm_{\ell\ell}} = \frac{d\sigma_\textrm{DY}}{dm_{\ell\ell}} - \eta_{ij}\frac{F_\textrm{I}}{\Lambda^2} + \frac{F_\textrm{C}}{\Lambda^4},
     \label{eq:cross_section_CI}
 \end{eqnarray}
-where the first term accounts for the $q\bar{q} \rightarrow Z/\gamma* \rightarrow \ell\ell$ Drell-Yan (DY) process. The second term corresponds to the interference between the DY and CI processes, and the third term gives the pure CI process. $F_I$ and $F_C$ are functions of differential cross-section with respect to $m_{\ell\ell}$, and do not depend of $\Lambda$~\cite{Eichten:1984eu}. The experimental signature that is searched for in this thesis is a non-resonant enhancement of the expected dilepton $m_{\ell\ell}$ distribution at high mass. 
+where the first term accounts for the $q\bar{q} \rightarrow Z/\gamma* \rightarrow \ell\ell$ (DY) process, the second term corresponds to the interference between the DY and CI processes, and the third term gives the pure CI process. $F_I$ and $F_C$ are functions of differential cross-section with respect to $m_{\ell\ell}$ for the interference term and the pure CI term, respectively, and do not depend of $\Lambda$~\cite{Eichten:1984eu}. The relative impact of the interference and pure CI term are dependent on both $m_{\ell\ell}$ and $\Lambda$. 
 
-The results presented in this thesis focuses on the CI model mentioned above. The results are also provided in a model-independent context~\cref{sec:results:reinterp}, which can be used to reinterpret into other models. These can be used to interpret the results in the context of any arbitrary quark-lepton CI model not included in the above model~\cite{de_Blas_2013}.
+There has been a wide range of searches for CIs in many different experiments. Previous searches for quark-lepton compositeness have been performed at LEP~\cite{Schael:2006wu,Abdallah:2005ph}, HERA~\cite{Wing:2013sv,Chekanov:2003pw}, the Tevatron~\cite{Orejudos:2002ua,Abbott:1998rr}. The most result from CMS experiment in the search for CIs was performed at $\sqrt{s} = $ \SI{13}{\tera\electronvolt} with an integrated luminosity of \SI{36}{\femto\barn^{-1}}~\cite{Sirunyan:2018ipj}. The strongest exclusion limits for $\ell\ell qq$ was set by the ATLAS experiment, where the search was performed at $\sqrt{s} = $ \SI{13}{\tera\electronvolt} with an integrated luminosity of \SI{36.1}{\femto\barn^{-1}}~\cite{EXOT-2016-05}. Lower limits on the CI interaction energy scale $\Lambda$ was set for the combined electron and muon channel at a 95\% confidence level on the left-left model at $\Lambda = \SI{40}{\tera\electronvolt}$ for the constructive interference. A detailed comparison of the previous ATLAS results are given in \cref{chap:results}
+
+% The results presented in this thesis focuses on the CI model mentioned above. The results are also provided in a model-independent context~\cref{sec:results:reinterp}, which can be used to reinterpret into other models. These can be used to interpret the results in the context of any arbitrary quark-lepton CI model not included in the above model~\cite{de_Blas_2013}. 
 
