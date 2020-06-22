@@ -1,7 +1,7 @@
 \chapter{Uncertainties}\label{chap:uncertBkgmodel}
 A central part of the analysis is quantifying the potential bias introduced by the choice of a particular function and quantifying the uncertainty on both the shape and normalisation of the background estimation. The uncertainties related to the background modelling results from three sources: the inherent bias of the function (\cref{sec:uncertBkgmodel:iss}), statistical uncertainty of the fit (\cref{sec:uncertBkgmodel:statu}) and the residual difference between the signal+background and the background-only functions (\cref{sec:uncertBkgmodel:crbu}). The uncertainties are estimated using the background-only function, as it is used for the final background estimate in data. 
 
-The interpretation of the results in the context of CI model uses the MC templates, described in \cref{chap:stats}. Therefore, the uncertainties associated with the simulated samples are also quantified for the SR choices considered in the analysis (\cref{sec:uncertBkgmodel:signalyield}).
+The interpretation of the results in the context of CI models uses the MC templates, described in \cref{chap:stats}. Therefore, the uncertainties associated with the simulated samples are also quantified for the SR choices considered in the analysis (\cref{sec:uncertBkgmodel:signalyield}).
  
 \section{Background estimate uncertainties}
 
@@ -10,11 +10,11 @@ For a given underlying PDF that generates an invariant mass spectrum, the extrap
 
 At high mass the underlying background distribution in data is not known accurately. A \ISSU measurement made on the template from only the nominal PDF would assume the underlying distribution to be known precisely. Therefore, the theoretical uncertainties associated with the nominal PDF choice described in \cref{sec:sysmc:theory} are also considered in the \ISSU measurement. Additionally, due to detector and reconstruction effects on the simulated MC template, the experimental uncertainties, described in \cref{sec:sysmc:exp}, are also considered. 
 
-The \ISSU is measured on the nominal MC background, and its systematic variations. An ensemble of possible simulated shapes are created scaling the nominal simulated background template by a linear combination of all of its systematic uncertainties. Each uncertainty is scaled by a Gaussian factor in the range [-1,1], summed together, and used to scale the simulated background shape to produce a toy distribution. \cref{eq:issutoy} outlines the procedure used to construct each toy background shape. 
+The \ISSU is measured on the nominal MC background, and its systematic variations. An ensemble of possible simulated shapes are created scaling the nominal simulated background template by a linear combination of all of its systematic uncertainties. Each uncertainty is scaled by a Gaussian factor in the range [-1,1], summed together, and used to scale the simulated background shape to produce a toy distribution. The procedure used to construct each toy background shape is given by
 \begin{equation}
     \label{eq:issutoy}
     \begin{aligned}
-        & Toy = \sum_{i} N_{bkg,i} + \sum_{j} \left(\delta_{i,j} * \alpha_{j}\right), \\
+        & \mathrm{Toy} = \sum_{i} N_{bkg,i} + \sum_{j} \left(\delta_{i,j} * \alpha_{j}\right), \\
         & \alpha_j = \mathrm{Gaus}(\sigma=1,\mu=0),
     \end{aligned}
 \end{equation}
