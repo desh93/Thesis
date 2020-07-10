@@ -640,7 +640,7 @@
     \begingroup
     \ifx\@sftitles\@empty\else\sffamily\fi
     {\LARGE{\textbf{Acknowledgements}}}%
-    \refstepcounter{chapter}\addcontentsline{toc}{chapter}{Acknowledgements}%
+    % \refstepcounter{chapter}\addcontentsline{toc}{chapter}{Acknowledgements}%
     % \phantomsection\addcontentsline{toc}{chapter}{Acknowledgements}%
     \endgroup
   \end{center}%

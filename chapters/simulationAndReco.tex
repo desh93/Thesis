@@ -37,7 +37,7 @@ There are multiple \protonproton collisions per bunch crossing at the LHC due to
 \begin{figure}[]
     \centering
     \includegraphics[width=\mediumfigwidth]{images/mu_2015_2018.png}
-    \caption[Distribution of number of interactions per \protonproton bunch crossing in ATLAS for the 2015+2018 data-taking period]{Distribution of number of interactions per \protonproton bunch crossing in ATLAS for the 2015+2018 data-taking period.~\cite{ATLAS:lumiPlots}}
+    \caption[Distribution of number of interactions per \protonproton bunch crossing in ATLAS for the 2015+2018 data-taking period]{Distribution of number of interactions per \protonproton bunch crossing in ATLAS for the 2015+2018 data-taking period~\cite{ATLAS:lumiPlots}.}
     \label{fig:method:ATLAS-pileup}
 \end{figure}
 
@@ -56,7 +56,7 @@ The efficiency of the sliding window algorithm to reconstruct EM-cluster candida
 \begin{figure}[]
     \centering
     \includegraphics[width=\mediumfigwidth]{images/2015_2016_recoeff.png}
-    \caption[Total reconstruction energy for simulated electrons using the sliding window algorithm]{The total reconstruction efficiency for simulated electrons in a single-electron sample as a function of truth level transverse energy, $E_T$, for each step of electron candidate formation ~\cite{slidingwindowreco}.}
+    \caption[Total reconstruction energy for simulated electrons using the sliding window algorithm]{The total reconstruction efficiency for simulated electrons in a single-electron sample as a function of truth level transverse energy, $E_T$, for each step of electron candidate formation~\cite{slidingwindowreco}.}
     \label{fig:method:slidingwindow-reco}
 \end{figure}
 
@@ -70,7 +70,7 @@ where $\abs{E^{\mathrm{EM}}_{\mathrm{cell}}}$ is the absolute cell energy and $\
 \begin{figure}[h]
     \centering
     \includegraphics[width=\mediumfigwidth]{images/topo-cluster.pdf}
-    \caption[Diagram of an example supercluster showing a seed electron cluster and a satellite photon cluster.]{Diagram of an example supercluster showing a seed electron cluster and a satellite photon cluster ~\cite{ATL-PHYS-PUB-2017-022}.}
+    \caption[Diagram of an example supercluster showing a seed electron cluster and a satellite photon cluster.]{Diagram of an example supercluster showing a seed electron cluster and a satellite photon cluster~\cite{ATL-PHYS-PUB-2017-022}.}
     \label{fig:method:superclusterscheme}
 \end{figure}
 \begin{figure}[h]
@@ -84,7 +84,7 @@ The supercluster-based algorithm provides an improved energy resolution compared
 \begin{equation}
     IQE = \frac{Q_3 - Q_1}{1.349},
 \end{equation}
-where $Q_1$ and $Q_3$ are the first and third quartiles of the $E_{calib}/E_{true}$ distribution. The normalisation factor of 1.349 is chosen such that the IQE of a Gaussian distribution equals its standard deviation. \cref{fig:method:iqe} shown the IQE as a function of energy is shown for the two approaches. An improvement in the IQE can be seen for the supercluster-based algorithm, where the difference is larger at lower energies. 
+where $Q_1$ and $Q_3$ are the first and third quartiles of the $E_{calib}/E_{true}$ distribution. The normalisation factor of 1.349 is chosen such that the IQE of a Gaussian distribution equals its standard deviation. \cref{fig:method:iqe} shows the IQE as a function of energy is shown for the two approaches. An improvement in the IQE can be seen for the supercluster-based algorithm, where the difference is larger at lower energies. 
 \begin{figure}[h]
     \centering
     \includegraphics[width=\mediumfigwidth]{images/IQE_reco_1.pdf}
@@ -93,7 +93,7 @@ where $Q_1$ and $Q_3$ are the first and third quartiles of the $E_{calib}/E_{tru
 \end{figure}
 
 \subsubsection{Electron identification}
-Physics processes can \emph{fake} the prompt electron signature that can pass the reconstruction algorithms. Prompt electrons are defined as electrons which originate from the hard scattering vertex and are not the result of hadronic decays. Fake prompt electrons can arise from sources such as, hadronic showers which mimic an electron shower, electrons from photon conversions. Non-prompt electrons can originate from the semileptonic decays of heavy-flavour hadrons.
+Physics processes can \emph{fake} the prompt electron signature that can pass the reconstruction algorithms. Prompt electrons are defined as electrons which originate from the hard scattering vertex and are not the result of hadronic decays. Fake prompt electrons can arise from sources such as, hadronic showers which mimic an electron shower, and electrons from photon conversions. Non-prompt electrons can originate from the semileptonic decays of heavy-flavour hadrons.
 
 Further criteria referred to as \emph{identification} is defined to select a sample of pure prompt electrons. A likelihood-based identification method is employed in the identification of prompt electrons. The method combines signal and background probability density functions of discriminating variables from quantities measured from the detector. These quantities include transition radiation in the TRT and shower shape in the EM calorimeter. An overall probability for an object to be constructed as an electron is calculated using the variables described above. The discriminating variable $d_\mathcal{L}$ is defined as
 \begin{equation}
