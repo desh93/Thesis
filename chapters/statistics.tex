@@ -48,16 +48,16 @@ In the example likelihood given in \cref{eq:poissL}, there are additional parame
 \begin{equation}
     \label{eq:likelihood}
     \begin{aligned}
-        & \mathcal{L}(n;S,\theta) = \frac{\nu^{n} e^{-\nu}}{n!} \times \prod_{j=1}^{N} \frac{1}{\sqrt{2\pi}\sigma_{\tilde{\theta}_j}} e^\frac{-(\tilde{\theta}_j - \theta_j)}{2\sigma_{\theta_j}^2} , \\
+        & \mathcal{L}(n;\nu_S,\theta) = \frac{\nu^{n} e^{-\nu}}{n!} \times \prod_{j=1}^{N} \frac{1}{\sqrt{2\pi}\sigma_{j}} e^\frac{-(\tilde{\theta}_j - \theta_j)}{2\sigma_{j}^2} , \\
     \end{aligned}
 \end{equation}
-where $\theta_j$ is the nuisance parameter corresponding to systematic \emph{j} and the expected number of events is a function of the POI and the nuisance parameters, $\nu = \nu_S + \nu_B(\theta)$.
+where $\theta_j$ is the nuisance parameter corresponding to systematic \emph{j}, $\sigma_j$ are the $1\sigma$ variations and the expected number of events is a function of the POI and the nuisance parameters, $\nu = \nu_S + \nu_B(\theta)$.
 
-When the data are fit using the full likelihood in \cref{eq:likelihood}, both the POI and nuisance parameters are estimated to minimise the likelihood. However, in some scenarios, standard deviation of the nuisance parameter after the fit can be substantially smaller than what entered into the constraint term, indicating an inherent mismodelling of the likelihood. The \emph{post-fit} pulls are used to quantify the degree to which the estimate of the nuisance parameter, $\hat{\theta}$, deviates from the initially estimated value, $\tilde{\theta}$, given the uncertainty after fitting, $\hat{\sigma}_{\hat{\theta}}$. The pull of a nuisance parameter is defined as
+When the data are fit using the full likelihood in \cref{eq:likelihood}, both the POI and nuisance parameters are estimated to minimise the likelihood. However, in some scenarios, standard deviation of the nuisance parameter after the fit can be substantially smaller than what entered into the constraint term, indicating an inherent mismodelling of the likelihood. The \emph{post-fit} pulls are used to quantify the degree to which the estimate of the nuisance parameter, $\hat{\theta}$, deviates from the nominal value, $\tilde{\theta}$, given the uncertainty after fitting, $\hat{\sigma}_{\hat{\theta}}$. The pull of a nuisance parameter is defined as
 \begin{equation}
     \label{eq:nppull}
     \begin{aligned}
-        & \mathrm{pull} = \frac{\hat{\theta} -{\theta}}{\hat{\sigma}_{\hat{\theta}}}.
+        & \mathrm{pull} = \frac{\hat{\theta} -\tilde{\theta}}{\hat{\sigma}_{\hat{\theta}}}.
     \end{aligned}
 \end{equation}
 Deviation from the central value of the nuisance parameter will indicate features of the data not described by the model. The pulls of the nuisance parameters from the fit to data are shown in \cref{chap:results}. 
@@ -66,10 +66,10 @@ The impact of the nuisance parameter on the parameter of interest is defined as
 \begin{equation}
     \label{eq:npinpact}
     \begin{aligned}
-        & \mathrm{Impact} = \Delta \hat{\nu_S} = \hat{\hat{\nu}}_s(\theta \pm \sigma_\theta) - \hat{\nu}_s,
+        & \mathrm{Impact} = \Delta \hat{\nu}_{S} = \hat{\hat{\nu}}_S(\theta \pm \sigma_\theta) - \hat{\nu}_S,
     \end{aligned}
 \end{equation}
-where, $\hat{\hat{\nu}}_s(\theta \pm \sigma_\theta)$, is the fitted value of $\nu_S$ with the nuisance parameter fixed at at its expectation value plus or minus its standard deviation, resulting in the \emph{prefit} impact. The postfit impact given by the nuisance parameter fixed at its observed value plus or minus its standard deviation. 
+where, $\hat{\hat{\nu}}_S(\theta \pm \sigma_\theta)$, is the fitted value of $\nu_S$ with the nuisance parameter fixed at its nominal value ($\tilde{\theta}$) plus or minus its standard deviation, resulting in the \emph{prefit} impact. The postfit impact is given by the nuisance parameter fixed at its estimated value ($\hat{\theta}$) plus or minus its standard deviation. 
 
 
 \section{Hypothesis tests}\label{sec:stats:hypo}
@@ -150,8 +150,7 @@ where $p_{\nu_{B}}$ is the \emph{p}-value derived from the same test statistic u
 \subsubsection{Expected limit}
 The expected limit is an important quantity which indicates the sensitivity of an analysis. The expected limit and corresponding upper and lower bounds are calculated by sampling a distribution of the limits produced from many background-only MC toy experiments and taking the median value of the expected limit distribution, and its 95\% and 68\% quantiles. The median value is taken instead of the mean, as it is invariant to the choice of significance or \emph{p}-value. The distribution of the limit is given by $f(\nu_{S,\mathrm{up}};0,\hat{\hat{\theta}}(\nu_S = 0,obs))$, where the nuisance parameters have a profiled value based on the observed data. The $1\sigma$ and $2\sigma$ bounds indicate the rage of fluctuations that one expects for the limit under the assumption of the background-only model. 
 
-\cref{fig:toyDist} depicts the distribution of limits from toy MC experiments in the constructive and destructive SRs in the electron and muon channel. The results are based on 2000 toy experiments. The 68\% and 95\% quantiles of the distribution corresponding to the one and two sigma error bands, respectively, are indicated on the distributions by the yellow and green bands. Non-Gaussian behaviour observed in the distributions lead to an asymmetry $1\sigma$ and $2\sigma$; this is especially prominent in the muon destructive signal regions and can be seen in the final 
-results in \cref{chap:results}. 
+\cref{fig:toyDist} depicts the distribution of limits from toy MC experiments in the constructive and destructive SRs in the electron and muon channel. The results are based on 2000 toy experiments. The 68\% and 95\% quantiles of the distribution corresponding to the one and two sigma error bands, respectively, are indicated on the distributions by the yellow and green bands. The Non-Gaussian behaviour observed in the distributions leads to an asymmetry in the $1\sigma$ and $2\sigma$ bands. This is due to the distribution of the test statistic becoming discrete when there are low number of events in the signal regions; this is especially prominent in the muon destructive signal regions and can be seen in the final results in \cref{chap:results}. 
 
 \begin{figure}[!htpb]
     \centering
