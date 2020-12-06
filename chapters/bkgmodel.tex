@@ -247,8 +247,15 @@ where $\Lambda$ is the CI energy scale in the injected MC template that is fit, 
 
 A combination of both the expected limit and the linearity is used to pick a final CR and SR configuration. A balance between the expected limit and linearity is required for an optimal CR and SR configuration. The different chiral and interference CI signal models are considered in the optimisation. The chiral models correspond to LL, LR, RL, and RR, and the interference models considered are either constructive or destructive. In the destructive interference cases, if the SR includes a significant contribution from the destructive interference component of the CI signal shape, the integral number of expected events in the SR is reduced. Therefore, the optimisation procedure allows for a gap between the CR and SRs to avoid this effect. Additionally, the inclusion of the destructive component of the signal shape in the CR results in a poor linearity when performing the signal injection tests. 
 
-Each chirality and interference choice of the CI model is tested with an independent CR and SR configuration. It is found that for models with destructive interference a mass gap of \SI{1320}{\giga\electronvolt} is preferred by the optimisation procedure, while for the constructive interference models, the optimal $\mathrm{CR}_{\mathrm{max}}$ coincides with $\mathrm{SR}_{\mathrm{min}}$. Similar performance is shown for the resulting ranges for the chirality options at the level of few tens of \SI{}{\giga\electronvolt}. Therefore, the ranges for the different chiral models are merged, as shown in \cref{tab:massRanges}, to simply the the rest of the analysis. 
+\cref{fig:bkgmodel:expopt} shows an example of an optimisation plot used to pick the end of the control region and start of the signal region. Each chirality and interference choice of the CI model is tested with an independent CR and SR configuration. It is found that for models with destructive interference a mass gap of \SI{1320}{\giga\electronvolt} is preferred by the optimisation procedure, while for the constructive interference models, the optimal $\mathrm{CR}_{\mathrm{max}}$ coincides with $\mathrm{SR}_{\mathrm{min}}$. Similar performance is shown for the resulting ranges for the chirality options at the level of few tens of \SI{}{\giga\electronvolt}. Therefore, the ranges for the different chiral models are merged, as shown in \cref{tab:massRanges}, to simply the the rest of the analysis. 
 % The function given in \cref{eq:fitfunc} is used to measure the background estimate in the SR for these configurations. 
+\begin{figure}[htbh!]
+    \centering
+    \centering
+    \includegraphics[width=0.5\textwidth]{/Users/Deshan/Documents/PhD/thesis/Thesis/figures/analysis/bkgmodel/2dscan-limit-const-LR-ee-2.pdf}
+    \caption{Example optimisation scan of the end of the control region ($\mathrm{CR}_{\mathrm{max}}$) and start of the signal region ($\mathrm{SR}_{\mathrm{min}}$). The Expected limit on the CI interaction energy scale for a contractive interference model is used to optimise the regions. The end point of the signal region is chosen to be \SI{6}{\tera\electronvolt}. }
+    \label{fig:bkgmodel:expopt}
+\end{figure}
 
 \begin{table}[htp]
     \centering
@@ -275,7 +282,7 @@ If a significant difference is observed between the two background estimates, th
 
 Examples of test of compatibility of the signal+background and background only fits is shown in \cref{fig:bkgmodel:fitsbplusb} for the final CR and SR choices, where they have been performed on the background-only MC template. The integrated number of background events in the SR from each fit is shown for the CR and SR configurations. The fits performed on data are shown in \cref{chap:results}. This example depicts a good agreement between the two functions, indicating the background-only function can be used. The uncertainty shown corresponds to the uncertainty on the background estimate from the signal+background fit. The uncertainty on the background-only fit is not included as the main objective is to compare the central value of the background estimate from background-only fit to the signal+background fit. Any difference observed between the two background estimates will be used as an additional uncertainty on the background estimate. Further detail on the estimation of background function uncertainties are given in \cref{chap:uncertBkgmodel}. 
 
-To show an example when there is a significant signal contribution present in the CR, the background estimate resulting from the two functions is compared when a signal has been injected in an invalid CR choice. This is shown in \cref{fig:bkgmodel:fitsbplusbbad}. A CI signal corresponding to $\Lambda = \SI{18}{\tera\electronvolt}$ is injected into the MC background template. The CR in this example was chosen to be between \SI{200}{\giga\electronvolt} and \SI{3500}{\giga\electronvolt} to exaggerate the effects on the background estimate. The background estimate from the background only fit is significantly deflected due to an excess of signal events in the CR.
+To show an example when there is a significant signal contribution present in the CR, the background estimate resulting from the two functions is compared when a signal has been injected in an invalid CR choice. This is shown in \cref{fig:bkgmodel:fitsbplusbbad}. A CI signal corresponding to $\Lambda = \SI{18}{\tera\electronvolt}$ is injected into the MC background template. The CR in this example was chosen to be between \SI{200}{\giga\electronvolt} and \SI{3500}{\giga\electronvolt} to exaggerate the effects on the background estimate. The background estimate from the background only fit is significantly deflected due to an excess of signal events in the CR. \cref{fig:bkgmodel:fitsbplusbbaddist} shows the fit distributions of the background-only and signal+background fit when a signal has been injected. When a signal is injected, the background-only fit attempts to accommodate the injected signal, resulting in a incorrect background estimate. 
 
 \begin{figure}[h!]
     \centering
@@ -315,6 +322,22 @@ To show an example when there is a significant signal contribution present in th
         \includegraphics[width=\textwidth]{/Users/Deshan/Documents/PhD/thesis/Thesis/figures/analysis/bkgmodel/nbkg-LL-const-mm-bad.pdf}
         \label{fig:bkgmodel:fitsbplusb2bad}
     \end{subfigure}
-    \caption[Background estimation comparisons of the signal+background fit and background only fit in an invalid CR choice.]{Number of background events in the SR from the background-only fit and the signal+background (S+B) fit on MC with an injected CI signal with $\Lambda = \SI{18}{\tera\electronvolt}$, for the electron channel (left) and muon channel (right). The uncertainty on the background estimate is shown for background-only fit. The number of background events from each fit is shown on the x-axis.}
+    \caption[Background estimation comparisons of the signal+background fit and background only fit in an invalid CR choice.]{Number of background events in the SR from the background-only fit and the signal+background (S+B) fit on MC with an injected CI signal with $\Lambda = \SI{18}{\tera\electronvolt}$, for the electron channel (left) and muon channel (right). The injected number of signals corresponds to 12 and 10 events in the electron and muon channels, respectively. The uncertainty on the background estimate is shown for background-only fit. The number of background events from each fit is shown on the x-axis.}
     \label{fig:bkgmodel:fitsbplusbbad}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/Deshan/Documents/PhD/thesis/Thesis/figures/analysis/bkgmodel/nominalFit-sb-const-LL-18-sbFalse-ee-bonly.png}
+        \label{fig:bkgmodel:fitsbplusb1baddist}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/Deshan/Documents/PhD/thesis/Thesis/figures/analysis/bkgmodel/nominalFit-sb-const-LL-18-sbTrue-ee-twoo.png}
+        \label{fig:bkgmodel:fitsbplusb2baddist}
+    \end{subfigure}
+    \caption[Background estimation distribution comparisons of the signal+background fit and background only fit in an invalid CR choice.]{Fit distributions from the the background-only fit (left) and the signal+background (right) fit on MC with an injected CI signal with $\Lambda = \SI{18}{\tera\electronvolt}$ (S+B template) in the electron channel. The S+B template is the MC background template with the injected signal. S+B fit is the signal+background fit function.}
+    \label{fig:bkgmodel:fitsbplusbbaddist}
 \end{figure}

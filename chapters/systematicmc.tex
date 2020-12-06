@@ -38,6 +38,13 @@ The muon resolution corrections are calculated by fitting several correction coe
 
 The systematic variations for the resolution uncertainty in the electron and muon channel is shown in \cref{fig:uncert:eeExp,fig:uncert:mmExp}. The muon resolution is <1\% at low invariant masses up to \SI{2000}{\giga\electronvolt} with a sharp increase up to 28\% at \SI{6000}{\giga\electronvolt}. Whereas, the electron resolution uncertainty follows a similar shape, but with a much smaller impact, ranging from <0.1\% at low invariant mass to 0.75\% at \SI{6000}{\giga\electronvolt}. The uncertainty in both channel will result in a sharp change in the shape of the invariant-mass distribution. However, the effect is significantly larger in the muon channel. 
 
+\cref{fig:uncert:mass_resolution_eemm} depicts the dielectron and dimuon mass resolution as a function of the generated mass of the dilepton pair. In contrast to the dielectron channel, it can be seen in the dimuon channel that the mass resolution significantly deteriorates at higher invariant-mass. The impact of the muon resolution uncertainty on the data-driven extrapolation method, discussed in \cref{chap:uncertBkgmodel}, was studied in detail. In particular, the impact of increasing the muon resolution uncertainty on the data-driven uncertainties was studied. It was concluded that there is negligible impact on the data-driven uncertainties when the muon resolution uncertainty is increased by 90\% of it's initial value. This indicates that the functional form used is robust enough to take into account significant variations in the measurement of the muon resolution. 
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/exp/figaux_15_massResolution.pdf}
+    \caption[Dielectron and dimuon mass resolution as a function of the generated mass of the dilepton pair ($m_{\ell\ell}^{true}$)]{Dielectron and dimuon mass resolution as a function of the generated mass of the dilepton pair ($m_{\ell\ell}^{true}$)~\cite{Aad:2019fac}.}
+    \label{fig:uncert:mass_resolution_eemm}
+\end{figure}
 
 \subsubsection{Energy scale}
 Electron and muon energy scale corrections are applied only on data. The effects of varying the respective uncertainties associated with the energy scale corrections up and down is calculated to determine the systematic uncertainty. The resulting distributions are used to determine the systematic uncertainty and is calculated on MC due to the higher statistics available~\cite{Aad:2019tso}. 
@@ -49,16 +56,19 @@ Electron and muon energy scale corrections are applied only on data. The effects
     \begin{subfigure}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/exp/mm/m_uu_pstOR_MUON_EFF_ISO_STAT__1up.pdf}
+        \caption{}
         \label{fig:uncert:mmIso}
     \end{subfigure}
     \begin{subfigure}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/exp/mm/m_uu_pstOR_MUON_MS__1up.pdf}
+        \caption{}
         \label{fig:uncert:mmMC}
     \end{subfigure}
     \begin{subfigure}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/exp/mm/m_uu_pstOR_MUON_ID__1up.pdf}
+        \caption{}
         \label{fig:uncert:mmID}
     \end{subfigure}
     % \begin{subfigure}[b]{0.42\textwidth}
@@ -69,14 +79,16 @@ Electron and muon energy scale corrections are applied only on data. The effects
     \begin{subfigure}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/exp/mm/m_uu_pstOR_MUON_EFF_RECO_SYS__1up.pdf}
+        \caption{}
         \label{fig:uncert:mmReco}
     \end{subfigure}
     \begin{subfigure}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/exp/mm/m_uu_pstOR_MUON_SCALE__1up.pdf}
+        \caption{}
         \label{fig:uncert:mmScale}
     \end{subfigure}
-    \caption[Muon systematic uncertainties due to experimental sources]{Muon systematic uncertainties due to experimental sources. Shown from left to right and top to bottom, the uncertainty related to isolation, momentum resolution in the MS and ID, identification, Trigger, reconstruction, and muon energy scale.}
+    \caption[Muon systematic uncertainties due to experimental sources]{Muon systematic uncertainties due to experimental sources. The uncertainty related to isolation (a), momentum resolution in the muon spectrometer (b) and inner detector (c), muon reconstruction (d), and muon energy scale (e) are shown.}
     \label{fig:uncert:mmExp}
 \end{figure}
 
@@ -85,26 +97,31 @@ Electron and muon energy scale corrections are applied only on data. The effects
     \begin{subfigure}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/exp/ee/m_ee_pstOR_EG_RESOLUTION_ALL__1up.pdf}
+        \caption{}
         \label{fig:uncert:eeRes}
     \end{subfigure}
     \begin{subfigure}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/exp/ee/m_ee_pstOR_EG_SCALE_ALL__1up.pdf}
+        \caption{}
         \label{fig:uncert:eeScale}
     \end{subfigure}
     \begin{subfigure}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/exp/ee/m_ee_pstOR_EL_EFF_ID_TOTAL_1NPCOR_PLUS_UNCOR__1up.pdf}
+        \caption{}
         \label{fig:uncert:eeID}
     \end{subfigure}
     \begin{subfigure}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/exp/ee/m_ee_pstOR_EL_EFF_Reco_TOTAL_1NPCOR_PLUS_UNCOR__1up.pdf}
+        \caption{}
         \label{fig:uncert:eeReco}
     \end{subfigure}
     \begin{subfigure}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/exp/ee/m_ee_pstOR_EL_EFF_Iso_TOTAL_1NPCOR_PLUS_UNCOR__1up.pdf}
+        \caption{}
         \label{fig:uncert:eeIso}
     \end{subfigure}
     % \begin{subfigure}[b]{0.42\textwidth}
@@ -112,7 +129,7 @@ Electron and muon energy scale corrections are applied only on data. The effects
     %     \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/exp/ee/m_ee_pstOR_EL_EFF_Trigger_TOTAL_1NPCOR_PLUS_UNCOR__1up.pdf}
     %     \label{fig:uncert:eeTrig}
     % \end{subfigure}
-    \caption[Electron systematic uncertainties due to experimental sources]{Electron systematic uncertainties due to experimental sources. Shown from left to right and top to bottom, the uncertainty related to electron energy resolution, energy scale, identification, reconstruction, isolation and Trigger.}
+    \caption[Electron systematic uncertainties due to experimental sources]{Electron systematic uncertainties due to experimental sources. The uncertainty related to electron energy resolution (a), energy scale (b), identification (c), reconstruction (d) and isolation (e) are shown.}
     \label{fig:uncert:eeExp}
 \end{figure}
 
@@ -167,7 +184,7 @@ where n is the number of PDF eigenvectors, $\sigma_i^{+/-}$ is the cross-section
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/theory/mm/backgroundTemplate_KF_PDF_EV7.pdf}
         \label{fig:uncert:mmpdfvar7}
     \end{subfigure}
-    \caption{Systematic uncertainties due to theoretical sources in the muon channel. Shown from left to right and top to bottom, the uncertainties corresponding to the seven eigenvector variations of the CT10NNLO PDF.}
+    \caption{Systematic uncertainties due to theoretical sources in the muon channel. The uncertainties corresponding to the seven eigenvector variations of the CT10NNLO PDF are shown in the figure.}
     \label{fig:ucnert:mmpdfvar}
 \end{figure}
 
@@ -208,7 +225,7 @@ where n is the number of PDF eigenvectors, $\sigma_i^{+/-}$ is the cross-section
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/theory/ee/backgroundTemplate_KF_PDF_EV7.pdf}
         \label{fig:uncert:eepdfvar7}
     \end{subfigure}
-    \caption{Systematic uncertainties due to theoretical sources in the electron channel. Shown from left to right and top to bottom, the uncertainties corresponding to the seven eigenvector variations of the CT10NNLO PDF.}
+    \caption{Systematic uncertainties due to theoretical sources in the electron channel. The uncertainties corresponding to the seven eigenvector variations of the CT10NNLO PDF are shown in the figure.}
     \label{fig:ucnert:eepdfvar}
 \end{figure}
 
@@ -220,24 +237,28 @@ The uncertainty related to the choice of PDF is determined by comparing the cent
     \begin{subfigure}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/theory/mm/backgroundTemplate_KF_CHOICE_HERAPDF20.pdf}
+        \caption{}
         \label{fig:uncert:mmchoiceHERA}
     \end{subfigure}
     \begin{subfigure}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/theory/mm/backgroundTemplate_KF_CHOICE_NNPDF30.pdf}
+        \caption{}
         \label{fig:uncert:mmchoiceNNPDF}
     \end{subfigure}
     \begin{subfigure}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/theory/ee/backgroundTemplate_KF_CHOICE_HERAPDF20.pdf}
+        \caption{}
         \label{fig:uncert:eechoiceHERA}
     \end{subfigure}
     \begin{subfigure}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/theory/ee/backgroundTemplate_KF_CHOICE_NNPDF30.pdf}
+        \caption{}
         \label{fig:uncert:eechoiceNNPDF}
     \end{subfigure}
-    \caption{Systematic uncertainties due to the choice of the nominal with respect to HERAPDF20 (left) and NNPDF30 (right) in the muon (top) and electron (right) channels.}
+    \caption{Systematic uncertainties due to the choice of the nominal with respect to HERAPDF20 (a)/(b) and NNPDF30 (c)/(d) in the muon and electron channels, respectively.}
     \label{fig:uncert:pdfchoice}
 \end{figure}
 
@@ -249,14 +270,16 @@ The uncertainty on the PDF scales are calculated by varying the factorisation an
     \begin{subfigure}[h]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/theory/mm/backgroundTemplate_KF_SCALE_Z__1up.pdf}
+        \caption{}
         \label{fig:uncert:mmscaleZ}
     \end{subfigure}
     \begin{subfigure}[h]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/theory/ee/backgroundTemplate_KF_SCALE_Z__1up.pdf}
+        \caption{}
         \label{fig:uncert:eescaleZ}
     \end{subfigure}
-    \caption{Systematic uncertainties due to factorisation and renormalisation scales of the CT10NNLO PDF in the muon (left) and electron (right) channels.}
+    \caption{Systematic uncertainties due to factorisation and renormalisation scales of the CT10NNLO PDF in the muon (a) and electron (b) channels.}
     \label{fig:uncert:scales}
 \end{figure}
 
@@ -269,11 +292,13 @@ The combination of EW and QCD corrections is not fully known. Therefore, the EW 
     \centering
     \begin{subfigure}[h]{0.42\textwidth}
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/theory/mm/backgroundTemplate_KF_ALPHAS__1up.pdf}
+        \caption{}
         \label{fig:uncert:mmalpha}
     \end{subfigure}
     \begin{subfigure}[h]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/theory/mm/backgroundTemplate_KF_PDF_EW__1up.pdf}
+        \caption{}
         \label{fig:uncert:mmEW}
     \end{subfigure}
     % \begin{subfigure}[h]{0.42\textwidth}
@@ -283,11 +308,13 @@ The combination of EW and QCD corrections is not fully known. Therefore, the EW 
     % \end{subfigure}
     \begin{subfigure}[h]{0.42\textwidth}
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/theory/ee/backgroundTemplate_KF_ALPHAS__1up.pdf}
+        \caption{}
         \label{fig:uncert:eealpha}
     \end{subfigure}
     \begin{subfigure}[h]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/theory/ee/backgroundTemplate_KF_PDF_EW__1up.pdf}
+        \caption{}
         \label{fig:uncert:eeEW}
     \end{subfigure}
     % \begin{subfigure}[h]{0.42\textwidth}
@@ -295,7 +322,7 @@ The combination of EW and QCD corrections is not fully known. Therefore, the EW 
     %     \includegraphics[width=\textwidth]{figures/analysis/datamc/Uncertainties/theory/ee/backgroundTemplate_KF_PI__1up.pdf}
     %     \label{fig:uncert:eePI}
     % \end{subfigure}
-    \caption{Systematic uncertainties due to corrections applied to the CT10NNLO PDF. Shown from left to right and top to bottom, the uncertainty related to the strong coupling constant ($\alpha_s$) and EW corrections in the electron and muon channels.}
+    \caption{Systematic uncertainties due to corrections applied to the CT10NNLO PDF. The uncertainty related to the strong coupling constant ($\alpha_s$) (a)/(b) and EW (c)/(d) corrections in the electron and muon channels, respectively.}
     \label{fig:uncert:theoryConstants}
 \end{figure}
 

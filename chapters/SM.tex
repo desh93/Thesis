@@ -8,7 +8,7 @@
 
 The Standard Model (SM) of particle physics is a quantum field theory (QFT) with multiple interacting fields and symmetries. It was developed during the second half of the $20^{\mathrm{th}}$ century. There has been excellent agreement between the predictions of the SM and experimental data from particle physics experiments. An overview of the standard model is presented in \cref{sec:SM:intro}. The SM Lagrangian is described in \cref{sec:SM:lagrangian}, outlining each of its components.
 
-Natural units are used throughout this thesis, where $\hbar=h/2\pi=c=1$ is used. Therefore, masses and momenta are quoted in unites of energy, electron volts (\SI{}{\electronvolt}). 
+% Natural units are used throughout this thesis, where $\hbar=h/2\pi=c=1$ is used. Therefore, masses and momenta are quoted in unites of energy, electron volts (\SI{}{\electronvolt}). 
 % An Examples is the predicted magnetic dipole moment of an electron agrees with the measured value to a very high precision. Further verifications of the SM include the discovery of the Top quark by CDF and D$\emptyset$ experiments at the Tevatron \protonproton collider~\cite{Abe1995,Abachi1995}. The tau neutrino~\cite{Kodama_2001} in 2009. The most recent validation of the SM was via the observation of the Higgs Boson by the ATLAS and CMS experiments at the LHC in 2012~\cite{Chatrchyan2012,Aad_2012}. This chapter will give an introduction to the Standard Model of particle physics and its interactions. The strong, electroweak and Higgs interactions are also discussed. 
 \section{Introduction}
 \subsubsection{Fundamental mathematical concepts}
@@ -47,7 +47,7 @@ Therefore, it can be said that the Lagrangian is invariant under global one-dime
 where $A_\mu(x)$ is a new field that transforms as $A_\mu \rightarrow A_\mu - \frac{1}{q}\partial_\mu\alpha(x)$ and $q$ is the coupling strength between the field $\psi$ and $A_\mu$. Therefore, the Lagrangian is now invariant under local $\mathrm{U(1)}$ transformation. The introduced field, $A_\mu$, is known as a \emph{gauge field}, and the Lagrangian under these modifications is known as a \emph{gauge theory}. The number of gauge fields required to restore a given local symmetry is related to the number of generators in the symmetry group, for example, $\mathrm{U(1)}$ is a symmetry group with one generator, which results in the addition of a single gauge field. 
 
 \subsubsection{Overview of Standard Model}\label{sec:SM:intro}
-The SM is a gauge theory that describes the elementary particle and their fundamental interactions (excluding gravity). Interactions of the SM are considered in terms of fields, $\psi$, of half-integer spin fermions and integer spin gauge bosons, $\phi$. The fermions consist of 12 particles (with their corresponding anti-particles) in total classified into quarks and leptons. The gauge bosons mediate the fundamental forces between the fermions. The SM describes three fundamental forces: the electromagnetic, the weak, and the strong interaction. The different properties (mass, charge and spin) of the SM particles are summarised in \cref{fig:sm_diagram}. 
+The SM is a gauge theory that describes elementary particles and their fundamental interactions (excluding gravity). Interactions of the SM are considered in terms of fields, $\psi$, of half-integer spin fermions and integer spin gauge bosons, $\phi$. The fermions consist of 12 particles (with their corresponding anti-particles) in total classified into quarks and leptons. The gauge bosons mediate the fundamental forces between the fermions. The SM describes three fundamental forces: the electromagnetic, the weak, and the strong interaction. The different properties (mass, charge and spin) of the SM particles are summarised in \cref{fig:sm_diagram}. 
 
 The full gauge symmetry group of the SM is given by $\mathrm{SU(3)}_\mathrm{C} \otimes \mathrm{SU(2)}_\mathrm{L} \otimes \mathrm{U(1)}_\mathrm{Y}$, where $\mathrm{SU(n)}$ is a special unitary group with $n$ dimension~\cite{stephanhaywood}. The indices C, L, Y represent the \emph{colour} (strong interaction), \emph{weak isospin} and \emph{weak hypercharge} (both electroweak interactions), respectively. The electroweak theory unifies the electromagnetic and weak interactions and is based on the conservation of electric charge, Q, which is convolved with the weak isospin and hypercharge (described in \cref{sec:SM:lagrangian}). The description of the strong interaction is based on the theory of Quantum Chromodynamics (QCD)~\cite{Zweig:1964jf}. The conserved quantity in QCD is the colour charge (C), and it is represented by three possible colours: for example these could be red, green, and blue. 
 
@@ -268,4 +268,75 @@ Finally, after electroweak symmetry breaking, and the Higgs field acquiring the 
      \end{aligned}
 \end{equation}
 In 2012, the SM Higgs boson was discovered with $m_h \sim \SI{125.09}{\giga\electronvolt}$~\cite{Aad_2012,Chatrchyan2012} by the ATLAS and CMS collaborations at CERN. 
+
+\section{Phenomenology of Proton-Proton collisions}
+The hadron-hadron scattering processes which occur at the LHC and other collider experiments can be classified as either \textit{hard} or \textit{soft}. When protons collide, their constituents may interact directly and exchange a substantial fraction of their protons momentum, known as hard-scattering. Processes such as \emph{W} and \emph{Z} production occur at high energy scales, therefore perturbative QCD can provide their cross sections with good precision.
+
+In this section, the partonic structure of the proton is outlined, and the production of events that are of interest to the physics analysis in this thesis is also discussed. 
+
+\subsection{The structure of the proton}
+The quantum number of hadrons are given given according to the quark model, by either the three or two valence quarks for baryons or mesons, respectively. For protons these are two \emph{u}-quarks and one \emph{d}-quark. The valence quarks are bound by the exchange of gluons, where several processes can occur. For example, a gluon can split into a \emph{q$\bar{q}$}-pair. These dynamically changing quarks are called sea quarks, since they form a sea of \emph{q$\bar{q}$}-pairs. Additionally, the valence quarks or gluons themselves can radiate a gluon. All objects inside the protons, gluons, valence- and sea-quarks are referred to as partons. 
+
+During inelastic proton-proton collisions, only the partons inside the protons interact. Therefore, the total center-of-mass energy of the colliding proton is not available during the collision. Each parton will carry a fraction of their respective proton's total energy. Within the context of proton-proton collisions, the probability of a given parton within a proton to interact with another parton of a different proton is given by the parton distribution function (PDF). The PDFs are obtained through deep inelastic scattering experiments, and depend on the momentum transfer of the collision, $Q^2$, and the fraction of the protons momentum carried by each parton involved in the collision, \emph{x}. \cref{fig:pdg} shows the resulting PDF shapes as a function of x for each parton at $Q^2 = 10~\SI{}{\giga\electronvolt}^2$ and $Q^2 = 10^4~\SI{}{\giga\electronvolt}^2$. 
+\begin{figure}[!htpb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{/Users/Deshan/Documents/PhD/thesis/Thesis/figures/theory/sm/pdg.png}
+    \caption{Parton distribution functions of proton constituents as a function of the momentum fraction x of the partons relative to the proton momentum, for momentum transfers $Q^2 = 10~\SI{}{\giga\electronvolt}^2$ and $Q^2 = 10^4~\SI{}{\giga\electronvolt}^2$~\cite{Ball:2014uwa}.}
+    \label{fig:pdg}
+\end{figure}
+
+\subsection{Dilepton production}
+The analysis described in this thesis measures the dilepton ($e^+e^-$ and $\mu^+\mu^-$) invariant-mass spectrum to search for a signal. The dominant hard-scattering processes that produce events with dilepton pairs, that are considered in the analysis, are described in this section. 
+
+The Drell-Yan process~\cite{Drell:1970yt} is the most significant lepton pair production mechanism in hadronic collisions. The process involves the production of a lepton pair $\ell^+\ell^-$ at a hadron collider by quark-antiquark annihilation. In the basic Drell-Yan process, the $q\bar{q}$-pair annihilates to a virtual photon $q\bar{q} \rightarrow \gamma^* \rightarrow \ell^+\ell^-$. The cross-section for this process at leading order is easily obtained from the fundamental QED $e^+e^- \rightarrow \mu^+\mu^-$ cross-section, where the appropriate colour and charge factors are added~\cite{Campbell:2006wx},
+\begin{eqnarray}
+    \hat{\sigma}(q\bar{q} \rightarrow \gamma^* \rightarrow \ell^+\ell^-) = \frac{4\pi\alpha^2}{3\hat{s}} \frac{1}{N_{C}} Q^{2}_{q},
+    \label{eq:cross_section_dy}
+\end{eqnarray}
+where $\hat{s}$ is the center of mass energy of the incoming partons, $Q_q$ is the charge of the quarks and $1/N_C = 1/3$ is a colour factor, where only three colour combinations are possible since the intermediate state has to be colourless. If the collision energy is below the \emph{Z} mass, the intermediate state is an off-shell photon. The partonic center of mass energy is equal to the mass of the virtual photon and the invariant mass of the dilepton pair, and is given by 
+\begin{eqnarray}
+    \sqrt{\hat{s}} = m_{\gamma^*} = m_{\ell\ell} = \sqrt{(p_{\ell^+} + p_{\ell^-})^2}, 
+    \label{eq:partonE}
+\end{eqnarray}
+where $p_{\ell^{\pm}}$ are the momentum four vectors of the leptons. Comparing equation \eqref{eq:cross_section_dy} and \eqref{eq:partonE}, one can see that $\hat{\sigma} \propto 1/m_{\ell\ell}^{2}$. If the collision energy is equal to the \emph{Z} mass, the process can take place via the exchange of a \emph{Z} boson, leading to a Breit-Wigner resonance in the spectrum of the invariant-mass near the mass of the \emph{Z} boson. The exchange via a virtual photon and a \emph{Z} boson interfere. The Feynman diagram for the Drell-Yan process is given by
+\begin{align}
+    \quad\feynmandiagram [inline=(a),horizontal=a to b] {
+        i1 [particle=\(q\)]-- [fermion] a -- [fermion] i2 [particle=\(\overline q\)],
+        a  -- [boson, edge label'=\({\gamma^*/Z}\)] b,
+        f1 [particle=\(\ell\)] -- [fermion] b -- [fermion] f2 [particle=\(\overline \ell\)],
+      };.
+\end{align}
+
+Diboson production is the second largest source of dilepton events. The leading-order production of these events is through the $q\bar{q}$ initial state. The Feynman diagrams for diboson production is given by
+\begin{align}
+    \feynmandiagram [inline=(a), vertical'=a to b] { i1 [particle=\(Z\)] -- [boson] a -- [fermion] f1 [particle=\(\bar{q}\)], a -- [anti fermion] b, i2 [particle=\(q\)] -- [fermion] b -- [boson] f2 [particle=\(Z\)]};, \quad
+    \feynmandiagram [inline=(a),horizontal=a to b] {
+        i1 [particle=\(q\)]-- [fermion] a -- [fermion] i2 [particle=\(\overline q\)],
+        a  -- [boson, edge label'=\({W}\)] b,
+        f1 [particle=\(W\)] -- [fermion] b -- [fermion] f2 [particle=\(Z\)],
+      };, \quad 
+      \feynmandiagram [inline=(a),horizontal=a to b] {
+        i1 [particle=\(q\)]-- [fermion] a -- [fermion] i2 [particle=\(\overline q\)],
+        a  -- [boson, edge label'=\({Z}\)] b,
+        f1 [particle=\(W^+\)] -- [fermion] b -- [fermion] f2 [particle=\(W^-\)],
+      };, 
+\end{align}
+where the vector bosons will decay into dilepton pairs in the case of the \emph{Z} production and a lepton and neutrino pair in the $W^\pm$ production. 
+
+The third largest contribution arises from the production of pairs of top quarks ($t\bar{t}$). The Feynman diagrams for the leading order production of $t\bar{t}$-paris is given by
+\begin{align}
+    \feynmandiagram [inline=(a), vertical'=a to b] { i1 [particle=\(\bar{t}\)] -- [fermion] a -- [gluon] f1 [particle=\(g\)], a -- [fermion] b, i2 [particle=\(g\)] -- [gluon] b -- [fermion] f2 [particle=\(t\)]};, \quad
+    \feynmandiagram [inline=(a),horizontal=a to b] {
+        i1 [particle=\(g\)]-- [gluon] a -- [gluon] i2 [particle=\(g\)],
+        a  -- [gluon, edge label'=\(g\)] b,
+        f1 [particle=\(t\)] -- [fermion] b -- [anti fermion] f2 [particle=\(\bar{t}\)],
+      };, \quad 
+      \feynmandiagram [inline=(a),horizontal=a to b] {
+        i1 [particle=\(q\)]-- [fermion] a -- [fermion] i2 [particle=\(\overline q\)],
+        a  -- [gluon, edge label'=\(g\)] b,
+        f1 [particle=\(t\)] -- [fermion] b -- [anti fermion] f2 [particle=\(\bar{t}\)],
+      };,
+\end{align}
+where the top quark will rapidly decay to a \emph{W} and a lighter quark final state and result in the production of dilepton pairs. 
+
 

@@ -12,7 +12,7 @@ Several different simulation groups specialise in matrix element simulations and
 
 The simulation of the interactions of the particles produced in collisions is handled by the \textsc{Geant4} simulation software~\cite{Geant1,Geant2,Geant3}, which provides a detailed computer model of the ATLAS detector materials, geometry and also includes the wiring in the detector. The output of the detector simulation is treated the same as measurements of real data events made by the detector to preserve the compatibility between the simulated and real reconstructed data. 
 
-Full simulation of interactions with the detector can be computationally intensive and results in a significant use of resources for the experiment. The analysis presented in this thesis in~\cref{chap:intro} requires multiple samples of large numbers of events to be produced to be sensitive to new physics phenomena. The analysis described in this thesis introduces an alternative method that does not rely on the production of large simulated datasets which require full detector simulation, drastically reducing the strain on available resources. Simulation of objects at generator level before detector simulation is referred to as \emph{truth}-level, whereas objects produced after the detector simulation is referred to as \emph{reconstructed (reco)}-level.
+Full simulation of interactions with the detector can be computationally intensive and results in a significant use of resources for the experiment. The analysis presented in this thesis requires multiple samples of large numbers of events to be produced to be sensitive to new physics phenomena. The analysis described in this thesis introduces an alternative method that does not rely on the production of large simulated datasets which require full detector simulation, drastically reducing the strain on available resources. Simulation of objects at generator level before detector simulation is referred to as \emph{truth}-level, whereas objects produced after the detector simulation is referred to as \emph{reconstructed (reco)}-level.
 
 \section{Reconstruction of physics objects}\label{sec:reconstruction}
 The reconstruction, identification and isolation of the types of physics objects used in the thesis are described in this section. 
@@ -66,7 +66,16 @@ From 2017 a new clustering algorithm has been adopted based on topological clust
     \zeta^{\mathrm{EM}}_{\mathrm{cell}} = \abs{\frac{E^{\mathrm{EM}}_{\mathrm{cell}}}{\sigma^{\mathrm{EM}}_{\mathrm{cell,noise}}}},
 \end{equation}
 
-where $\abs{E^{\mathrm{EM}}_{\mathrm{cell}}}$ is the absolute cell energy and $\sigma^{\mathrm{EM}}_{\mathrm{cell,noise}}$ is the expected cell noise. The clustering algorithm initially forms a \emph{proto-cluster} using a set of noise thresholds in which the first cell is required to have $\abs{E^{\mathrm{EM}}_{\mathrm{cell}}} \geq 4$. Then all immediate neighbouring cells with $\abs{E^{\mathrm{EM}}_{\mathrm{cell}}} \geq 2$ around the proto-cluster are added. Finally, cells with $\abs{E^{\mathrm{EM}}_{\mathrm{cell}}} \geq 0$ adjacent to the cells that were previously included are also added to the cluster. This formalism is known as the "4-2-0" topo-cluster reconstruction. A supercluster is built from a topo-cluster seed after satellite candidates, possibly emerging from bremsstrahlung radiation around a seed candidate, have been resolved. \cref{fig:method:screco} shows the efficiency for the different components of the supercluster-based reconstruction. The same track fitting method used in the sliding window algorithm is used to refit the reconstructed tracks.
+where $\abs{E^{\mathrm{EM}}_{\mathrm{cell}}}$ is the absolute cell energy and $\sigma^{\mathrm{EM}}_{\mathrm{cell,noise}}$ is the expected cell noise. The steps of the clustering algorithm are: 
+\begin{enumerate}
+    \item A \emph{proto-cluster} is formed from calorimeter cells with $\zeta^{\mathrm{EM}}_{\mathrm{cell}} \geq 4$. 
+    \item All immediate neighbouring cells with $\zeta^{\mathrm{EM}}_{\mathrm{cell}} \geq 2$ around the proto-cluster are added.
+    \item Finally, cells with $\zeta^{\mathrm{EM}}_{\mathrm{cell}} \geq 0$ adjacent to the cells that were previously included are also added to the cluster.
+\end{enumerate}
+
+This formalism is known as the "4-2-0" topo-cluster reconstruction. A supercluster is built from a topo-cluster seed after satellite candidates, possibly emerging from bremsstrahlung radiation around a seed candidate, have been resolved. A cluster is accepted as a satellite if it falls within a window of $\Delta\eta \times \Delta\phi = 0.075 \times 0.125$ around the seed cluster barycentre. Once a satellite cluster has been identified it is vetoed from future usage. 
+
+\cref{fig:method:screco} shows the efficiency for the different components of the supercluster-based reconstruction. The same track fitting method used in the sliding window algorithm is used to refit the reconstructed tracks.
 \begin{figure}[h]
     \centering
     \includegraphics[width=\mediumfigwidth]{images/topo-cluster.pdf}
@@ -126,10 +135,12 @@ Three identification working points are defined for electron identification: \em
     \label{fig:method:reco:ideff}
 \end{figure}
 
-\subsubsection{Electon isolation}
+\subsubsection{Electron isolation}
 To further improve the purity of the prompt electron sample, and reject the background from hadronic decays, isolation requirements are applied based on the transverse energy around the electron candidate. Two types of isolation criteria are used: calorimeter and track-based isolation~\cite{Aad:2019tso}.
 
-For the raw calorimeter isolation ($E_{T,\mathrm{raw}}^{\mathrm{isol}}$), the sum of the transverse energy of positive energy topo-clusters whose barycenter falls within a cone around the electron cluster is used. The raw EM particle energy ($E_{T,\mathrm{core}}$) is also contained within the cone and is required to be subtracted. This subtraction is done by removing the energy of EM calorimeter cells contained in a $\eta \times \phi = 5 \times 7$ around the EM particle cluster. Leakage corrections as a function of $\eta$ and $\phi$ are applied since the subtraction does not subtract all of the EM particle energy. A correction for the pileup and underlying-event contributions to the isolation cone is also estimated~\cite{Cacciari:2007fd}. The corrected calorimeter isolation variable is computed as
+For the raw calorimeter isolation ($E_{T,\mathrm{raw}}^{\mathrm{isol}}$), the sum of the transverse energy of positive energy topo-clusters whose barycenter falls within a cone around the electron cluster is used. The raw EM particle energy ($E_{T,\mathrm{core}}$) is also contained within the cone and is required to be subtracted. This subtraction is done by removing the energy of EM calorimeter cells contained in a $\eta \times \phi = 5 \times 7$ around the EM particle cluster. Leakage corrections as a function of $\eta$ and $\phi$ are applied since the subtraction does not subtract all of the EM particle energy. A correction for the pileup and underlying-event contributions to the isolation cone is also estimated~\cite{Cacciari:2007fd}. Many factors are taken into account when calculating the pileup correction. These include: in-time and out-of-time pileup, described in \cref{sec:reconstruction:tracks}, and collisions between the proton bunch and residual gas inside the beam-pipe. Additionally, detector conditions will need to be taken into account, where the calculation will be effected by noise from different components. 
+
+The corrected calorimeter isolation variable is computed as
 \begin{equation}
     E_{T}^{\mathrm{coneXX}} = E_{T,raw}^{\mathrm{isolXX}} - E_{T,\mathrm{core}} - E_{T,\mathrm{leakage}}(E_T,\eta,\Delta R) - E_{{T,\textrm{pile-up}}}(\eta,\Delta R),
 \end{equation}

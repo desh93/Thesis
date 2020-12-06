@@ -8,7 +8,7 @@ The analysis presented in this thesis is performed on \emph{\protonproton} colli
 \begin{table}[h]
     \centering
     \begin{tabular}{l|c}
-        Year & luminosity [\SI{}{\femto\barn^{-1}}] \\
+        Year & luminosity \SI{}{\femto\barn^{-1}} \\
         \hline
         2015 & 3.2 \\
         2016 & 33.0 \\
@@ -223,7 +223,6 @@ Furthermore, the morphed signal PDFs can be used in the statistical analysis to 
 \section{Estimation of fake background}\label{sec:datamc:fakes}
 Processes involving jets or electron and a jet can be reconstructed as electrons in the algorithms, described in \cref{sec:reconstruction:electrons}, and pass the analysis selection. The dominant contribution for the electron plus jet final state is mainly due to the $W$+jets processes. Light-flavour jets containing charged and neutral pions can be misidentified as electrons during reconstruction. Due to the high energies of collisions at the LHC, the decays of neutral pions, $\pi^0 \rightarrow \gamma\gamma$, are highly boosted and can lead to narrow electromagnetic energy depositions. These processes can give rise to signatures that are difficult to distinguish from those of the desired electrons. The desired electrons are referred to as \emph{real electrons}, whereas the objects which mimic the electrons are referred to as \emph{fake electrons}. The fake background is difficult to estimate using simulation. Therefore, data-driven techniques are often used. This is mainly due to increased computing power needed to model the detector simulation of many jet interactions with the detector. 
 
-\subsection{Matrix method}
 The analysis uses the likelihood matrix method~\cite{Varnes:2016nrb} to estimate the fake background contribution using two levels of electron identification criteria: a \emph{tight} (T) selection which corresponds to the nominal analysis selection, and a \emph{loose} (L) identification criteria which relaxes the nominal identification. The set of objects passing the \emph{tight} selection, $N_{tight}$, is a subset of those passing the \emph{loose} selection, $N_{loose}$. Pairs of electron candidates are considered denoted by $N_{xy}$ with $x,y \in T,L$, giving the number of electron pairs passing a specific selection. The fist index representing the leading electron ($p_{T,lead} > p_{T,sublead}$) and the second one the subleading electron. An additional set of quantities $N_{xy}$ with $x,y \in R,F$ can be defined to denote whether an electron is real (R) or fake (F). The relationship between the two sets of quantities is given by~\cite{EXOT-2016-05}
 
 \begin{equation}\label{eq:matrix_method_1}
@@ -268,7 +267,6 @@ The Transfer function approach offers an alternative method to produce large sta
 
 The TF approach provides a smooth transformation between the truth and reconstruction level invariant-mass spectrum. A functional form is not imposed on the TF, and the transformation is analytically parametrised using the detector resolution. The electron and muon channels require separate TFs due to the different reconstruction properties of the two channels.
 
-\subsection{Overview}
 The transition between a known truth spectrum, $S_t(m_{\ell\ell,t})$, and an unknown reconstructed spectrum, $S_r(m_{\ell\ell,r})$, is be parametrised by a TF, $P(m_{\ell\ell,r} \mid m_{\ell\ell,t})$. The TF describes the probability to reconstruct an event at invariant mass of $m_{\ell\ell,r}$ for events with truth mass $m_{\ell\ell,t}$ that passes the selection. Full simulation MC is used to construct the TFs. The TFs are obtained fitting the detector response, with simultaneous fits to $m_{\ell\ell,t}$ bins, where the convolution of a Gaussian and a Crystal-ball is used to model the detector response. The truth invariant mass spectrum is obtained from very large truth-only MC samples. Larger samples can be produced at truth-level efficiently compared to fully reconstructed samples due to significantly smaller CPU times and disk space required to produce them. The truth-only sample is produced such that it is produced at luminosity 55 times larger than the available dataset. The following convolution is used to obtain the reconstruction level spectrum: 
 \begin{equation}\label{eq:TF_generalConv}
 	S_r(m_{\ell\ell,r}) = P(m_{\ell\ell,r} \mid m_{\ell\ell,t}) \otimes \left[ S_t(m_{\ell\ell,t}) \cdot A\varepsilon(m_{\ell\ell,t}) \right], 
